@@ -1,0 +1,383 @@
+extends /src/layouts/_master
+
+block variables
+  -
+    const meta = {
+      title: 'Partner',
+    }
+    const headerWhite = true;
+
+block append scripts
+
+block modal
+
+block content
+  section.sec-partner
+    .sec-partner__container
+      .sec-partner__wrap
+        p.sec-partner__subheading PARTNERSHIP
+        h1.heading-03.text-left: span ร่วมเป็นพันธมิตรกับผู้นำธุรกิจ#[br(class="hidden lg:block")]ขายฝากสินค้าลักชัวรี่เจ้าแรกของโลก
+        .sec-partner__content
+          p #[strong บริษัท เงินเรื่องจิ๊บ จำกัด (JIPJIPMONEY)] ก่อตั้งขึ้นในปี 2565 โดยทีมงานที่มีความเชี่ยวชาญ ในหลากหลายสาขา ทั้งการเงิน การลงทุน ธุรกิจสินค้าลักชัวรี่ และเทคโนโลยี ทำให้บริษัทสามารถพัฒนา โมเดลธุรกิจใหม่ที่ไม่เคยมีใครทำมาก่อนในโลก #[strong "บริการขายฝากสินค้าลักชัวรี่แบบครบวงจร"] ภายใต้มาตรฐานสูงและแบรนด์ดิ้งที่ชัดเจน
+          br
+          p ในปี 2568 บริษัทได้ร่วมมือเป็นพันธมิตรกับ #[strong บริษัท ทีคิวเอ็ม อัลฟ่า จำกัด (มหาชน)] เสริมความ แข็งแกร่งทั้งด้านเงินทุน การประกันภัย และความน่าเชื่อถือในการให้บริการ ซึ่งทำให้ JIPJIPMONEY เป็นตัวเลือกทางการเงินทางเลือกใหม่ที่มั่นคง โปร่งใส และยั่งยืน
+          br
+          p บริษัทมีความเชื่อมั่นในศักยภาพของตลาดสินค้าลักชัวรี่ที่เติบโตอย่างต่อเนื่อง ทั้งในด้านของมูลค่าและ คุณค่าทางจิตใจ และมีเป้าหมายขยายธุรกิจสู่ตลาดหลักทรัพย์แห่งประเทศไทย รวมถึงตลาดต่างประเทศ ในอนาคต และในฐานะผู้นำด้านการเงินทางเลือกสำหรับสินค้าลักชัวรี่
+          br
+          p บริษัทมุ่งมั่นที่จะพัฒนาโมเดลธุรกิจที่ #[strong “โปร่งใส เป็นธรรม และเข้าถึงได้”] เพื่อให้คนทุกกลุ่มสามารถใช้ ทรัพย์สินที่มีอยู่เป็นโอกาสในการสร้างสภาพคล่องโดยไม่ถูกเอาเปรียบ
+          br
+          p บริษัทเปิดรับ พันธมิตรทางธุรกิจ ที่มีเป้าหมายและวิสัยทัศน์ร่วมกัน ร่วมเป็นส่วนหนึ่งในการปฏิวัติ วงการสินเชื่อ ด้วยโมเดลทางการเงินที่ทันสมัย โปร่งใส และยั่งยืน บริษัทเปิดรับพันธมิตรทางธุรกิจ ในหลากหลายรูปแบบ ทั้งด้านการลงทุน เทคโนโลยี การตลาด ประกันภัย และการพัฒนาระบบสู่ มาตรฐานระดับโลก พร้อมก้าวไปสู่ตลาดทุนและขยายสู่ระดับนานาชาติในอนาคตอันใกล้
+  // /.sec-partner
+
+  section.sec-partner-team
+    +img(src="/src/images/partner/img-team-pc.webp" alt="Introducing Our Team" class="hidden md:block")
+    .sec-partner-team__sp
+      .sec-partner-team__logo
+        +img(src="/src/images/common/logo-main-black.svg" alt="JIPJIP MONEY")
+      h2.sec-partner-team__heading: span Introducing Our Team
+      .sec-partner-team__item
+        +img(src="/src/images/partner/img-saowanee-phathaiwanich.webp" alt="Saowanee Phathaiwanich")
+        .sec-partner-team__content
+          h3.sec-partner-team__title Saowanee#[br] Phathaiwanich
+          p.sec-partner-team__text Chief Executive Officer
+      .sec-partner-team__item
+        +img(src="/src/images/partner/img-chalermchai-mahagitsiri.webp" alt="Chalermchai Mahagitsiri")
+        .sec-partner-team__content
+          h3.sec-partner-team__title Chalermchai#[br] Mahagitsiri
+          p.sec-partner-team__text Co-Founder
+      .sec-partner-team__item
+        +img(src="/src/images/partner/img-natavudh-pungcharoenpong.webp" alt="Natavudh Pungcharoenpong")
+        .sec-partner-team__content
+          h3.sec-partner-team__title Natavudh#[br] Pungcharoenpong
+          p.sec-partner-team__text Co-Founder
+      .sec-partner-team__item
+        +img(src="/src/images/partner/img-napassanun-punnipa.webp" alt="Dr. Napassanun Punnipa")
+        .sec-partner-team__content
+          h3.sec-partner-team__title Dr. Napassanun#[br] Punnipa
+          p.sec-partner-team__text Shareholder
+  // /.sec-partner-team
+
+  .sec-partner-bagforcash
+    +img(src="/src/images/partner/img-bagforcash.webp" alt="bagforcash")
+
+  section.sec-partner-keystrengths
+    .sec-partner-keystrengths__container
+      h2.sec-partner-keystrengths__heading
+        span.heading-04: span จุดแข็งของ
+        +img(src="/src/images/common/logo-main-black.svg" alt="JIPJIP MONEY")
+        span.heading-04: span ที่ทำให้แตกต่างและน่าสนใจ (Key Strengths)
+      ul.sec-partner-keystrengths__box
+        li.sec-partner-keystrengths__item
+          p เจ้าแรกของโลกที่ให้บริการขายฝาก สินค้า ลักชัวรี่แบบครบวงจร พร้อมมาตรฐาน ระดับสูงที่ไม่เคยมีมาก่อน
+        li.sec-partner-keystrengths__item
+          p
+            strong ระบบจัดเก็บทรัพย์สินมาตรฐานสูงสุด
+            |  ทรัพย์สินของลูกค้าทุกชิ้นได้รับการดูแล ในห้องนิรภัยที่ป้องกันไฟ มีระบบ ควบคุมอุณหภูมิและความชื้น พร้อมทั้งระบบตรวจจับการเคลื่อนไหว และระบบรักษาความปลอดภัยตลอด 24 ชั่วโมง
+        li.sec-partner-keystrengths__item
+          p ธุรกรรมออนไลน์เต็มรูปแบบ สะดวก ปลอดภัย และตอบโจทย์ยุคดิจิทัล
+        li.sec-partner-keystrengths__item
+          p ตรวจสอบสินค้าแม่นยำกว่า 99% ด้วย เทคโนโลยี AI ร่วมกับผู้เชี่ยวชาญเฉพาะทาง
+        li.sec-partner-keystrengths__item
+          p เราเป็นเจ้าเดียวในตลาดที่ใช้ระบบ Data-Driven ในการประเมินวงเงิน ด้วยระบบที่คิดค้นและพัฒนาขึ้นเอง#[br(class="hidden lg:block")] ทำให้สามารถประเมินผลได้อย่างแม่นยำและรวดเร็ว
+        li.sec-partner-keystrengths__item
+          p
+            strong ระบบ CRM และ CDP อัจฉริยะ
+            | เชื่อมต่อ LINE, SMS และอีเมล พร้อมระบบแจ้งเตือนและชำระค่าบริการ อัตโนมัติ#[br(class="hidden lg:block")] ช่วยบริหารความสัมพันธ์ลูกค้าได้อย่างมีประสิทธิภาพ
+        li.sec-partner-keystrengths__item
+          p ร่วมมือกับภาครัฐเพื่อความโปร่งใส ทั้งด้าน KYC, การป้องกันมิจฉาชีพ และการดำเนินงานภายใต้กรอบกฎหมาย#[br(class="hidden lg:block")] ที่เข้มงวด
+        li.sec-partner-keystrengths__item
+          p ยังไม่มีคู่แข่งที่ใกล้เคียงในด้านความครบวงจร มาตรฐาน หรือเทคโนโลยีที่ใช้มีมาตรฐานสูงเทียบเท่าบริษัท
+            strong  JIPJIPMONEY
+  // /.sec-partner-keystrengths
+
+  .sec-partner-comparestrengths
+    +img(src="/src/images/partner/img-comparestrengths.webp" alt="เปรียบเทียบจุดแข็งของเรา")
+  // /.sec-partner-comparestrengths
+
+  section.sec-partner-marketinsights
+    .sec-partner-preserve
+      .sec-partner-preserve__container
+        .sec-partner-preserve__wrap
+          +img(src="/src/images/common/text-bagforcash-watchforcash.svg" alt="bagforcash watchforcash")
+          h2.sec-partner-preserve__heading: span Preservation#[br(class="lg:hidden")] at its Finest
+        .sec-partner-preserve__slider#slider-preservation
+          .swiper(ref="sliderPreservation")
+            .swiper-wrapper
+              .swiper-slide
+                figure.sec-partner-preserve__image
+                  +img(src="/src/images/partner/img-preservation-01.webp", alt="")
+              .swiper-slide
+                figure.sec-partner-preserve__image
+                  +img(src="/src/images/partner/img-preservation-02.webp", alt="")
+              .swiper-slide
+                figure.sec-partner-preserve__image
+                  +img(src="/src/images/partner/img-preservation-03.webp", alt="")
+              .swiper-slide
+                figure.sec-partner-preserve__image
+                  +img(src="/src/images/partner/img-preservation-04.webp", alt="")
+              .swiper-slide
+                figure.sec-partner-preserve__image
+                  +img(src="/src/images/partner/img-preservation-05.webp", alt="")
+            .box-slider-control
+              .swiper-pagination(role="navigation" aria-label="Pagination")
+              .box-slider-control__nav
+                button.swiper-button-prev(aria-label="Previous slide")
+                button.swiper-button-next(aria-label="Next slide")
+    .sec-partner-marketinsights__inner
+      h2.heading-05: span Market insights &amp; Customer trends
+      ul.sec-partner-marketinsights__container
+        li.sec-partner-marketinsights__item
+          +img(src="/src/images/common/ico-marker.svg" alt)
+          h3.sec-partner-marketinsights__title ประเทศไทย
+          p.sec-partner-marketinsights__text มูลค่าตลาดสินค้าลักชัวรี่ในเดือนพฤศจิกายน 2024 อยู่ที่ 3.52 พันล้าน ดอลลาร์สหรัฐ และคาดว่าจะเติบโต เฉลี่ยปีละ 3.94% จนถึงปี 2029
+          p.sec-partner-marketinsights__note ที่มา: Statista – Luxury Goods Market in Thailand (Nov 2024)
+        li.sec-partner-marketinsights__item
+          +img(src="/src/images/common/ico-world.svg" alt)
+          h3.sec-partner-marketinsights__title ตลาดโลก
+          p.sec-partner-marketinsights__text คาดว่าภายในปี 2025 มูลค่าตลาดสินค้า ลักชัวรี่ทั่วโลกจะสูงถึง 495 พันล้าน ดอลลาร์สหรัฐ
+          p.sec-partner-marketinsights__note ที่มา: Bain &amp; Company – Worldwide Luxury Market Outlook 2024
+        li.sec-partner-marketinsights__item
+          +img(src="/src/images/common/ico-graph.svg" alt)
+          h3.sec-partner-marketinsights__title เทรนด์ใหม่ของผู้บริโภค
+          p.sec-partner-marketinsights__text คนมองแบรนด์เนมเป็น “ทรัพย์สิน” ที่ลงทุน ได้ในระยะยาวไม่ใช่แค่ของใช้อีกต่อไป
+  // /.sec-partner-marketinsights
+
+  section.sec-partner-technology
+    .sec-partner-technology__container
+      .sec-partner-technology__img
+        +img(src="/src/images/partner/img-technology.webp" alt)
+      .sec-partner-technology__box
+        +img(src="/src/images/common/text-bagforcash-watchforcash.svg" alt="bagforcash watchforcash")
+        .sec-partner-technology__heading
+          h2.heading-02: span Technology-Driven Operation
+          ul.sec-partner-technology__list
+            li.sec-partner-technology__item
+              .sec-partner-technology__icon
+                +img(src="/src/images/common/ico-ai.svg" alt)
+              .sec-partner-technology__content
+                h3.sec-partner-technology__title ระบบตรวจสอบทรัพย์สินด้วยเทคโนโลยี AI
+                p.sec-partner-technology__text บริษัทผสานความเชี่ยวชาญของผู้เชี่ยวชาญเฉพาะทางเข้ากับเทคโนโลยี AI เพื่อการตรวจสอบความแท้#[br(class="hidden lg:block")]ของทรัพย์สินได้อย่างแม่นยำในระดับมากกว่า 99% ระบบถูกออกแบบให้ดำเนินการ ได้อย่างรวดเร็ว#[br(class="hidden lg:block")] และมีประสิทธิภาพ รองรับการให้บริการที่รวดเร็วเพื่อตอบสนองความต้องการของลูกค้าได้ดีที่สุด
+            li.sec-partner-technology__item
+              .sec-partner-technology__icon
+                +img(src="/src/images/common/ico-graph.svg" alt)
+              .sec-partner-technology__content
+                h3.sec-partner-technology__title ระบบประเมินมูลค่าทรัพย์สินที่แม่นยำและได้มาตรฐาน
+                p.sec-partner-technology__text การประเมินวงเงินอ้างอิงจากฐานข้อมูลราคากลางในตลาดโลกที่พัฒนาโดยบริษัท โดยนำเทคโนโลยี AI เข้ามา ช่วยวิเคราะห์ร่วม ส่งผลให้ผลการประเมินวงเงินมีความถูกต้อง โปร่งใส และเป็นธรรมต่อผู้ใช้บริการ
+            li.sec-partner-technology__item
+              .sec-partner-technology__icon
+                +img(src="/src/images/common/ico-alert.svg" alt)
+              .sec-partner-technology__content
+                h3.sec-partner-technology__title ระบบแจ้งเตือนและจัดการธุรกรรมด้วย Automation
+                p.sec-partner-technology__text บริษัทใช้ระบบ Automation แบบครบวงจรในการแจ้งเตือนการชำระเงินและการต่อสัญญา ผ่านช่องทางต่าง ๆ ผ่าน LINE, SMS และอีเมล ระบบนี้ช่วยเพิ่มความสะดวกให้กับลูกค้าในการติดตามสถานะ ลดความเสี่ยงในการ ผิดนัดและสนับสนุนการวางแผนทางการเงินของลูกค้าได้อย่างมีประสิทธิภาพ
+            li.sec-partner-technology__item
+              .sec-partner-technology__icon
+                +img(src="/src/images/common/ico-crm.svg" alt)
+              .sec-partner-technology__content
+                h3.sec-partner-technology__title การจัดการข้อมูลลูกค้าด้วยระบบ CRM / CDP
+                p.sec-partner-technology__text บริษัทนำระบบบริหารความสัมพันธ์ลูกค้า (CRM) และระบบจัดการข้อมูลลูกค้า (CDP) มาใช้เพื่อวิเคราะห์ข้อมูล เชิงลึก เพื่อเข้าใจความต้องการเฉพาะของลูกค้า และเพื่อพัฒนาการให้บริการที่มีประสิทธิภาพ พร้อมเสริมสร้าง ความสัมพันธ์ระยะยาว
+            li.sec-partner-technology__item
+              .sec-partner-technology__icon
+                +img(src="/src/images/common/ico-data.svg" alt)
+              .sec-partner-technology__content
+                h3.sec-partner-technology__title การจัดเก็บและบริหารฐานข้อมูลทรัพย์สินอย่างเป็นระบบ
+                p.sec-partner-technology__text บริษัทมีการจัดเก็บข้อมูลประวัติของทรัพย์สินแต่ละชิ้นที่นำมาฝากไว้อย่างละเอียด เพื่อให้ลูกค้ามั่นใจว่าทรัพย์สิน อยู่ภายใต้การดูแลที่มีมาตรฐาน และสามารถตรวจสอบย้อนหลังได้ หากเกิดข้อสงสัยหรือปัญหาใด ๆ#[br(class="hidden lg:block")] ลูกค้าจะมีข้อมูลอ้างอิงที่ชัดเจน ครอบคลุมทั้งสองฝ่าย
+  // /.sec-partner-technology
+
+  section.sec-partner-info
+    .sec-partner-info__container
+      .sec-partner-info__img01
+        +img(src="/src/images/partner/img-target-customers.webp" alt)
+      .sec-partner-info__targetcustomers
+        h2.sec-partner-info__heading Target Customers
+        p.sec-partner-info__text กลุ่มลูกค้าของเราคือผู้ที่ถือครองทรัพย์สินลักชัวรี่ เช่น กระเป๋าแบรนด์เนม นาฬิกา ไฮเอนด์ และเครื่องประดับหรู ที่ต้องการใช้เงินด่วนทั้งระยะสั้น และระยะยาว ด้วยวงเงินตั้งแต่ 10,000 ถึง 6,500,000 บาท จึงครอบคลุมตั้งแต่นักศึกษา คนทำงาน ไปจนถึงเจ้าของธุรกิจ
+      .sec-partner-info__img02
+        +img(src="/src/images/partner/img-strategicpartners.webp" alt)
+      .sec-partner-info__strategicpartners
+        h2.sec-partner-info__heading STRATEGIC PARTNERS
+        p.sec-partner-info__text
+          strong กลุ่มพันธมิตรที่บริษัทมองหา#[br]
+          | ร่วมสร้างระบบนิเวศธุรกิจลักชัวรี่แบบครบวงจร เติบโตอย่างมั่นคงและยั่งยืนไปด้วยกัน
+
+    .sec-partner-info__wrap
+      .sec-partner-info__list01
+        .sec-partner-info__box
+          .sec-partner-info__inner
+            .sec-partner-info__icon
+              +img(src="/src/images/common/ico-fund.svg" alt)
+            h2.sec-partner-info__title พันธมิตรด้านการลงทุน
+          ul
+            li: p.sec-partner-info__subtitle นักลงทุนรายบุคคล / PRIVATE FUND
+            li: p.sec-partner-info__subtitle Venture Capital (VC)
+            li
+              p.sec-partner-info__subtitle Private Equity (PE)
+              p.sec-partner-info__subtext เพื่อเสริมสภาพคล่อง ขยายฐานธุรกิจ และต่อยอด#[br(class="hidden lg:block")] การเติบโตระยะยาว
+        .sec-partner-info__box
+          .sec-partner-info__inner
+            .sec-partner-info__icon
+              +img(src="/src/images/common/ico-kyc.svg" alt)
+            h2.sec-partner-info__title พันธมิตรด้านเทคโนโลยี
+          ul
+            li
+              p.sec-partner-info__subtitle ระบบ KYC, AI, CRM และ Automation
+              p.sec-partner-info__subtext เพื่อยกระดับประสบการณ์ของลูกค้าและพัฒนา#[br(class="hidden lg:block")] ระบบการให้บริการให้แม่นยำ ปลอดภัย และรวดเร็ว
+            li
+              p.sec-partner-info__subtitle พาร์ตเนอร์ด้านเทคโนโลยีสารสนเทศ (IT Infrastructure &amp; Platform Partner)
+              p.sec-partner-info__subtext รองรับการขยายตัวทั้งในประเทศและระดับภูมิภาค
+        .sec-partner-info__box
+          .sec-partner-info__inner
+            .sec-partner-info__icon
+              +img(src="/src/images/common/ico-partner.svg" alt)
+            h2.sec-partner-info__title พันธมิตรด้านการตลาด#[br]และแบรนด์
+          ul
+            li: p.sec-partner-info__subtitle เอเจนซี่ด้านการตลาด (Marketing Partner)
+            li
+              p.sec-partner-info__subtitle ผู้เชี่ยวชาญด้านการสร้างแบรนด์ (Branding Partner)
+              p.sec-partner-info__subtext เพื่อวางตำแหน่งแบรนด์อย่างชัดเจน และสื่อสาร#[br] ภาพลักษณ์ระดับพรีเมียมสู่กลุ่มเป้าหมาย
+      .sec-partner-info__list02
+        .sec-partner-info__box
+          .sec-partner-info__inner
+            .sec-partner-info__icon
+              +img(src="/src/images/common/ico-system.svg" alt)
+            h2.sec-partner-info__title ระบบคลังสินค้าและบริหารสต๊อก#[br] (Inventory &amp; Warehousing Partners)
+          ul
+            li
+              p.sec-partner-info__subtitle Inventory Management System Provider
+              p.sec-partner-info__subtext ผู้ให้บริการระบบบริหารจัดการสต๊อกดิจิทัลแบบครบวงจร สำหรับตรวจสอบสินค้า#[br(class="hidden lg:block")]เข้า-ออกแบบเรียลไทม์
+            li
+              p.sec-partner-info__subtitle Luxury Inventory Tracking Solutions
+              p.sec-partner-info__subtext ระบบติดตามทรัพย์สินที่เหมาะกับสินค้าลักชัวรี่ ติดตามการเคลื่อนไหว#[br(class="hidden lg:block")]ทุกขั้นตอนอย่างแม่นยำ
+            li
+              p.sec-partner-info__subtitle Warehouse Management System (WMS) Partner
+              p.sec-partner-info__subtext ระบบคลังสินค้าอัจฉริยะ เช่น
+              ul
+                li สแกนบาร์โค้ด
+                li RFID
+                li การจัดหมวดหมู่อัตโนมัติ
+            li
+              p.sec-partner-info__subtitle Stock Control &amp; Asset Monitoring Partner
+              p.sec-partner-info__subtext ระบบควบคุมสต๊อกที่มีฟีเจอร์ด้านความปลอดภัย เช่น
+              ul
+                li ตรวจจับการเคลื่อนไหว
+                li กล้องวงจรปิด
+                li การแจ้งเตือนอัตโนมัติ
+                li ควบคุมอุณหภูมิและความชื้น
+        .sec-partner-info__box
+          .sec-partner-info__inner
+            .sec-partner-info__icon
+              +img(src="/src/images/common/ico-logistics.svg" alt)
+            h2.sec-partner-info__title พันธมิตรด้านการขนส่งและจุดรับ-ส่งสินค้า (Logistics &amp; Drop-off Partners)
+          ul
+            li: p.sec-partner-info__subtitle Luxury Logistics Partner
+            li: p.sec-partner-info__subtitle Secure Transportation Provider
+            li
+              p.sec-partner-info__subtitle White-glove Delivery Partner
+              p.sec-partner-info__subtext ผู้ให้บริการที่เชี่ยวชาญด้านการขนส่งสินค้าระดับพรีเมียมพร้อมมาตรฐาน#[br(class="hidden lg:block")]ความปลอดภัยสูง
+        .sec-partner-info__box
+          .sec-partner-info__inner
+            .sec-partner-info__icon
+              +img(src="/src/images/common/ico-dropoff.svg" alt)
+            h2.sec-partner-info__title จุดรับ-ส่งสินค้า (Drop-off Points)
+          ul
+            li: p.sec-partner-info__subtitle Luxury Drop-off Point Partner
+            li: p.sec-partner-info__subtitle Secure Pick-up &amp; Drop-off Network
+            li
+              p.sec-partner-info__subtitle Authorized Collection Point
+              p.sec-partner-info__subtext พื้นที่รับ-ส่งสินค้าที่ปลอดภัย เช่น ห้างสรรพสินค้า โรงแรม หรือศูนย์บริการมาตรฐาน#[br(class="hidden lg:block")] พร้อมระบบยืนยันตัวตนและกล้องวงจรปิด
+      .sec-partner-info__box
+        .sec-partner-info__inner
+          .sec-partner-info__icon
+            +img(src="/src/images/common/ico-soical.svg" alt)
+          h2.sec-partner-info__title พันธมิตรด้านสังคม (Social Impact &amp; CSR Partnerships)
+        ul
+          li
+            p.sec-partner-info__subtitle องค์กรเพื่อสังคม / มูลนิธิ / หน่วยงานไม่แสวงหากำไร
+            p.sec-partner-info__subtext JIPJIPMONEY เชื่อว่าความสำเร็จที่แท้จริงของธุรกิจ ไม่ได้วัดเพียงแค่ผลกำไร แต่ต้องสามารถสร้างผลกระทบเชิงบวกให้กับสังคมได้อย่างแท้จริง
+  // /.sec-partner-info
+
+  section.sec-partner-contact
+    .sec-partner-contact__container
+      .sec-partner-contact__upper
+        h2.sec-partner-contact__heading
+          span ติดต่อ
+          +img(src="/src/images/common/logo-main-black.svg" alt="JIPJIP MONEY")
+        .sec-partner-contact__lead
+          p.sec-partner-contact__lead-title: span สอบถามข้อมูลเพิ่มเติม
+          p สามารถติดต่อเราได้ทันที #[br(class="md:hidden")]ในช่วงวันและเวลาทำการ 10:00-19:00 น. #[br(class="md:hidden")](ปิดวันอาทิตย์)
+      .sec-partner-contact__lower
+        .sec-partner-contact__address
+          ul.list-contact-info
+            li
+              +img(src="/src/images/partner/ico-line.svg" alt)
+              .list-contact-info__content
+                p.list-contact-info__title ไลน์ (Line)
+                p: a(href="https://line.me/R/ti/p/@jipjipmoney" target="_blank" ) @JIPJIPMONEY
+                p: a(href="https://line.me/R/ti/p/@bagforcash" target="_blank") @bagforcash
+                p: a(href="https://line.me/R/ti/p/@watchforcash" target="_blank") @watchforcash
+            li
+              +img(src="/src/images/partner/ico-tel.svg" alt)
+              .list-contact-info__content
+                p.list-contact-info__title โทร
+                p: a(href="tel:+0888000000") 0888-000-000
+            li
+              +img(src="/src/images/partner/ico-email.svg" alt)
+              .list-contact-info__content
+                p.list-contact-info__title อีเมล
+                p: a(href="mailto:official@jipjipmoney.com") official@jipjipmoney.com
+            li
+              +img(src="/src/images/partner/ico-address.svg" alt)
+              .list-contact-info__content
+                p.list-contact-info__title ที่อยู่
+                p 58/101 หมู่ 3 ถนน แจ้งวัฒนะ-ปากเกร็ด 33 #[br(class="hidden lg:block")]คลองเกลือ ปากเกร็ด นนทบุรี 11120
+          // /.list-contact-info
+        .sec-partner-contact__form
+          .box-contact-form
+            form.box-contact-form__form(method="post" action="/partner/")
+              .box-contact-form__field
+                label.form-label-lg.form-label-lg--required(for="name") ชื่อผู้ติดต่อ
+                .form-block
+                  input.form-input(type="text" id="name" name="name" placeholder="กรุณากรอกชื่อผู้ติดต่อ")
+              .box-contact-form__column
+                .box-contact-form__field
+                  label.form-label-lg.form-label-lg--required(for="email") อีเมล
+                  .form-block
+                    input.form-input(type="email" id="email" name="email" placeholder="กรุณากรอกอีเมล")
+                .box-contact-form__field
+                  label.form-label-lg.form-label-lg--required(for="tel") โทรศัพท์
+                  .form-block
+                    input.form-input(type="tel" id="tel" name="tel" placeholder="กรุณากรอกเบอร์โทรศัพท์")
+              .box-contact-form__column
+                .box-contact-form__field
+                  label.form-label-lg.form-label-lg--required(for="position") ตำแหน่ง
+                  .form-block
+                    input.form-input(type="text" id="position" name="position" placeholder="กรุณากรอกตำแหน่ง")
+                .box-contact-form__field
+                  label.form-label-lg.form-label-lg--required(for="company") ชื่อบริษัท
+                  .form-block
+                    input.form-input(type="text" id="company" name="company" placeholder="กรุณากรอกชื่อบริษัท")
+              .box-contact-form__column
+                .box-contact-form__field
+                  label.form-label-lg.form-label-lg--required(for="industry") อุตสาหกรรม (Industry)
+                  .form-block
+                    .form-select
+                      select(name="industry" id="industry")
+                        option(value="") เลือกอุตสาหกรรม
+                        option(value="retail") ขายปลีก
+                        option(value="wholesale") ขายส่ง
+                        option(value="other") อื่นๆ
+                .box-contact-form__field
+                  label.form-label-lg.form-label-lg--required(for="interest") บริการของเราที่สนใจ
+                  .form-block
+                    .form-select
+                      select(name="interest" id="interest")
+                        option(value="") เลือกบริการของเราที่สนใจ
+                        option(value="investment") พันธมิตรด้านการลงทุน
+                        option(value="technology") พันธมิตรด้านเทคโนโลยี
+                        option(value="branding") พันธมิตรด้านการตลาดและแบรนด์
+                        option(value="inventory") ระบบคลังสินค้าและบริหารสต๊อก (Inventory &amp; Warehousing Partners)
+                        option(value="logistics") พันธมิตรด้านการขนส่งและจุดรับ-ส่งสินค้า (Logistics &amp; Drop-off Partners)
+                        option(value="drop-off") จุดรับ-ส่งสินค้า (Drop-off Points)
+                        option(value="social") พันธมิตรด้านสังคม (Social Impact &amp; CSR Partnerships)
+              button.box-contact-form__submit(type="submit") ส่งข้อมูล
+          // /.box-contact-form
+
+  // /.sec-partner-contact

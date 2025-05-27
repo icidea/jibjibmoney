@@ -1,0 +1,71 @@
+header.header#header(class=(headerWhite ? 'header--white' : ''))
+  .header__container
+    a.header__logo(href="/" aria-label="JipJip Money Logo")
+    button.header-btn-menu(:aria-expanded="isMenuOpen.toString()" @click.prevent="menuToggle")
+      span.header-btn-menu__title เมนู
+      span.header-btn-menu__hamburger
+        span
+        span
+        span
+    nav.nav-global#nav-global(:aria-hidden="menuAriaHidden.toString()" :class="{ 'is-open': isMenuOpen }")
+      .nav-global__container
+        .nav-global__inner
+          ul.nav-global__list
+            li: a.nav-global__link(href="/") หน้าแรก
+            li: a.nav-global__link(href="/about-us/") เกี่ยวกับเรา
+            li(@mouseenter="subMenuHoverToggle(true)" @mouseleave="subMenuHoverToggle(false)")
+              button.nav-global__link(@click.prevent="subMenuClickToggle" :aria-expanded="isSubMenuOpen") ผลิตภัณฑ์ของเรา
+              transition(name="fade")
+                .nav-global-sub(:aria-hidden="(!isSubMenuOpen).toString()" v-show="isSubMenuOpen")
+                  .nav-global-sub__inner
+                    p.nav-global-sub__heading บริการเงินด่วน
+                    a.nav-global-sub__link(href="/bagforcash/")
+                      +img(src="/src/images/common/ico-nav-bagforcash.svg" alt="")
+                      .nav-global-sub__link-desc
+                        p.nav-global-sub__link-title bagforcash
+                        p ผู้นำด้านการฝากขายกระเป๋าแบรนด์เนม#[br(class="hidden xl:black")]และเครื่องประดับกระเป๋าแบรนด์เนม อันดับ 1 ของไทย
+                    a.nav-global-sub__link(href="/watchforcash/")
+                      +img(src="/src/images/common/ico-nav-watchforcash.svg" alt="")
+                      .nav-global-sub__link-desc
+                        p.nav-global-sub__link-title watchforcash
+                        p ผู้นำด้านการฝากขายนาฬิกาแบรนด์เนม อันดับ 1 ของไทย
+                  .nav-global-sub__inner
+                    p.nav-global-sub__heading บริการของเรา
+                    a.nav-global-sub__link(href="/authentication/")
+                      +img(src="/src/images/common/ico-nav-authen.svg" alt="")
+                      .nav-global-sub__link-desc
+                        p.nav-global-sub__link-title ตรวจแท้–ปลอม
+                        p บริการตรวจแท้ปลอมโดยผู้เชี่ยวชาญพร้อมออกการ์ด
+                    a.nav-global-sub__link(href="/redemption/")
+                      +img(src="/src/images/common/ico-nav-redemption.svg" alt="")
+                      .nav-global-sub__link-desc
+                        p.nav-global-sub__link-title สินเชื่อ
+                        p บริการตรวจแท้ปลอมโดยผู้เชี่ยวชาญพร้อมออกการ์ด
+            li: a.nav-global__link(href="/news-promotion/") ข่าวสารและโปรโมชัน
+            li: a.nav-global__link(href="/partner/") พาร์ทเนอร์
+            li: a.nav-global__link(href="/contact-us/") ติดต่อเรา
+          .nav-global-lang
+            button.nav-global-lang__button(:aria-expanded="isLangOpen.toString()" @click.prevent="langToggle")
+              span.nav-global-lang__text ภาษา
+              span.nav-global-lang__current
+                span ภาษาไทย
+            transition(name="fade")
+              .nav-global-lang__box(v-show="isLangOpen")
+                p.nav-global-lang__box-title เลือกภาษา
+                ul.nav-global-lang__list(:aria-hidden="(!isLangOpen).toString()")
+                  li: a(href="#" aria-selected="true") ภาษาไทย
+                  li: a(href="#") English
+                  li: a(href="#") 中文
+        ul.nav-global__sns
+          li
+            a(href="https://www.facebook.com/profile.php?id=61550832268748&mibextid=LQQJ4d" target="_blank" aria-label="Facebook")
+              span(style="--image: url('/src/images/common/ico-facebook-white.svg')")
+          li
+            a(href="https://line.me/R/ti/p/%40jipjipmoney" target="_blank" aria-label="Line")
+              span(style="--image: url('/src/images/common/ico-line-white.svg')")
+          li
+            a(href="https://instagram.com/jipjipmoney?igshid=MzRlODBiNWFlZA==" target="_blank" aria-label="Instagram")
+              span(style="--image: url('/src/images/common/ico-instagram-white.svg'); --size: 22;")
+          li
+            a(href="https://www.tiktok.com/@jipjipmoney" target="_blank" aria-label="TikTok")
+              span(style="--image: url('/src/images/common/ico-tiktok-white.svg'); --size: 21;")

@@ -1,0 +1,128 @@
+@use "../utilities" as *;
+
+.main-visual-sub {
+  position: relative;
+  height: 100vh;
+  min-height: 450px;
+
+  @include breakpoint-up(lg) {
+    min-height: 600px;
+  }
+
+  &__image {
+    display: block;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 0 24px;
+    text-align: center;
+    transform: translateY(-50%);
+
+    &--redemption {
+      @include breakpoint-up(md) {
+        left: 50%;
+        max-width: 870px;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 286px;
+    height: auto;
+    margin: 0 auto;
+
+    @include breakpoint-up(md) {
+      width: 513px;
+    }
+  }
+
+  &__heading,
+  &__heading-sm,
+  &__heading-lg {
+    @include text-h5-bold;
+    margin-top: 24px;
+
+    @include breakpoint-up(md) {
+      @include text-h3-bold;
+    }
+
+    > span {
+      display: inline-block;
+      background: radial-gradient(72.03% 768.29% at 52.73% 100%, #fff 0%, #9abeca 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__heading-sm {
+    @include text-body1;
+    margin-top: 0;
+
+    @include breakpoint-up(md) {
+      @include text-h3;
+    }
+  }
+
+  &__heading-lg {
+    @include text-h5-bold;
+    margin-top: 4px;
+
+    @include breakpoint-up(md) {
+      @include text-h1-bold;
+      margin-top: 0;
+    }
+  }
+
+  &__text {
+    @include text-body3;
+
+    position: relative;
+    padding-top: 24px;
+    margin-top: 24px;
+    text-align: center;
+    background: radial-gradient(72.03% 768.29% at 52.73% 100%, #fff 0%, #9abeca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @include breakpoint-up(md) {
+      @include text-h6;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      max-width: 327px;
+      height: 1px;
+      content: "";
+      background-color: var(--color-white);
+      border-radius: 1px;
+      transform: translateX(-50%);
+
+      @include breakpoint-up(lg) {
+        max-width: 563px;
+      }
+    }
+  }
+}

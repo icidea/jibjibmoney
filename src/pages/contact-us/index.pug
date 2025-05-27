@@ -1,0 +1,53 @@
+extends /src/layouts/_master
+
+block variables
+  -
+    const meta = {
+      title: 'Contact Us',
+    }
+    const headerWhite = true;
+
+block append scripts
+
+block modal
+
+block content
+  .sec-contact
+    .sec-contact__container
+      h1.sec-contact__heading
+        span ติดต่อ
+        +img(src="/src/images/common/logo-main-black.svg", alt="")
+      p.sec-contact__heading-sub: span สอบถามข้อมูลเพิ่มเติม
+      p.sec-contact__text สามารถติดต่อเราได้ทันที #[br(class="md:hidden")]ในช่วงวันและเวลาทำการ 10:00-19:00 น. #[br(class="md:hidden")](ปิดวันอาทิตย์)
+
+      .sec-contact__content
+        .sec-contact__address
+          ul.list-contact-info
+            li
+              +img(src="/src/images/partner/ico-line.svg" alt)
+              .list-contact-info__content
+                p.list-contact-info__title ไลน์ (Line)
+                p: a(href="https://line.me/R/ti/p/@jipjipmoney" target="_blank" ) @JIPJIPMONEY
+                p: a(href="https://line.me/R/ti/p/@bagforcash" target="_blank") @bagforcash
+                p: a(href="https://line.me/R/ti/p/@watchforcash" target="_blank") @watchforcash
+            li
+              +img(src="/src/images/partner/ico-tel.svg" alt)
+              .list-contact-info__content
+                p.list-contact-info__title โทร
+                p: a(href="tel:+0888000000") 0888-000-000
+            li
+              +img(src="/src/images/partner/ico-email.svg" alt)
+              .list-contact-info__content
+                p.list-contact-info__title อีเมล
+                p: a(href="mailto:official@jipjipmoney.com") official@jipjipmoney.com
+            li
+              +img(src="/src/images/partner/ico-address.svg" alt)
+              .list-contact-info__content
+                p.list-contact-info__title ที่อยู่
+                p 58/101 หมู่ 3 ถนน แจ้งวัฒนะ-ปากเกร็ด 33 #[br(class="hidden lg:block")]คลองเกลือ ปากเกร็ด นนทบุรี 11120
+          // /.list-contact-info
+          a.sec-contact__button(href="https://maps.app.goo.gl/4w9AB5FLSffhRbft5" target="_blank") เปิดแผนที่ Google map
+
+        .sec-contact__map.
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8836.060558698064!2d100.53428875898513!3d13.906665889650807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2833d79968dd9%3A0xb19bb38ab587632!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5gOC4h-C4tOC4meC5gOC4o-C4t-C5iOC4reC4h-C4iOC4tOC5iuC4miDguIjguY3guLLguIHguLHguJQ!5e0!3m2!1sen!2sth!4v1748360718757!5m2!1sen!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  // /.sec-contact

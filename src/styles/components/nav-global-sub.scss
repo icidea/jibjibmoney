@@ -1,0 +1,84 @@
+@use "../utilities" as *;
+
+.nav-global-sub {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 320px;
+  padding: 16px;
+  background-color: var(--color-white);
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+
+  @include breakpoint-down(xl) {
+    position: static;
+    background-color: transparent;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    & + & {
+      margin-top: 16px;
+
+      @include breakpoint-down(xl) {
+        margin-top: 24px;
+      }
+    }
+  }
+
+  &__heading {
+    font-size: calc(12 / 16 * 1rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-blue-dark);
+
+    @include breakpoint-down(xl) {
+      color: var(--color-blue-main);
+    }
+  }
+
+  &__link {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-out;
+
+    &:hover {
+      @include hover {
+        background-color: var(--color-blue-main-a20);
+      }
+    }
+
+    > img {
+      display: block;
+      flex-shrink: 0;
+      width: 36px;
+      height: auto;
+    }
+  }
+
+  &__link-desc {
+    flex: 1;
+    font-size: calc(10 / 16 * 1rem);
+    line-height: 1.25;
+
+    @include breakpoint-down(xl) {
+      color: var(--color-grey-light);
+    }
+  }
+
+  &__link-title {
+    margin-bottom: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-dark);
+
+    @include breakpoint-down(xl) {
+      color: var(--color-white);
+    }
+  }
+}

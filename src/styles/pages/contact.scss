@@ -1,0 +1,203 @@
+@use "../utilities" as *;
+
+.sec-contact {
+  position: relative;
+  padding: 48px 24px;
+  overflow: hidden;
+
+  @include breakpoint-up(lg) {
+    padding: 96px 24px;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    width: 136px;
+    height: 192px;
+    content: "";
+    background: url("/src/images/common/bg-logo-blue.svg") no-repeat left bottom;
+    background-size: 240px;
+    opacity: 0.2;
+
+    @include breakpoint-up(lg) {
+      top: 130px;
+      right: auto;
+      left: 50%;
+      width: 569px;
+      height: 569px;
+      background-size: contain;
+      transform: translateX(-810px);
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    max-width: 1085px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    @include text-h3-bold;
+    text-align: center;
+
+    @include breakpoint-up(lg) {
+      @include text-h2-bold;
+    }
+
+    > span {
+      display: inline-block;
+      background: linear-gradient(95.38deg, #000000 0.75%, #546c83 87.8%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    > img {
+      display: block;
+      width: 255px;
+      height: auto;
+      margin: 0 auto;
+
+      @include breakpoint-up(lg) {
+        width: 356px;
+      }
+    }
+  }
+
+  &__heading-sub {
+    @include text-h6-bold;
+
+    margin-top: 24px;
+    text-align: center;
+
+    @include breakpoint-up(lg) {
+      @include text-h5-bold;
+      margin-top: 40px;
+    }
+
+    > span {
+      display: inline-block;
+      background: linear-gradient(95.38deg, #000000 0.75%, #9abeca 87.8%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__text {
+    margin-top: 8px;
+    color: var(--color-grey-main);
+    text-align: center;
+
+    @include breakpoint-up(lg) {
+      margin-top: 10px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 6px;
+    margin-top: 24px;
+
+    @include breakpoint-up(md) {
+      flex-direction: row-reverse;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include breakpoint-up(lg) {
+      gap: 69px;
+      padding: 0;
+      margin-top: 60px;
+    }
+  }
+
+  &__address {
+    @include breakpoint-up(md) {
+      flex-shrink: 0;
+      width: 300px;
+    }
+
+    @include breakpoint-up(lg) {
+      width: 316px;
+    }
+  }
+
+  &__button {
+    @include text-body2-bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin-top: 24px;
+    color: var(--color-dark);
+    background-color: var(--color-blue-main);
+    border-radius: 2px;
+    transition: var(--hover-transition);
+
+    &:hover {
+      @include hover {
+        opacity: var(--hover-opacity);
+      }
+    }
+  }
+
+  &__map {
+    position: relative;
+    aspect-ratio: 310 / 218;
+    overflow: hidden;
+    border-radius: 24px;
+
+    @include breakpoint-up(md) {
+      flex: 1;
+      aspect-ratio: 700 / 491;
+    }
+
+    @include breakpoint-up(lg) {
+      border-radius: 100px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: linear-gradient(to right, #a7cedb 0%, #7eacbb 100%);
+      border-radius: 24px;
+      opacity: 0.7;
+
+      @include breakpoint-up(lg) {
+        background: linear-gradient(to right, #7eacbb 0%, #344c64 100%);
+        border-radius: 100px;
+      }
+    }
+
+    > iframe {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      z-index: 1;
+      width: calc(100% - 6px);
+      height: calc(100% - 6px);
+      border-radius: 24px;
+
+      @include breakpoint-up(lg) {
+        top: 5px;
+        left: 5px;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        border-radius: 100px;
+      }
+    }
+  }
+}

@@ -1,0 +1,333 @@
+@use "../utilities" as *;
+
+.sec-authen-accepted {
+  padding: 48px 24px;
+  background: linear-gradient(101.34deg, rgba(164, 164, 164, 0.2) 7.97%, rgba(65, 74, 76, 0.2) 98.59%);
+
+  @include breakpoint-up(lg) {
+    padding: 96px 24px;
+  }
+
+  &__container {
+    max-width: 1130px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    @include breakpoint-up(lg) {
+      display: flex;
+      align-items: center;
+
+      &:first-child {
+        flex-direction: row-reverse;
+      }
+    }
+
+    & + & {
+      margin-top: 24px;
+
+      @include breakpoint-up(md) {
+        margin-top: 32px;
+      }
+
+      @include breakpoint-up(lg) {
+        margin-top: 88px;
+      }
+    }
+  }
+
+  &__image {
+    @include breakpoint-up(md) {
+      position: relative;
+      flex-shrink: 0;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+    }
+
+    @include breakpoint-up(lg) {
+      width: calc(341 / 1130 * 100%);
+      aspect-ratio: 341 / 457;
+    }
+
+    > img {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      @include breakpoint-up(md) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__brand {
+    flex: 1;
+  }
+}
+
+.sec-authen-step {
+  position: relative;
+  padding: 48px 24px;
+
+  @include breakpoint-up(lg) {
+    padding: 80px 24px;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    width: 152px;
+    height: 177px;
+    content: "";
+    background: url("/src/images/common/bg-logo-blue.svg") left bottom no-repeat;
+    background-size: 240px;
+    opacity: 0.2;
+
+    @include breakpoint-up(lg) {
+      width: 325px;
+      height: 399px;
+      background-size: 522px;
+      opacity: 0.3;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    max-width: 1184px;
+    margin: 0 auto;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 24px;
+    margin-top: 38px;
+
+    @include breakpoint-up(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(lg) {
+      grid-template-columns: calc(536 / 1184 * 100%) auto auto;
+    }
+
+    > li:first-child {
+      @include breakpoint-up(md) {
+        grid-column: 1 / span 2;
+      }
+
+      @include breakpoint-up(lg) {
+        grid-column: 1;
+      }
+    }
+  }
+
+  &__remark {
+    padding: 8px;
+    margin-top: 24px;
+    font-size: calc(10 / 16 * 1rem);
+    line-height: 1.2;
+    color: var(--color-blue-dark);
+    border: 1px solid var(--color-blue-main-a50);
+
+    @include breakpoint-up(md) {
+      display: flex;
+      gap: 8px;
+      padding: 16px;
+      margin-top: 38px;
+    }
+
+    > p {
+      flex-shrink: 0;
+
+      @include breakpoint-down(md) {
+        margin-bottom: 8px;
+        text-decoration: underline;
+      }
+    }
+
+    > ul {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 4px;
+
+      > li {
+        position: relative;
+        padding-left: 15px;
+
+        &::before {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          width: 3px;
+          height: 3px;
+          content: "";
+          background-color: var(--color-blue-dark);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+.sec-authen-why {
+  position: relative;
+  padding: 48px 24px;
+  overflow: hidden;
+  background: radial-gradient(87.08% 407.87% at 19.27% 71.82%, #fff 0%, rgba(151, 153, 155, 0.5) 100%);
+
+  @include breakpoint-up(lg) {
+    padding: 96px 24px;
+  }
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 492px;
+    z-index: 0;
+    width: 168px;
+    height: 240px;
+    content: "";
+    background: url("/src/images/common/bg-logo-white.svg") left center no-repeat;
+    background-size: 240px;
+    opacity: 0.2;
+
+    @include breakpoint-up(lg) {
+      right: auto;
+      bottom: 123px;
+      left: 0;
+      width: 423px;
+      height: 522px;
+      background-position: right center;
+      background-size: 522px;
+      opacity: 0.4;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+
+    & + & {
+      margin-top: 48px;
+
+      @include breakpoint-up(lg) {
+        margin-top: 64px;
+      }
+    }
+  }
+
+  &__heading {
+    @include text-h5-bold;
+
+    margin-bottom: 24px;
+    text-align: center;
+
+    @include breakpoint-up(lg) {
+      @include text-h2-bold;
+    }
+
+    > span {
+      display: inline-block;
+      background: linear-gradient(95.38deg, #000 0.75%, #546c83 87.8%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+
+      &:last-child {
+        @include breakpoint-up(lg) {
+          display: block;
+          margin-top: -8px;
+        }
+      }
+    }
+  }
+
+  &__heading-in {
+    @include breakpoint-up(lg) {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    > img {
+      display: block;
+      width: 255px;
+      height: auto;
+      margin: 8px auto;
+
+      @include breakpoint-up(lg) {
+        width: 318px;
+        margin: 0;
+      }
+    }
+  }
+
+  &__card-responsible {
+    @include text-body2;
+    padding: 24px;
+    text-align: center;
+    background-color: var(--color-white);
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+
+    @include breakpoint-up(lg) {
+      @include text-body1;
+      padding: 46px;
+    }
+
+    > img {
+      display: block;
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+    }
+  }
+}
+
+.sec-authen-cert {
+  position: relative;
+  padding: 48px 24px;
+  background: radial-gradient(87.08% 407.87% at 19.27% 71.82%, #fff 0%, rgba(78, 83, 101, 0.2) 100%);
+
+  @include breakpoint-up(lg) {
+    padding: 96px 24px;
+    background: radial-gradient(51.87% 51.87% at 50% 50%, rgba(151, 153, 155, 0.1) 0%, rgba(151, 153, 155, 0.06) 100%);
+  }
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 208px;
+    height: 208px;
+    content: "";
+    background: url("/src/images/common/bg-logo-blue.svg") top left no-repeat;
+    background-size: 240px;
+    opacity: 0.2;
+
+    @include breakpoint-up(lg) {
+      width: 348px;
+      height: 472px;
+      background-size: 569px;
+      opacity: 0.1;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,19 @@
+@use "../utilities" as *;
+
+.section-redemption {
+  padding: 48px 24px;
+  background: radial-gradient(87.08% 407.87% at 19.27% 71.82%, #ffffff 0%, rgba(151, 153, 155, 0.5) 100%);
+
+  @include breakpoint-up(lg) {
+    padding: 96px 24px;
+  }
+
+  &__container {
+    max-width: 880px;
+    margin: 24px auto 0;
+
+    @include breakpoint-up(lg) {
+      margin-top: 32px;
+    }
+  }
+}

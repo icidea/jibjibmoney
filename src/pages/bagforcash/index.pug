@@ -1,0 +1,218 @@
+extends /src/layouts/_master
+
+block variables
+  -
+    const meta = {
+      title: 'Bagforcash',
+    }
+
+block append scripts
+
+block modal
+
+block content
+  section.main-visual-service
+    picture.main-visual-service__image
+      source(srcset="/src/images/bagforcash/img-mv-pc.webp" media="(min-width: 1024px)")
+      +img(src="/src/images/bagforcash/img-mv-sp.webp" alt="")
+    .main-visual-service__container
+      +img.main-visual-service__logo(src="/src/images/common/logo-bagforcash.svg", alt="")
+      +img.main-visual-service__name(src="/src/images/common/text-bagforcash-white.svg", alt="bagforcash")
+      h1.main-visual-service__title บริการกระเป๋า#[br(class="md:hidden")]และจิวเวลรี่แลกเงินด่วน
+    a.btn-mv-scroll(href="#sec-intro")
+      span Please scroll down
+  // /.main-visual-service
+
+  .sec-intro.sec-intro--bagforcash#sec-intro
+    .sec-intro__container
+      .sec-intro__block
+        .sec-intro__block-inner
+          .box-service-intro
+            p.box-service-intro__sub #[span.text-blue-main bagforcash] – กระเป๋าแลกเงินด่วน
+            p.box-service-intro__heading เปลี่ยนทรัพย์สินเป็นเงินสดได้ทันที #[span.text-blue-main วงเงินสูง#[br(class="hidden md:block")]อนุมัติไว ดอกเบี้ยต่ำถูกกฎหมาย]
+            p.box-service-intro__text หากคุณยังไม่อยากขายกระเป๋าแบรนด์เนม แต่ต้องการใช้เงินด่วน #[strong bagforcash] พร้อมช่วยคุณ #[br(class="md:hidden")]#[br(class="lg:hidden")]เราประเมินวงเงินด้วยระบบราคากลางที่ประมวลผลแม่นยำและเป็นธรรม รับสินค้าหลากหลาย พร้อมให้วงเงินสูงถึง #[strong.text-blue-main 6,500,000 บาทต่อสัญญา]
+          // /.box-service-intro
+
+      .box-service-condition
+        p.box-service-condition__heading: span “เรารับฝาก สินค้าแบรนด์เนม #[br(class="md:hidden")]ทุกประเภท”
+        ul.box-service-condition__list
+          li: span มือหนึ่ง หรือ มือสอง
+          li: span รุ่นวินเทจ ของสะสม และของหายาก
+        +img.box-service-condition__logo(src="/src/images/common/logo-main.svg", alt="")
+      // /.box-service-condition
+
+  // /.sec-intro
+
+  section.sec-why-choose.sec-why-choose--bagforcash
+    .sec-why-choose__container
+      h2.heading-service
+        span ทำไมต้องเลือก
+        +img(src="/src/images/common/text-bagforcash-02.svg", alt="bagforcash")
+      .sec-why-choose__inner
+        .box-why-choose
+          .box-why-choose__inner
+            ul.box-why-choose__list
+              li
+                +img(src="/src/images/common/ico-why-choose-01.svg", alt="")
+                p.box-why-choose__info ให้วงเงินสูง ตั้งแต่ 10,000 - 6,500,000 บาท ต่อสัญญา
+              li
+                +img(src="/src/images/common/ico-why-choose-02.svg", alt="")
+                p.box-why-choose__info ดอกเบี้ยต่ำถูกกฎหมาย เริ่มต้นเพียง#[br]0.89% ต่อเดือน
+              li
+                +img(src="/src/images/common/ico-why-choose-03.svg", alt="")
+                p.box-why-choose__info อนุมัติไวใน 45 นาที #[br(class="md:hidden")]รับเงินโอนใน 1 ชั่วโมง
+              li
+                +img(src="/src/images/common/ico-why-choose-04.svg", alt="")
+                p.box-why-choose__info ให้วงเงินเต็ม ไม่หักดอกเบี้ยล่วงหน้า
+              li
+                +img(src="/src/images/common/ico-why-choose-05.svg", alt="")
+                p.box-why-choose__info ไม่ต้องส่งเงินต้นระหว่างสัญญา
+              li
+                +img(src="/src/images/common/ico-why-choose-06.svg", alt="")
+                p.box-why-choose__info บริการรับสินค้าฟรีถึงบ้าน – โดยแมสเซนเจอร์ที่ เชี่ยวชาญด้านการขนส่งสินค้าลักชัวรี่โดยเฉพาะ
+              li
+                +img(src="/src/images/common/ico-why-choose-07.svg", alt="")
+                p.box-why-choose__info เงื่อนไขยืดหยุ่น – #[br(class="md:hidden")]ต่อสัญญาได้ไม่จำกัด
+              li
+                +img(src="/src/images/common/ico-why-choose-08.svg", alt="")
+                p.box-why-choose__info ดำเนินธุรกิจถูกกฎหมาย #[br]ลูกค้ามากกว่า 10,000 รายไว้วางใจ
+              li
+                +img(src="/src/images/common/ico-why-choose-09.svg", alt="")
+                p.box-why-choose__info จัดเก็บแบบ 1 ต่อ 1 ในห้องนิรภัยมาตรฐานระดับ โลกพร้อมวงเงินคุ้มครอง – มั่นใจได้ว่าทรัพย์สิน ของคุณปลอดภัยสูงสุด
+              li
+                +img(src="/src/images/common/ico-why-choose-10.svg", alt="")
+                p.box-why-choose__info รักษาความลับของลูกค้าอย่างสูงสุด
+          .box-why-choose__footer
+            +img(src="/src/images/common/logo-bagforcash-black.svg", alt="")
+            p.box-why-choose__footer-text ต้องการเงินด่วนนำกระเป๋าแบรนด์เนมและจิวเวลรี่ มาที่ bagforcash เท่านั้น !
+  // /.sec-why-choose
+
+  section.sec-how-to-use
+    .sec-how-to-use__container
+      h2.heading-service
+        span ขั้นตอนการใช้บริการ
+        +img(src="/src/images/common/text-bagforcash-02.svg", alt="bagforcash")
+      p.sec-how-to-use__heading-sub ง่าย รวดเร็ว ปลอดภัย – #[br(class="md:hidden")]พร้อมรับเงินก้อนใช้ในทันที
+      ol.sec-how-to-use__list
+        li
+          .card-step
+            p.card-step__number 1
+            p.card-step__title สมัครสมาชิก
+            .card-step__text
+              p ส่งข้อมูลทรัพย์สินเบื้องต้นพร้อมระบุวงเงินที่ต้องการผ่านเว็บไซต์
+              p: a(href="https://www.bagforcash.com" target="_blank") www.bagforcash.com
+          // /.card-step
+        li
+          .card-step
+            p.card-step__number 2
+            p.card-step__title รอผลอนุมัติวงเงิน
+            .card-step__text
+              p แจ้งผลอนุมัติภายใน 45 นาที
+          // /.card-step
+        li
+          .card-step
+            p.card-step__number 3
+            p.card-step__title ส่งทรัพย์สิน#[br]และชำระค่าประเมิน
+            .card-step__text
+              p ส่งทรัพย์สินมายังสำนักงานใหญ่เมืองทอง หรือใช้บริการ แมสเซนเจอร์จากเราฟรี!
+          // /.card-step
+        li
+          .card-step
+            p.card-step__number 4
+            p.card-step__title เซ็นสัญญาออนไลน์
+            .card-step__text
+              p รับเงินโอนทันที
+          // /.card-step
+      .sec-how-to-use__remark
+        p.sec-how-to-use__remark-title หมายเหตุ
+        ul.sec-how-to-use__remark-list
+          li ชื่อในการทำสัญญาและบัญชีรับโอนเงินจะต้องตรงกันเท่านั้น
+          li ลูกค้าที่ฝากทรัพย์สินมูลค่ามากกว่า 1 ล้านบาทจะต้องทำ KYC
+  // /.sec-how-to-use
+
+  section.sec-accepted-brand
+    .sec-accepted-brand__container
+      h2.heading-02.text-center: span แบรนด์กระเป๋า#[br(class="md:hidden")]และจิวเวลรี่ที่รับฝาก
+      .sec-accepted-brand__accepted
+        .box-accepted-brand
+          h3.box-accepted-brand__heading แบรนด์กระเป๋าที่รับฝาก
+          ul.box-accepted-brand__list
+            li
+              +img(src="/src/images/brand/logo-hermes.svg", alt="Hermès")
+            li
+              +img(src="/src/images/brand/logo-gucci.svg", alt="Gucci")
+            li
+              +img(src="/src/images/brand/logo-channel.svg", alt="Channel")
+            li
+              +img(src="/src/images/brand/logo-louis-vuitton.svg", alt="Louis Vuitton")
+            li
+              +img(src="/src/images/brand/logo-dior.svg", alt="Dior")
+            li
+              +img(src="/src/images/brand/logo-celine.svg", alt="Celine")
+            li
+              +img(src="/src/images/brand/logo-balenciaga.svg", alt="Balenciaga")
+            li
+              +img(src="/src/images/brand/logo-goyard.svg", alt="Goyard")
+            li
+              +img(src="/src/images/brand/logo-bottega-veneta.svg", alt="Bottega Veneta")
+            li
+              +img(src="/src/images/brand/logo-miumiu.svg", alt="Miumiu")
+            li
+              +img(src="/src/images/brand/logo-prada.svg", alt="Prada")
+            li
+              +img(src="/src/images/brand/logo-fendi.svg", alt="Fendi")
+            li
+              +img(src="/src/images/brand/logo-loewe.svg", alt="Loewe")
+            li
+              +img(src="/src/images/brand/logo-loro-piana.svg", alt="Loro Piana")
+            li
+              +img(src="/src/images/brand/logo-saint-laurent.svg", alt="Saint Laurent")
+            li
+              +img(src="/src/images/brand/logo-delvaux.svg", alt="Delvaux")
+        // /.box-accepted-brand
+
+        .box-accepted-brand
+          h3.box-accepted-brand__heading แบรนด์จิวเวลรี่ที่รับฝาก
+          ul.box-accepted-brand__list.box-accepted-brand__list--sm
+            li
+              +img(src="/src/images/brand/logo-cartier.svg", alt="Cartier")
+            li
+              +img(src="/src/images/brand/logo-bvlgari.svg", alt="Bvlgari")
+            li
+              +img(src="/src/images/brand/logo-van-cleef-arpels.svg", alt="Van Cleef & Arpels")
+            li
+              +img(src="/src/images/brand/logo-tiffany-co.svg", alt="Tiffany & Co.")
+            li
+              +img(src="/src/images/brand/logo-hermes.svg", alt="Hermès")
+            li
+              +img(src="/src/images/brand/logo-channel.svg", alt="Channel")
+        // /.box-accepted-brand
+
+  // /.sec-accepted-brand
+
+  section.sec-faq
+    .sec-faq__container
+      h2.heading-02.text-center: span คำถามที่พบบ่อย #[span(class="hidden md:inline") (FAQ)]
+      .sec-faq__list
+        div#faq-list(class="flex flex-col gap-4 lg:gap-6")
+          faq-item
+            template(slot="question")
+              span ดอกเบี้ยแพงไหมคะ?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span สัญญาถ้าครบสัญญาแล้ว#[br(class="md:hidden")]สามารถต่อได้มั้ยคะ?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span กระเป๋าที่ฝากเก็บดีมั้ยคะ?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span จ่ายดอกเบี้ยยังไงคะ?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  // /.sec-faq

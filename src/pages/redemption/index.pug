@@ -1,0 +1,127 @@
+extends /src/layouts/_master
+
+block variables
+  -
+    const meta = {
+      title: 'Asset Redemption',
+    }
+
+block append scripts
+
+block modal
+
+block content
+  section.main-visual-sub
+    picture.main-visual-sub__image
+      source(srcset="/src/images/redemption/img-mv-pc.webp" media="(min-width: 1024px)")
+      +img(src="/src/images/redemption/img-mv-sp.webp" alt="")
+    .main-visual-sub__container.main-visual-sub__container--redemption
+      h1.main-visual-sub__heading-lg: span บริการไถ่ถอนทรัพย์สิน
+      p.main-visual-sub__heading-sm: span ย้ายมาฝากกับเราดอกเบี้ยถูกกว่า #[br(class="lg:hidden")]วงเงินสูงกว่า!
+      .main-visual-sub__text
+        p หากคุณฝากทรัพย์สินประเภท กระเป๋าแบรนด์เนม นาฬิกาไฮเอนด์ หรือ จิวเวลรี่แบรนด์ ไว้ที่อื่นและเสียดอกเบี้ยหรือค่าใช้จ่ายอื่นๆ สูงเกินไป JIPJIPMONEY เรามีบริการไถ่ถอนทรัพย์สินแทนคุณ
+        br
+        p บริการนี้จะช่วยให้คุณประหยัดค่าใช้จ่ายและลดภาระการเงิน โดยไม่ต้องใช้เงินก้อน เพียงแค่เซ็นมอบอำนาจให้เราดำเนินการแทนคุณ เราจะนำเงินไปไถ่ถอนทรัพย์สินและเก็บรักษาทรัพย์สินของคุณอย่างดีในห้องนิรภัยมาตรฐานระดับโลกและจัดเก็บแบบ 1 ต่อ1 ให้คุณมั่นใจในความปลอดภัยสูงสุด
+    a.btn-mv-scroll(href="#sec-step")
+      span Please scroll down
+  // /.main-visual-sub
+
+  section#sec-step.sec-how-to-use.sec-how-to-use--watchforcash
+    .sec-how-to-use__container
+      h2.heading-07: span ขั้นตอนการใช้บริการไถ่ถอน
+      ol(class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-9.5")
+        li(class="md:col-span-2 md:col-start-1 lg:col-span-1")
+          .card-step
+            p.card-step__number 1
+            p.card-step__title แจ้งรายละเอียดทรัพย์สิน
+            .card-step__text
+              p แจ้งรายละเอียดทรัพย์สินของคุณโดยติดต่อผ่านช่องทาง LINE ของบริษัท #[strong.text-blue-main @JIPJIPMONEY] หรือติดต่อโดยตรง
+            ul.card-step__list
+              li กระเป๋าแบรนด์และเครื่องประดับ#[br]LINE: #[a(href="https://line.me/R/ti/p/@bagforcash" target="_blank"): strong @bagforcash]
+              li นาฬิกาไฮเอนด์#[br]LINE: #[a(href="https://line.me/R/ti/p/@watchforcash" target="_blank"): strong @watchforcash]
+          // /.card-step
+        li
+          .card-step
+            p.card-step__number 2
+            p.card-step__title เซ็นใบมอบอำนาจ#[br]และชำระค่าบริการ
+            .card-step__text
+              p เซ็นใบมอบอำนาจและชำระค่าบริการ (หากมี) พร้อมทำนัดหมายเวลา หากในกรณีที่ร้านค้า หรือบริษัทเดิม จำเป็นต้องให้ลูกค้าไปด้วยตนเอง เราทีมงานของเราจะไปกับท่านเพื่ออำนวยความสะดวกให้โดยไม่มีค่าใช้จ่าย
+          // /.card-step
+        li
+          .card-step
+            p.card-step__number 3
+            p.card-step__title รับเงินส่วนต่างทันที
+            .card-step__text
+              p ในกรณีที่ลูกค้า ได้วงเงินมากกว่าที่เดิม เราจะโอน เงินส่วนต่างให้หลังประเมินเสร็จในทันที
+          // /.card-step
+  // /.sec-how-to-use
+
+  section.section-redemption
+    h2.heading-07: span ข้อดีของการเลือกใช้#[br(class="md:hidden")]บริการไถ่ถอนของเรา
+    .section-redemption__container
+      .box-why-choose
+        .box-why-choose__inner
+          ul.box-why-choose__list-02
+            li
+              +img(src="/src/images/common/ico-why-choose-02.svg", alt="")
+              p.box-why-choose__info ดอกเบี้ยต่ำกว่า
+            li
+              +img(src="/src/images/common/ico-why-choose-07.svg", alt="")
+              p.box-why-choose__info เงื่อนไขยืดหยุ่นต่อสัญญาได้ไม่จำกัด
+            li
+              +img(src="/src/images/common/ico-why-choose-11.svg", alt="")
+              p.box-why-choose__info ไม่ต้องมีเงินก้อน
+            li
+              +img(src="/src/images/common/ico-why-choose-09.svg", alt="")
+              p.box-why-choose__info เก็บรักษาทรัพย์สินในห้องนิรภัยมาตรฐาน#[br(class="hidden md:block")]ระดับโลกสะดวกและปลอดภัย
+            li
+              +img(src="/src/images/common/ico-why-choose-12.svg", alt="")
+              p.box-why-choose__info ลดภาระ และประหยัดค่าใช้จ่าย
+            li
+              +img(src="/src/images/common/ico-why-choose-13.svg", alt="")
+              p.box-why-choose__info มีทีมงานอำนวยความสะดวกให้ท่าน
+  // /.section-redemption
+
+  section.sec-faq
+    .sec-faq__container
+      h2.heading-02.text-center: span คำถามที่พบบ่อย #[span(class="hidden md:inline") (FAQ)]
+      .sec-faq__list
+        div#faq-list(class="flex flex-col gap-4 lg:gap-6")
+          faq-item
+            template(slot="question")
+              span ใช้เวลาตรวจสอบนานแค่ไหน?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span ตรวจสอบแล้วมีใบรับรองให้หรือไม่?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span ใบรับรองมีอายุการใช้งานไหม?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span หากสินค้าตรวจแล้วพบว่าเป็นของปลอม บริษัทจะดำเนินการอย่างไร?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span สามารถตรวจสอบผ่านออนไลน์ได้หรือไม่?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span หากการ์ดหาย จะต้องทำอย่างไร?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+      .box-remark(class="mt-4 lg:mt-13")
+        p.box-remark__title ติดต่อบริการไถ่ถอนทรัพย์สินหรือสอบถามข้อมูลเพิ่มเติม
+        ul
+          li กระเป๋าและเครื่องประดับ – LINE #[a(href="https://line.me/R/ti/p/@bagforcash" target="_blank"): strong @bagforcash]
+          li นาฬิกาไฮเอนด์ – LINE #[a(href="https://line.me/R/ti/p/@watchforcash" target="_blank"): strong @watchforcash]
+          li โทร 0888-000-000
+  // /.sec-faq

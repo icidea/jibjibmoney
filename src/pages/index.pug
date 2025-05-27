@@ -1,0 +1,369 @@
+extends /src/layouts/_master
+
+block variables
+  -
+    const meta = {
+      title: 'Home',
+    }
+
+block append scripts
+
+block modal
+
+block content
+  section.main-visual-home
+    picture.main-visual-home__image
+      source(srcset="/src/images/home/img-main-visual-pc.webp" media="(min-width: 1024px)")
+      +img(src="/src/images/home/img-main-visual-sp.webp" alt="")
+    .main-visual-home__container
+      +img.main-visual-home__logo(src="/src/images/common/logo-main.svg" alt="JIPJIP MONEY")
+      h1.main-visual-home__title ผู้นำด้านบริการขายฝากสินค้าลักชัวรี่ในไทย
+    a.btn-mv-scroll(href="#sec-intro")
+      span Please scroll down
+
+  .sec-intro.sec-intro--home#sec-intro
+    .sec-intro__container
+      .sec-intro__block
+        .sec-intro__block-inner
+          .box-home-intro
+            p.box-home-intro__text-upper เราคือผู้ให้บริการ #[span.text-blue-main ขายฝากสินค้าลักชัวรี่] #[br(class="md:hidden")]อันดับ 1 ในไทย #[br(class="hidden md:block")]ที่ดำเนินธุรกิจ#[br(class="md:hidden")]ด้วยความโปร่งใสยุติธรรม#[br(class="md:hidden")]และใส่ใจในทุกรายละเอียด
+            .box-home-intro__line
+              +img(src="/src/images/common/logo-sm-blue.svg", alt="")
+            p.box-home-intro__text-lower “ฝากไว้กับเราสบายใจ#[br(class="md:hidden")]ตั้งแต่เริ่มจนจบ”#[br]“เราดูแลทุกทรัพย์สินของ#[br(class="md:hidden")]คุณเสมือนเป็นของเราเอง”
+            +img.box-home-intro__logo(src="/src/images/common/logo-main.svg" alt="JIPJIP MONEY")
+
+      .box-home-about
+        .box-home-about__item
+          +img(src="/src/images/common/logo-sm-blue.svg", alt="")
+          .box-home-about__content
+            p #[strong JIPJIPMONEY] #[strong.text-blue-main ผสมผสานความเชี่ยวชาญเฉพาะทาง #[br(class="hidden xl:block")]เข้ากับเทคโนโลยีอันทันสมัย] เพื่อให้ลูกค้าสามารถเปลี่ยน ทรัพย์สินให้เป็นสภาพคล่องทางการเงินได้อย่างรวดเร็ว ทันใจ พร้อมข้อเสนอที่ดีที่สุด #[strong.text-blue-main ดอกเบี้ยเริ่มต้นเพียง 0.89% ต่อเดือน] ให้วงเงินสูง เงื่อนไขยืดหยุ่น ต่อสัญญาได้ไม่จำกัด และระบบจัดเก็บแบบ 1 ต่อ 1 ในห้องนิรภัยมาตรฐานระดับโลก
+        .box-home-about__item
+          +img(src="/src/images/common/logo-sm-blue.svg", alt="")
+          .box-home-about__content
+            p #[strong JIPJIPMONEY] เราเข้าใจถึงคุณค่าของสินค้า ลักชัวรี่ #[br(class="hidden xl:block")]ไม่ว่าจะเป็นกระเป๋าแบรนด์เนม นาฬิกาหรู หรือเครื่อง#[br(class="hidden xl:block")]ประดับแบรนด์ #[strong.text-blue-main เราจึงให้ความใส่ใจอย่างสูงสุดในทุกกระบวนการ] ตั้งแต่การรับฝาก การจัดเก็บ ไปจนถึงการดูแลรักษา เพื่อให้ ทรัพย์สินของคุณ #[strong.text-blue-main คงสภาพที่ดีที่สุด]
+  // /.sec-intro
+
+  section.sec-home-brand
+    .sec-home-brand__container
+      h2.heading-01: span แบรนด์ในเครือของ #[br(class="md:hidden")]JIPJIPMONEY
+      ul.sec-home-brand__list
+        li
+          a.sec-home-brand__card(href="/bagforcash/")
+            .sec-home-brand__card-inner
+              +img(src="/src/images/common/logo-bagforcash.svg", alt="bagforcash")
+              .sec-home-brand__card-desc
+                +img.sec-home-brand__title(src="/src/images/common/text-bagforcash.svg", alt="" style="--height: 36")
+                p บริการขายฝากกระเป๋าแบรนด์เนม#[br]และเครื่องประดับแบรนด์
+        li
+          a.sec-home-brand__card(href="/watchforcash/")
+            .sec-home-brand__card-inner
+              +img(src="/src/images/common/logo-watchforcash.svg", alt="watchforcash")
+              .sec-home-brand__card-desc
+                +img.sec-home-brand__title(src="/src/images/common/text-watchforcash.svg", alt="" style="--height: 33")
+                p บริการขายฝาก นาฬิกาไฮเอนด์
+  // /.sec-home-brand
+
+  section.sec-home-service
+    a.sec-home-service__item(href="/bagforcash/")
+      picture.sec-home-service__image
+        source(srcset="/src/images/home/img-service-bagforcash-pc.webp" media="(min-width: 1024px)")
+        +img(src="/src/images/home/img-service-bagforcash-sp.webp", alt="")
+      +img.sec-home-service__logo(src="/src/images/common/logo-bagforcash.svg", alt="")
+      .sec-home-service__inner
+        h2.sec-home-service__heading BAGFORCASH
+        p บริการกระเป๋า และเครื่องประดับแลกเงินด่วน คลิก!
+    a.sec-home-service__item(href="/watchforcash/")
+      picture.sec-home-service__image
+        source(srcset="/src/images/home/img-service-watchforcash-pc.webp" media="(min-width: 1024px)")
+        +img(src="/src/images/home/img-service-watchforcash-sp.webp", alt="")
+      +img.sec-home-service__logo(src="/src/images/common/logo-watchforcash.svg", alt="")
+      .sec-home-service__inner
+        h2.sec-home-service__heading WATCHFORCASH
+        p บริการนาฬิกาไฮเอนด์ แลกเงินด่วน คลิก!
+    a.sec-home-service__item(href="/authentication/")
+      picture.sec-home-service__image
+        source(srcset="/src/images/home/img-service-authen-pc.webp" media="(min-width: 1024px)")
+        +img(src="/src/images/home/img-service-authen-sp.webp", alt="")
+      +img.sec-home-service__logo(src="/src/images/common/logo-authen.svg", alt="")
+      .sec-home-service__inner
+        h2.sec-home-service__heading AUTHENTICATION SERVICE
+        p บริการตรวจแท้-ปลอม คลิก!
+  // /.sec-home-service
+
+  section.sec-home-why-us
+    .sec-home-why-us__container
+      h2.heading-02: span WHY US?
+      .sec-home-why-us__slider#slider-why-us
+        .swiper(ref="sliderWhyUs")
+          .swiper-wrapper
+            each i in Array(2)
+              .swiper-slide
+                .card-why-us
+                  +img.card-why-us__icon(src="/src/images/home/ico-why-us-01.svg", alt="")
+                  h3.card-why-us__title ขายฝากสินค้าลักชัวรี่
+                  p.card-why-us__text รับฝากขายสินค้าลักซ์ชัวรี่ทุกประเภท เช่น กระเป๋าแบรนด์เนม นาฬิกา ไฮเอนด์ และเครื่องประดับแบรนด์
+              .swiper-slide
+                .card-why-us
+                  +img.card-why-us__icon(src="/src/images/home/ico-why-us-02.svg", alt="")
+                  h3.card-why-us__title ดอกเบี้ยถูกกฎหมาย
+                  p.card-why-us__text เริ่มต้นเพียง 0.89% ต่อเดือน
+              .swiper-slide
+                .card-why-us
+                  +img.card-why-us__icon(src="/src/images/home/ico-why-us-03.svg", alt="")
+                  h3.card-why-us__title วงเงินสูง
+                  p.card-why-us__text ตั้งแต่ 10,000 ถึง 6,500,000 บาท ต่อสัญญา
+          .box-slider-control
+            .swiper-pagination(role="navigation" aria-label="Pagination")
+            .box-slider-control__nav
+              button.swiper-button-prev(aria-label="Previous slide")
+              button.swiper-button-next(aria-label="Next slide")
+  // /.sec-home-why-us
+
+  section.sec-home-ceo
+    picture.sec-home-ceo__image
+      source(srcset="/src/images/home/img-ceo-pc.webp" media="(min-width: 768px)")
+      +img(src="/src/images/home/img-ceo-sp.webp", alt="คุณจิ๊บ เสาวนีย์ ผไทวณิชย")
+    .sec-home-ceo__content
+      .sec-home-ceo__content-main
+        h2.heading-02: span ทำความรู้จัก CEO
+        .sec-home-ceo__text
+          p บริษัทดำเนินงานภายใต้การนำของ #[strong.text-blue-dark คุณจิ๊บ เสาวนีย์ ผไทวณิชย์] ประธานเจ้าหน้า ที่บริหาร (CEO) ผู้มีประสบการณ์และความเชี่ยวชาญใน ธุรกิจสินค้าลักชัวรี่และ การเงินมากกว่า 10 ปี ด้วยวิสัยทัศน์ที่ยึดหลักความโปร่งใส ยุติธรรม และทันสมัย คุณจิ๊บมุ่งมั่นบริหารงานด้วยความ ใส่ใจใน ทุกรายละเอียดเพื่อตอบโจทย์ไลฟ์สไตล์ ของลูกค้าในปัจจุบัน พร้อมมอบประสบการณ์ การบริการที่เหนือระดับและสร้างความพึงพอใจ สูงสุดแก่ผู้ใช้บริการ
+          br
+          p นอกจากนี้ ภายใต้การบริหารงานของคุณจิ๊บ บริษัทได้นำเทคโนโลยีที่ทันสมัย อาทิ Artificial Intelligence (AI) ในการตรวจสอบและประเมิน มูลค่าทรัพย์สิน รวมถึง การใช้ Data Analysis เพื่อประมวลราคากลางอย่างแม่นยำและโปร่งใส เพิ่ม ประสิทธิภาพในการดำเนินธุรกิจและสร้าง ความเชื่อมั่นให้กับลูกค้าด้วยเป้าหมาย อันชัดเจน ในการครองอันดับ 1 ในธุรกิจ ขายฝากสินค้า ลักชัวรี่ในประเทศไทย บริษัทพร้อมเดินหน้าเติบโต อย่างมั่นคงและยั่งยืน รวมถึงมีแผนในการขยาย ธุรกิจสู่ตลาดต่างประเทศในอนาคตอันใกล้นี้
+      div
+        a.btn-read-more(href="/about-us/")
+          span อ่านเพิ่มเติม
+          i
+  // /.sec-home-ceo
+
+  section.sec-home-financial
+    .sec-home-financial__container
+      h2.heading-02.text-center: span คำนวนวงเงินเบื้องต้น
+      .sec-home-financial__tab(role="tablist")
+        button.sec-home-financial__tab-button(role="tab" aria-selected="true")
+          picture
+            source(srcset="/src/images/common/text-bagforcash-tab-pc.svg" media="(min-width: 768px)")
+            +img(src="/src/images/common/text-bagforcash-tab-sp.svg", alt="bagforcash")
+        button.sec-home-financial__tab-button(role="tab" aria-selected="false")
+          picture
+            source(srcset="/src/images/common/text-watchforcash-tab-pc.svg" media="(min-width: 768px)")
+            +img(src="/src/images/common/text-watchforcash-tab-sp.svg", alt="watchforcash" style="--height-sp: 19; --height-pc: 30")
+
+      .sec-home-financial__content
+        .box-calculate
+          form.box-calculate__form(action="/" method="post")
+            .box-calculate__field
+              label.form-label(for="brand") แบรนด์ที่ต้องการฝาก
+              .form-block
+                .form-select
+                  select(name="brand" id="brand")
+                    option(value="") เลือกแบรนด์ที่ต้องการฝาก
+                    option(value="chanel") Chanel
+                    option(value="gucci") Gucci
+                    option(value="prada") Prada
+                    option(value="versace") Versace
+            .box-calculate__field
+              label.form-label(for="limit") วงเงินที่ต้องการ
+              .form-block
+                .form-input-unit
+                  input(type="number" name="limit" id="limit" required placeholder="กรอกวงเงินที่ต้องการ")
+                  span.form-input-unit__text บาท
+            .box-calculate__field
+              label.form-label(for="month") จำนวนเดือนที่ต้องการฝาก
+              .form-block
+                .form-select
+                  select(name="month" id="month")
+                    option(value="") เลือกจำนวนเดือนที่ต้องการฝาก
+                    option(value="1") 1
+                    option(value="2") 2
+                    option(value="3") 3
+              p.box-calculate__note สามารถต่อสัญญาได้ไม่จำกัด
+          button.box-calculate__reset(type="reset")
+            +img(src="/src/images/common/ico-reset.svg" alt="")
+            span เคลียร์ข้อมูลและเริ่มใหม่
+        // /.box-calculate
+
+        .box-result
+          p.box-result__heading
+            +img(src="/src/images/common/logo-sm-blue.svg", alt="")
+            span ผลลัพธ์
+          dl.box-result__summary
+            dt วงเงินที่ได้รับ
+            dd: span 98,395 บาท
+            dt วงเงินเมื่อปิดสัญญา
+            dd: span 102,250 บาท
+          div
+            p.box-result__heading-sub ต้องการใช้เงินด่วนเราช่วยคุณได้
+            ul.box-result__list
+              li: span ประเมินวงเงินฟรี
+              li: span รู้ผลไวใน 45 นาที
+              li: span รับเงินโอนใน 1 ชั่วโมง
+              li: span บริการแมสเซนเจอร์ รับถึงบ้านฟรี
+          a.box-result__button(href="#") สนใจขอวงเงินกับเรา สมัครเลย!
+          button.box-result__reset(type="reset")
+            +img(src="/src/images/common/ico-reset.svg" alt="")
+            span เคลียร์ข้อมูลและเริ่มใหม่
+        // /.box-result
+
+    // /.sec-home-financial__container
+  // /.sec-home-financial
+
+  section.sec-home-partner
+    .sec-home-partner__container
+      h2.heading-06.text-center: span พาร์ทเนอร์ของเรา
+      ul.sec-home-partner__list
+        li
+          figure.sec-home-partner__image
+            +img(src="/src/images/home/img-partner-01.webp", alt="")
+            figcaption Shikochic_bkk
+        li
+          figure.sec-home-partner__image
+            +img(src="/src/images/home/img-partner-02.webp", alt="")
+            figcaption brandnamemusthave
+        li
+          figure.sec-home-partner__image
+            +img(src="/src/images/home/img-partner-03.webp", alt="")
+            figcaption Shikochic_bkk
+        li
+          figure.sec-home-partner__image
+            +img(src="/src/images/home/img-partner-04.webp", alt="")
+            figcaption brandnamemusthave
+        li
+          figure.sec-home-partner__image
+            +img(src="/src/images/home/img-partner-05.webp", alt="")
+            figcaption Shikochic_bkk
+        li
+          figure.sec-home-partner__image
+            +img(src="/src/images/home/img-partner-06.webp", alt="")
+            figcaption brandnamemusthave
+        li
+          figure.sec-home-partner__image
+            +img(src="/src/images/home/img-partner-07.webp", alt="")
+            figcaption Shikochic_bkk
+        li
+          figure.sec-home-partner__image
+            +img(src="/src/images/home/img-partner-08.webp", alt="")
+            figcaption brandnamemusthave
+        li
+          figure.sec-home-partner__image
+            +img(src="/src/images/home/img-partner-09.webp", alt="")
+            figcaption Shikochic_bkk
+        li
+          figure.sec-home-partner__image
+            +img(src="/src/images/home/img-partner-10.webp", alt="")
+            figcaption brandnamemusthave
+  // /.sec-home-partner
+
+  section.sec-home-promotion
+    .sec-home-promotion__container
+      h2.sec-home-promotion__heading
+        span WHAT’S ON
+        span โปรโมชั่นสำหรับคุณ
+      .sec-home-promotion__slider#slider-promotion
+        .swiper(ref="sliderPromotion")
+          .swiper-wrapper
+            each i in Array(3)
+              .swiper-slide
+                a.card-promotion(href="#")
+                  figure.card-promotion__image
+                    +img(src="/src/images/home/img-promotion.webp", alt="")
+                  .card-promotion__content
+                    .card-promotion__content-in
+                      time(datetime="2023-08-31") 31 AUGUST 2023
+                      h3.card-promotion__title หมุนเงินไม่ทัน ทำยังไงดี?
+                      .card-promotion__desc
+                        p เปลี่ยนกระเป๋า สุดรัก ให้เป็นเงินทันใจ! ต้องที่ bagforcash
+                        ul.list-icon-checked
+                          li: span อนุมัติไว ทันใจ ให้วงเงินสูง
+                          li: span โอนไวใน 1 ชั่วโมง
+                          li: span ดอกเบี้ย 0.89% / เดือน
+                          li: span บริการแมสเซนเจอร์ รับถึงบ้านฟรี
+                    div
+                      .btn-read-more
+                        span อ่านเพิ่มเติม
+                        i
+              // /.card-promotion
+          .box-slider-control
+            .swiper-pagination(role="navigation" aria-label="Pagination")
+            .box-slider-control__nav
+              button.swiper-button-prev(aria-label="Previous slide")
+              button.swiper-button-next(aria-label="Next slide")
+  // /.sec-home-promotion
+
+  section.sec-home-article
+    .sec-home-article__container
+      .sec-home-article__heading
+        h2.heading-02: span บทความที่น่าสนใจ
+        a.btn-read-more(href="#")
+          span ดูเพิ่มเติม
+          i
+      .sec-home-article__slider#slider-article
+        .swiper(ref="sliderArticle")
+          .swiper-wrapper
+            .swiper-slide
+              a.card-article(href="#")
+                figure.card-article__image
+                  +img(src="/src/images/home/img-article-01.webp", alt="")
+                .card-article__detail
+                  time(datetime="2023-08-31") 31 AUGUST 2023
+                  h3.card-article__title Recycling Luxury: How to Sell Your Designer Items
+                p.card-article__more: span READ MORE
+            .swiper-slide
+              a.card-article(href="#")
+                figure.card-article__image
+                  +img(src="/src/images/home/img-article-02.webp", alt="")
+                .card-article__detail
+                  time(datetime="2023-08-30") 30 AUGUST 2023
+                  h3.card-article__title Recycling Luxury: How to Sell Your Designer Items
+                p.card-article__more: span READ MORE
+            .swiper-slide
+              a.card-article(href="#")
+                figure.card-article__image
+                  +img(src="/src/images/home/img-article-03.webp", alt="")
+                .card-article__detail
+                  time(datetime="2023-08-29") 29 AUGUST 2023
+                  h3.card-article__title How You Can Properly Clean Your Chanel Bags
+                p.card-article__more: span READ MORE
+          .box-slider-control
+            .swiper-pagination(role="navigation" aria-label="Pagination")
+            .box-slider-control__nav
+              button.swiper-button-prev(aria-label="Previous slide")
+              button.swiper-button-next(aria-label="Next slide")
+
+  // /.sec-home-article
+
+  section.sec-home-vdo
+    .sec-home-vdo__container
+      h2.sec-home-vdo__heading
+        span รับชมวิดิโอเกี่ยวกับ
+        +img(src="/src/images/common/logo-main-black.svg", alt="")
+      .sec-home-vdo__slider#slider-vdo
+        .swiper(ref="sliderVdo")
+          .swiper-wrapper
+            each i in Array(2)
+              .swiper-slide
+                a.card-vdo(href="#")
+                  figure.card-vdo__image
+                    +img(src="/src/images/home/img-vdo-01.webp", alt="")
+                  .card-vdo__desc
+                    p.card-vdo__title คุณ จิ๊บ เสาวนีย์ ผไทวณิชย์ CEO Jipjip Money#[br]ยกระดับมาตรฐานและตอกย้ำความเป็นอันดับ 1 ในไทย! ✨
+                    .card-vdo__more
+                      span รับชมเลย
+                      +img(src="/src/images/common/ico-play-blue.svg", alt="")
+              .swiper-slide
+                a.card-vdo(href="#")
+                  figure.card-vdo__image
+                    +img(src="/src/images/home/img-vdo-02.webp", alt="")
+                  .card-vdo__desc
+                    p.card-vdo__title Exclusive Tour with Khun Tha Pipoauh#[br]at JipJip Money! 💎💼⌚️
+                    .card-vdo__more
+                      span รับชมเลย
+                      +img(src="/src/images/common/ico-play-blue.svg", alt="")
+          .box-slider-control
+            .swiper-pagination(role="navigation" aria-label="Pagination")
+            .box-slider-control__nav
+              button.swiper-button-prev(aria-label="Previous slide")
+              button.swiper-button-next(aria-label="Next slide")
+      .sec-home-vdo__more
+        a(href="#"): span ดูทั้งหมด
+  // /.sec-home-vdo

@@ -1,0 +1,38 @@
+@use "../utilities" as *;
+
+.heading-service {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+
+  @include breakpoint-up(md) {
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  > span {
+    @include text-h3-bold;
+
+    display: inline-block;
+    background: linear-gradient(95.38deg, #000 0.75%, #546c83 87.8%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @include breakpoint-up(lg) {
+      @include text-h2-bold;
+    }
+  }
+
+  > img {
+    display: block;
+    width: auto;
+    height: 40px;
+
+    @include breakpoint-up(lg) {
+      height: 48px;
+    }
+  }
+}

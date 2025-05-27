@@ -1,0 +1,108 @@
+@use "../utilities" as *;
+
+.sec-intro {
+  position: relative;
+  padding: 48px 24px;
+  background: linear-gradient(
+    91.03deg,
+    #020202 -80.02%,
+    #020202 -37%,
+    #0a0a0a 29.5%,
+    #222222 51.41%,
+    #191919 68.94%,
+    #101010 99.2%
+  );
+
+  @include breakpoint-up(md) {
+    padding: 96px 24px;
+  }
+
+  &--home {
+    overflow: hidden;
+
+    &::after {
+      @include breakpoint-down(lg) {
+        position: absolute;
+        top: 342px;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: calc(331 / 375 * 100vw);
+        content: "";
+        background: url(/src/images/home/bg-home-about-sp.svg) no-repeat;
+        background-size: cover;
+      }
+    }
+
+    @include breakpoint-up(lg) {
+      background: url(/src/images/home/bg-home-about-pc.webp) no-repeat top center;
+      background-size: cover;
+    }
+  }
+
+  &--bagforcash::after,
+  &--watchforcash::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    display: block;
+    width: 438px;
+    height: 415px;
+    content: "";
+    background: url(/src/images/common/bg-logo-white.svg) left bottom no-repeat;
+    background-size: 621px;
+    opacity: 0.06;
+
+    @include breakpoint-down(lg) {
+      display: none;
+    }
+  }
+
+  &--watchforcash {
+    background: linear-gradient(269.61deg, #000 -8.35%, #202930 49.09%, #0d1014 105.71%);
+
+    &::after {
+      top: auto;
+      right: auto;
+      bottom: 20px;
+      left: 0;
+      width: 421px;
+      height: 621px;
+      background-position: top right;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  &__block {
+    position: relative;
+    padding: 24px;
+
+    @include breakpoint-up(md) {
+      padding: 50px 56px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: linear-gradient(90deg, rgba(126, 172, 187, 0.7) 0%, rgba(52, 76, 100, 0.7) 68.07%);
+      border-radius: 32px;
+      opacity: 0.7;
+
+      @include breakpoint-up(md) {
+        border-radius: 100px;
+      }
+    }
+  }
+}

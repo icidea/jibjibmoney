@@ -1,0 +1,33 @@
+:root {
+  --font-family-base: "Aktiv_Grotesk_Thai", sans-serif;
+
+  /* z-index */
+  --z-index-header: 15;
+
+  /* hover */
+  --hover-transition: 0.2s ease-out;
+  --hover-opacity: 0.8;
+
+  /* gradient */
+  --gradient-radial-white-gray: radial-gradient(
+    87.08% 407.87% at 19.27% 71.82%,
+    #fff 0%,
+    rgba(151, 153, 155, 0.5) 100%
+  );
+
+  /* color */
+  --color-white: #fff;
+  --color-white-a10: #{rgba(#fff, 0.1)};
+  --color-black: #000;
+  --color-black-a10: #{rgba(#000, 0.1)};
+  --color-dark: #212322;
+  --color-blue-main: #9abeca;
+  --color-blue-main-a20: #{rgba(#9abeca, 0.2)};
+  --color-blue-main-a50: #{rgba(#9abeca, 0.5)};
+  --color-blue-dark: #546c83;
+  --color-grey-white: #ebebeb;
+  --color-grey-dark: #343538;
+  --color-grey-main: #97999b;
+  --color-grey-light: #bfbdbb;
+  --color-error-main: #d07676;
+}

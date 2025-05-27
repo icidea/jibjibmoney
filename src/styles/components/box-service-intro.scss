@@ -1,0 +1,38 @@
+@use "../utilities" as *;
+
+.box-service-intro {
+  position: relative;
+  z-index: 1;
+  color: var(--color-white);
+  text-align: center;
+
+  &__sub {
+    @include text-body2-bold;
+
+    @include breakpoint-up(lg) {
+      @include text-h5-bold;
+    }
+  }
+
+  &__heading {
+    @include text-h5-bold;
+    margin-top: 24px;
+
+    @include breakpoint-up(lg) {
+      @include text-h2-bold;
+      margin-top: 16px;
+    }
+  }
+
+  &__text {
+    @include text-body2;
+    margin: 24px auto 0;
+
+    @include breakpoint-up(lg) {
+      max-width: 940px;
+      margin-top: 32px;
+      font-size: calc(24 / 16 * 1rem);
+      line-height: 1.8;
+    }
+  }
+}

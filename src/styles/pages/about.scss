@@ -1,0 +1,701 @@
+@use "../utilities" as *;
+
+.sec-about {
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+    max-width: 1360px;
+    padding: 85px 24px 72px;
+    margin-inline: auto;
+
+    @include breakpoint-down(lg) {
+      padding-block: 48px;
+    }
+
+    &::before {
+      position: absolute;
+      z-index: -1;
+      width: 569px;
+      height: 569px;
+      content: "";
+      background: url("/src/images/common/bg-logo-blue.svg") 0 0 / contain no-repeat;
+      opacity: 30%;
+
+      @include breakpoint-up(lg) {
+        top: calc(50% + 7px);
+        right: -105px;
+        transform: translateY(-50%);
+      }
+
+      @include breakpoint-down(lg) {
+        top: -48px;
+        right: -104px;
+        width: 240px;
+        height: 240px;
+        opacity: 20%;
+      }
+    }
+  }
+
+  &__wrap {
+    @include breakpoint-up(lg) {
+      padding-left: 111px;
+    }
+
+    @include breakpoint-down(lg) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__heading {
+    @include text-h2-bold;
+
+    @include breakpoint-down(lg) {
+      @include text-h3-bold;
+      text-align: center;
+    }
+
+    span {
+      display: inline-block;
+      background: linear-gradient(95.38deg, #000000 0.75%, #546c83 87.8%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__logo {
+    img {
+      height: auto;
+
+      @include breakpoint-up(lg) {
+        width: 356px;
+      }
+
+      @include breakpoint-down(lg) {
+        width: 254px;
+      }
+    }
+  }
+
+  &__content {
+    @include text-body1;
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    color: var(--color-grey-main);
+
+    @include breakpoint-up(lg) {
+      padding-left: 111px;
+    }
+
+    @include breakpoint-down(lg) {
+      margin-top: 14px;
+      @include text-body2;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 81px;
+      height: 301px;
+      content: "";
+      background: url("/src/images/about-us/text-aboutus.svg") 50% / contain no-repeat;
+
+      @include breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
+}
+
+.sec-about-service {
+  background: radial-gradient(87.08% 407.87% at 19.27% 71.82%, #ffffff 0%, rgba(151, 153, 155, 0.5) 100%);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    max-width: 1296px;
+    padding: 96px 24px;
+    margin-inline: auto;
+
+    @include breakpoint-down(xl) {
+      gap: 32px;
+      padding-block: 48px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    max-width: 598px;
+    margin-inline: auto;
+
+    & .heading-02 {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint-down(xl) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__logo {
+    height: auto;
+
+    @include breakpoint-down(xl) {
+      width: 254px;
+    }
+  }
+
+  &__sub {
+    @include text-body1;
+    color: var(--color-dark);
+    text-align: center;
+
+    @include breakpoint-down(xl) {
+      @include text-body2;
+      letter-spacing: 0;
+    }
+  }
+
+  &__title {
+    @include text-h4-bold;
+    position: relative;
+    padding-bottom: 16px;
+
+    @include breakpoint-down(xl) {
+      @include text-h5-bold;
+      text-align: center;
+    }
+
+    span {
+      display: inline-block;
+      background: linear-gradient(95.38deg, #000000 0.75%, #546c83 87.8%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      content: "";
+      border: 1px solid;
+      border-image-source: linear-gradient(95.38deg, #7b7b7b 0.75%, #9abeca 87.8%);
+      border-image-slice: 1;
+    }
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: calc(337 / 1168 * 100%) 1fr;
+    gap: calc(48 / 1168 * 100%);
+    padding: 40px;
+    background-color: var(--color-white);
+    box-shadow: 0px 10px 40px 0px #0000001a;
+
+    @include breakpoint-down(xl) {
+      grid-template-columns: 100%;
+      gap: 16px;
+      padding: 24px;
+    }
+  }
+
+  &__top-text {
+    @include text-body2;
+    margin-top: 16px;
+    color: var(--color-grey-main);
+
+    @include breakpoint-down(xl) {
+      @include text-body3;
+      text-align: center;
+    }
+  }
+
+  &__top-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    @include breakpoint-down(md) {
+      grid-template-columns: 100%;
+      gap: 16px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      @include breakpoint-down(xl) {
+        gap: 16px;
+      }
+
+      li {
+        display: flex;
+        gap: 16px;
+      }
+    }
+  }
+
+  &__top-logo {
+    flex-shrink: 0;
+
+    img {
+      @include breakpoint-down(xl) {
+        width: 56px;
+        height: auto;
+      }
+    }
+  }
+
+  &__top-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--color-grey-main);
+
+    @include breakpoint-down(xl) {
+      @include text-body3;
+    }
+  }
+
+  &__top-note {
+    margin-top: 8px;
+    font-size: calc(10 / 16 * 1rem);
+    color: var(--color-blue-dark);
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    @include breakpoint-down(lg) {
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__bottom-box {
+    padding: 40px;
+    background-color: var(--color-white);
+    box-shadow: 0px 10px 40px 0px #0000001a;
+
+    @include breakpoint-down(lg) {
+      padding: 24px;
+    }
+  }
+
+  &__bottom-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 16px;
+
+    > li {
+      display: flex;
+      gap: 16px;
+    }
+  }
+
+  &__bottom-logo {
+    flex-shrink: 0;
+    width: 28px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__bottom-content {
+    flex: 1;
+    color: var(--color-grey-main);
+
+    @include breakpoint-down(xl) {
+      @include text-body3;
+    }
+  }
+
+  &__bottom-bold01 {
+    color: var(--color-blue-dark);
+  }
+
+  &__bottom-bold02 {
+    color: var(--color-blue-main);
+  }
+
+  &__bottom-text {
+    margin-top: 16px;
+    color: var(--color-grey-main);
+
+    @include breakpoint-down(xl) {
+      @include text-body3;
+      text-align: center;
+    }
+  }
+
+  &__bottom-details {
+    position: relative;
+    padding-top: 16px;
+    margin-top: 16px;
+    font-size: calc(10 / 16 * 1rem);
+    color: var(--color-blue-dark);
+
+    @include breakpoint-down(md) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    &::before {
+      position: absolute;
+      top: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      content: "";
+      border: 1px solid;
+      border-image-source: linear-gradient(95.38deg, #7b7b7b 0.75%, #9abeca 87.8%);
+      border-image-slice: 1;
+    }
+
+    > *:not(:first-child) {
+      margin-top: 8px;
+    }
+
+    ul {
+      li {
+        position: relative;
+        padding-left: 15px;
+        text-align: left;
+
+        &::before {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          width: 3px;
+          height: 3px;
+          content: "";
+          background-color: var(--color-blue-dark);
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+}
+
+.sec-about-vision {
+  $this-root: &;
+  padding-block: 96px;
+  overflow: hidden;
+  background: radial-gradient(51.87% 51.87% at 50% 50%, rgba(151, 153, 155, 0.1) 0%, rgba(151, 153, 155, 0.06) 100%);
+
+  @include breakpoint-down(lg) {
+    padding-block: 48px;
+  }
+
+  &__container {
+    max-width: 1232px;
+    padding-inline: 24px;
+    margin-inline: auto;
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: calc(450 / 1184 * 100%) 1fr;
+    gap: calc(84 / 1184 * 100%);
+
+    @include breakpoint-down(lg) {
+      grid-template-columns: 100%;
+      gap: 36px;
+    }
+  }
+
+  &__subheading {
+    @include text-h5-bold;
+    color: #546c83;
+
+    @include breakpoint-down(lg) {
+      @include text-h6-bold;
+    }
+  }
+
+  &__heading {
+    @include text-h2-bold;
+    margin-top: 16px;
+
+    @include breakpoint-down(lg) {
+      @include text-h4-bold;
+    }
+
+    span {
+      display: inline-block;
+      background: linear-gradient(95.38deg, #000 0.75%, #97999b 87.8%);
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__text {
+    @include text-h3;
+    margin-top: 16px;
+
+    @include breakpoint-down(lg) {
+      @include text-h5;
+      line-height: 1.8;
+    }
+
+    span {
+      display: inline-block;
+      background: linear-gradient(95.38deg, #000 0.75%, #97999b 87.8%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  &__item01 {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+
+    @include breakpoint-down(lg) {
+      gap: 36px;
+    }
+  }
+
+  &__item02 {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    @include breakpoint-down(lg) {
+      flex-direction: column-reverse;
+      gap: 36px;
+      text-align: center;
+    }
+  }
+
+  &__image {
+    @include breakpoint-up(md) {
+      position: relative;
+      aspect-ratio: 4 / 3;
+    }
+
+    @include breakpoint-up(lg) {
+      aspect-ratio: auto;
+    }
+
+    > img {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      @include breakpoint-up(md) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @include breakpoint-up(lg) {
+        position: static;
+        height: auto;
+        object-fit: fill;
+      }
+    }
+  }
+}
+
+.sec-about-mission {
+  margin-top: 36px;
+
+  &__container {
+    position: relative;
+    max-width: 1048px;
+    padding: 88px 24px;
+    margin-inline: auto;
+
+    @include breakpoint-down(lg) {
+      padding-block: 0;
+    }
+
+    &::before {
+      @include breakpoint-up(md) {
+        position: absolute;
+        top: -205px;
+        left: -300px;
+        z-index: -1;
+        width: 569px;
+        height: 569px;
+        content: "";
+        background: url("/src/images/common/bg-logo-blue.svg") 0 0 / contain no-repeat;
+        opacity: 10%;
+      }
+    }
+
+    &::after {
+      @include breakpoint-up(md) {
+        position: absolute;
+        right: -461px;
+        bottom: -168px;
+        z-index: -1;
+        width: 569px;
+        height: 569px;
+        content: "";
+        background: url("/src/images/common/bg-logo-blue.svg") 0 0 / contain no-repeat;
+        opacity: 10%;
+      }
+    }
+  }
+
+  &__heading {
+    @include text-h5-bold;
+    color: var(--color-blue-dark);
+    text-align: center;
+
+    @include breakpoint-down(md) {
+      @include text-h6-bold;
+    }
+  }
+
+  &__box {
+    position: relative;
+    margin-top: 24px;
+
+    @include breakpoint-up(md) {
+      &::before {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: var(--color-white);
+        border: 1px solid var(--color-blue-dark);
+      }
+
+      &::after {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: var(--color-white);
+        border: 1px solid var(--color-blue-dark);
+      }
+    }
+
+    @include breakpoint-down(md) {
+      margin-top: 16px;
+    }
+  }
+
+  &__list {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-blue-dark);
+
+    @include breakpoint-down(md) {
+      gap: 24px;
+      padding: 24px;
+    }
+
+    li {
+      @include text-body1;
+      position: relative;
+      display: flex;
+      gap: 16px;
+      color: var(--color-grey-dark);
+
+      @include breakpoint-down(md) {
+        @include text-body3;
+        letter-spacing: 0;
+      }
+
+      &::before {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        content: "";
+        background: url("/src/images/common/bg-logo-blue.svg") 50% / contain no-repeat;
+      }
+    }
+  }
+}
+
+.sec-about-slogan {
+  position: relative;
+  margin-top: 36px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 1232px;
+    padding-inline: 24px;
+    margin-inline: auto;
+
+    &::before {
+      @include breakpoint-down(md) {
+        position: absolute;
+        bottom: -18px;
+        left: -96px;
+        z-index: -1;
+        width: 240px;
+        height: 240px;
+        content: "";
+        background: url("/src/images/common/bg-logo-blue.svg") 0 0 / contain no-repeat;
+        opacity: 30%;
+      }
+    }
+  }
+
+  &__heading {
+    @include text-h5-bold;
+    color: var(--color-blue-dark);
+    text-align: center;
+  }
+
+  &__box {
+    @include text-h3-bold;
+    padding: 25px;
+    color: var(--color-white);
+    text-align: center;
+    background: linear-gradient(90deg, rgba(126, 172, 187, 0.7) 0%, rgba(52, 76, 100, 0.7) 68.07%);
+
+    @include breakpoint-down(md) {
+      @include text-h4-bold;
+      padding: 8px;
+    }
+  }
+}

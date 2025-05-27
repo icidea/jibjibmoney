@@ -1,0 +1,55 @@
+@use "../utilities" as *;
+
+.box-faq-item {
+  background-color: var(--color-white);
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+
+  &__question {
+    @include text-body2-bold;
+
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 16px 40px 16px 16px;
+    cursor: pointer;
+
+    @include breakpoint-up(lg) {
+      @include text-h6-bold;
+      padding: 24px 65px 24px 32px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      width: 21px;
+      height: 20px;
+      content: "";
+      background: url("/src/images/common/ico-faq-plus.svg") no-repeat;
+      background-size: contain;
+      transform: translateY(-50%);
+      transform-origin: top center;
+      transition: transform 0.2s ease-out;
+
+      @include breakpoint-up(lg) {
+        right: 32px;
+      }
+    }
+
+    &[aria-expanded="true"] {
+      &::after {
+        transform: rotate(45deg) translateY(-50%);
+      }
+    }
+  }
+
+  &__answer {
+    @include text-body2;
+    padding: 8px 16px 16px;
+
+    @include breakpoint-up(lg) {
+      @include text-body1;
+      padding: 8px 32px 24px;
+    }
+  }
+}

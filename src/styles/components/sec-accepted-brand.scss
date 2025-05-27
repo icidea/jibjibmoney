@@ -1,0 +1,55 @@
+@use "../utilities" as *;
+
+.sec-accepted-brand {
+  position: relative;
+  padding: 48px 24px;
+  background: linear-gradient(101.34deg, rgba(164, 164, 164, 0.2) 7.97%, rgba(65, 74, 76, 0.2) 98.59%);
+
+  @include breakpoint-up(lg) {
+    padding: 96px 24px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 165px;
+    height: 177px;
+    content: "";
+    background: url("/src/images/common/bg-logo-white.svg") right bottom no-repeat;
+    background-size: 240px;
+    opacity: 0.5;
+
+    @include breakpoint-up(lg) {
+      top: auto;
+      bottom: 0;
+      width: 298px;
+      height: 493px;
+      background-position: top right;
+      background-size: 522px;
+    }
+  }
+
+  &--watchforcash {
+    background: linear-gradient(108.76deg, rgba(139, 172, 184, 0.2) -22.94%, rgba(62, 77, 82, 0.2) 98.74%);
+
+    &::before {
+      background-image: url("/src/images/common/bg-logo-blue.svg");
+      opacity: 0.2;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__accepted {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 789px;
+    margin: 24px auto 0;
+  }
+}

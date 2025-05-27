@@ -1,0 +1,42 @@
+@use "../utilities" as *;
+
+.btn-mv-scroll {
+  @include text-body3;
+
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  z-index: 1;
+  display: flex;
+  height: 48px;
+  white-space: nowrap;
+  transform: translateX(-50%);
+
+  @include breakpoint-up(md) {
+    bottom: 28px;
+  }
+
+  &:hover::after {
+    @include hover {
+      transform: translate(-50%, 5px);
+    }
+  }
+
+  &::after {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 27px;
+    height: 15px;
+    content: "";
+    background: url(/src/images/common/ico-arrow-down-blue.svg) no-repeat;
+    background-size: contain;
+    transform: translateX(-50%);
+    transition: transform 0.2s ease-out;
+  }
+
+  > span {
+    display: block;
+    color: rgba(#fff, 0.6);
+  }
+}

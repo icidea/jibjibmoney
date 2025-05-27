@@ -1,0 +1,134 @@
+@use "../utilities" as *;
+
+.box-result {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background-color: var(--color-white);
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+
+  @include breakpoint-up(md) {
+    padding: 32px;
+  }
+
+  &__heading {
+    @include text-h4-bold;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint-up(md) {
+      @include text-h3-bold;
+    }
+
+    img {
+      display: block;
+      flex-shrink: 0;
+      width: 36px;
+      height: auto;
+    }
+  }
+
+  &__summary {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 8px 0;
+    padding: 16px 0;
+    border-top: 1px solid var(--color-blue-main-a20);
+    border-bottom: 1px solid var(--color-blue-main-a20);
+
+    dt {
+      @include text-body2-bold;
+
+      @include breakpoint-up(md) {
+        @include text-body1-bold;
+      }
+    }
+
+    dd {
+      @include text-body1-bold;
+
+      display: inline-block;
+      text-align: right;
+      background: radial-gradient(72.03% 768.29% at 52.73% 100%, #242424 0%, #9abeca 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      @include breakpoint-up(md) {
+        @include text-h6-bold;
+      }
+    }
+  }
+
+  &__heading-sub {
+    @include text-body3-bold;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 16px;
+
+    > li {
+      @include text-body3-bold;
+      display: flex;
+      gap: 8px;
+      color: var(--color-blue-dark);
+
+      &::before {
+        display: block;
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        content: "";
+        background: url(/src/images/common/ico-checked.svg) no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  &__button {
+    @include text-body2-bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    color: var(--color-dark);
+    background-color: var(--color-blue-main);
+    border-radius: 2px;
+    transition: var(--hover-transition);
+
+    @include breakpoint-up(md) {
+      @include text-h6-bold;
+      height: 54px;
+    }
+
+    &:hover {
+      @include hover {
+        opacity: var(--hover-opacity);
+      }
+    }
+  }
+
+  &__reset {
+    @include text-body3;
+
+    display: inline-flex;
+    gap: 4px;
+    align-items: center;
+    align-self: center;
+    padding-bottom: 4px;
+    color: var(--color-blue-main);
+    border-bottom: 1px solid var(--color-blue-main);
+
+    @include breakpoint-up(lg) {
+      display: none;
+    }
+  }
+}

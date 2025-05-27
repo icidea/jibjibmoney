@@ -1,0 +1,72 @@
+@use "../utilities" as *;
+
+.sec-why-choose {
+  position: relative;
+  padding: 48px 24px;
+
+  @include breakpoint-up(lg) {
+    padding: 96px 24px;
+  }
+
+  &--bagforcash {
+    background: radial-gradient(87.08% 407.87% at 19.27% 71.82%, #fff 0%, rgba(151, 153, 155, 0.5) 100%);
+
+    &::after {
+      position: absolute;
+      top: 16px;
+      left: 0;
+      z-index: 0;
+      width: 184px;
+      height: 200px;
+      content: "";
+      background: url(/src/images/common/bg-icon-bagforcash.svg) right center no-repeat;
+      background-size: 200px;
+
+      @include breakpoint-up(lg) {
+        top: 80px;
+        left: 27px;
+        width: 505px;
+        height: 505px;
+        background-size: 505px;
+      }
+    }
+  }
+
+  &--watchforcash {
+    background: radial-gradient(87.08% 407.87% at 19.27% 71.82%, #fff 0%, rgba(151, 153, 155, 0.5) 100%);
+
+    @include breakpoint-up(lg) {
+      background: radial-gradient(87.08% 407.87% at 19.27% 71.82%, #fff 0%, rgba(154, 190, 202, 0.5) 100%);
+    }
+
+    &::after {
+      position: absolute;
+      top: 16px;
+      left: 30px;
+      z-index: 0;
+      width: 109px;
+      height: 200px;
+      content: "";
+      background: url(/src/images/common/bg-icon-watchforcash.svg) right center no-repeat;
+      background-size: contain;
+
+      @include breakpoint-up(lg) {
+        top: 72px;
+        left: 74px;
+        width: 295px;
+        height: 545px;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  &__inner {
+    margin-top: 32px;
+  }
+}

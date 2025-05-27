@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Aktiv_Grotesk_Thai";
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url("/assets/fonts/Aktiv_Grotesk_Thai.woff2") format("woff2"),
+    url("/assets/fonts/Aktiv_Grotesk_Thai.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aktiv_Grotesk_Thai";
+  font-style: normal;
+  font-weight: bold;
+  src:
+    url("/assets/fonts/Aktiv_Grotesk_Thai_Bold.woff2") format("woff2"),
+    url("/assets/fonts/Aktiv_Grotesk_Thai_Bold.woff") format("woff");
+  font-display: swap;
+}

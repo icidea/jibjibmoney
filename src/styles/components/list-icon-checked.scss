@@ -1,0 +1,27 @@
+@use "../utilities" as *;
+
+.list-icon-checked {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  > li {
+    display: flex;
+    gap: 8px;
+
+    &::before {
+      display: block;
+      width: 28px;
+      height: 28px;
+      content: "";
+      background: url("/src/images/common/ico-checked-02.svg") no-repeat;
+      background-size: contain;
+    }
+
+    span {
+      @include text-body2;
+      flex: 1;
+      align-self: center;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use "../utilities" as *;
+
+.list-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  > li {
+    display: flex;
+    gap: 16px;
+
+    > img {
+      display: block;
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__content {
+    @include text-body2;
+
+    flex: 1;
+    color: var(--color-grey-dark);
+
+    a {
+      color: var(--color-grey-dark);
+    }
+  }
+
+  &__title {
+    @include text-body1-bold;
+
+    margin-bottom: 2px;
+    color: var(--color-blue-dark);
+  }
+}

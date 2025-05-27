@@ -1,0 +1,113 @@
+@use "../utilities" as *;
+
+.heading-01 {
+  @include text-h3-bold;
+  text-align: center;
+
+  @include breakpoint-up(lg) {
+    @include text-h2-bold;
+  }
+
+  span {
+    display: inline-block;
+    background: radial-gradient(72.03% 768.29% at 52.73% 100%, #242424 0%, #9abeca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.heading-02,
+.heading-04 {
+  @include text-h3-bold;
+
+  @include breakpoint-up(lg) {
+    @include text-h2-bold;
+  }
+
+  span {
+    display: inline-block;
+    background: linear-gradient(95.38deg, #000 0.75%, #546c83 87.8%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.heading-03,
+.heading-05 {
+  @include text-h5-bold;
+  width: 100%;
+
+  @include breakpoint-up(lg) {
+    @include text-h3-bold;
+  }
+
+  span {
+    display: inline-block;
+    background: radial-gradient(72.03% 768.29% at 52.73% 100%, #242424 0%, #9abeca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @include breakpoint-down(lg) {
+      background: linear-gradient(95.38deg, #000 0.75%, #546c83 87.8%);
+      background-clip: text;
+    }
+  }
+}
+
+.heading-04 {
+  @include text-h5-bold;
+  text-align: center;
+
+  @include breakpoint-up(lg) {
+    @include text-h2-bold;
+  }
+}
+
+.heading-05 {
+  @include text-h3-bold;
+  text-align: center;
+
+  @include breakpoint-up(lg) {
+    @include text-h2-bold;
+  }
+}
+
+.heading-06 {
+  @include text-h4-bold;
+
+  @include breakpoint-up(lg) {
+    @include text-h2-bold;
+  }
+
+  span {
+    display: inline-block;
+    background: linear-gradient(95.38deg, #000 0.75%, #9abeca 87.8%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.heading-07 {
+  @include text-h5-bold;
+  text-align: center;
+
+  @include breakpoint-up(lg) {
+    @include text-h2-bold;
+  }
+
+  > span {
+    background: linear-gradient(95.38deg, #000 0.75%, #546c83 87.8%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @include breakpoint-up(lg) {
+      background: radial-gradient(72.03% 768.29% at 52.73% 100%, #242424 0%, #9abeca 100%);
+      background-clip: text;
+    }
+  }
+}

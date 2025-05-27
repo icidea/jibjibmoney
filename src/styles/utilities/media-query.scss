@@ -1,0 +1,28 @@
+@use "sass:map";
+
+$breakpoints: (
+  "sm": 640,
+  "md": 768,
+  "lg": 1024,
+  "xl": 1280,
+);
+
+@mixin breakpoint-up($name) {
+  $size: map.get($breakpoints, $name);
+  @media (min-width: #{$size}px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($name) {
+  $size: map.get($breakpoints, $name);
+  @media (max-width: #{($size - 1)}px) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media screen and (pointer: fine) {
+    @content;
+  }
+}

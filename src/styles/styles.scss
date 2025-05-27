@@ -1,0 +1,14 @@
+@use "foundation/fonts";
+@use "foundation/reset";
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "foundation/root.scss" layer(root);
+@import "foundation/base.scss" layer(base);
+
+@import "swiper/css" layer(libs);
+@import "swiper/css/navigation" layer(libs);
+@import "swiper/css/pagination" layer(libs);
+
+@import "components/+.css" layer(components);
+@import "pages/+.css" layer(pages);
+@import "tailwindcss/utilities.css" layer(utilities);

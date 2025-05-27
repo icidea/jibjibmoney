@@ -1,0 +1,89 @@
+@use "../utilities" as *;
+
+.box-slider-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+
+  &:has(.swiper-pagination-lock) {
+    display: none;
+  }
+
+  &__nav {
+    display: flex;
+    flex-shrink: 0;
+    gap: 15px;
+    align-items: center;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: relative;
+      top: auto;
+      right: auto;
+      left: auto;
+      width: 40px;
+      height: 40px;
+      margin: 0;
+      overflow: hidden;
+      border: 2px solid var(--color-dark);
+      border-radius: 50%;
+      transition:
+        background-color 0.2s ease-out,
+        border-color 0.2s ease-out;
+
+      &.swiper-button-disabled {
+        opacity: 0.5;
+      }
+
+      &:hover:not(.swiper-button-disabled) {
+        @include hover {
+          background-color: var(--color-blue-main);
+          border-color: var(--color-blue-main);
+        }
+      }
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 15px;
+        height: 12px;
+        content: "";
+        background: url("/src/images/common/ico-arrow-right-black.svg") no-repeat;
+        background-size: contain;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .swiper-button-prev {
+      transform: rotate(180deg);
+    }
+  }
+
+  .swiper-pagination {
+    position: static;
+    display: flex;
+    flex: 1;
+    flex-wrap: nowrap;
+    gap: 5px 8px;
+    font-size: 0;
+
+    .swiper-pagination-bullet {
+      width: 16px;
+      height: 6px;
+      margin: 0;
+      background-color: var(--color-grey-main);
+      border-radius: 20px;
+      opacity: 0.4;
+      transition: width 0.2s;
+
+      &.swiper-pagination-bullet-active {
+        width: 32px;
+        background-color: var(--color-blue-main);
+        opacity: 1;
+      }
+    }
+  }
+}

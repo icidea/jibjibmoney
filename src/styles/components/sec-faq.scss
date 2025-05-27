@@ -1,0 +1,24 @@
+@use "../utilities" as *;
+
+.sec-faq {
+  position: relative;
+  padding: 48px 24px;
+  background: radial-gradient(51.87% 51.87% at 50% 50%, rgba(151, 153, 155, 0.1) 0%, rgba(151, 153, 155, 0.06) 100%);
+
+  @include breakpoint-up(lg) {
+    padding: 96px 24px;
+  }
+
+  &__container {
+    max-width: 1184px;
+    margin-inline: auto;
+  }
+
+  &__list {
+    margin-top: 24px;
+
+    @include breakpoint-up(lg) {
+      margin-top: 52px;
+    }
+  }
+}

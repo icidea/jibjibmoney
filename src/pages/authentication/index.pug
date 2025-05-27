@@ -1,0 +1,250 @@
+extends /src/layouts/_master
+
+block variables
+  -
+    const meta = {
+      title: 'Authentication Service',
+    }
+
+block append scripts
+
+block modal
+
+block content
+  section.main-visual-sub
+    picture.main-visual-sub__image
+      source(srcset="/src/images/authentication/img-mv-pc.webp" media="(min-width: 1024px)")
+      +img(src="/src/images/authentication/img-mv-sp.webp" alt="")
+
+    .main-visual-sub__container
+      +img.main-visual-sub__logo(src="/src/images/common/logo-main.svg", alt="JIBJIB MONEY")
+      h1.main-visual-sub__heading: span Authentication Service #[br(class="lg:hidden")]บริการตรวจแท้ปลอม
+      .main-visual-sub__text
+        p บริการตรวจสอบสินค้าแบรนด์เนมด้วยเทคโนโลยี#[br(class="lg:hidden")]อันทันสมัยผสมผสานกับผู้เชี่ยวชาญมากประสบการณ์#[br]ที่ให้ความแม่นยำมากกว่า 99% ตรวจสอบรวดเร็ว #[br(class="lg:hidden")]รับผลภายใน 1- 24 ชั่วโมงพร้อมใบรับรอง
+
+    a.btn-mv-scroll(href="#sec-accepted")
+      span Please scroll down
+  // /.main-visual-sub
+
+  section.sec-authen-accepted#sec-accepted
+    .sec-authen-accepted__container
+      .sec-authen-accepted__item
+        figure.sec-authen-accepted__image
+          +img(src="/src/images/authentication/img-authen-bag.webp", alt="")
+        .sec-authen-accepted__brand
+          .box-accepted-brand
+            h3.box-accepted-brand__heading-02: span แบรนด์กระเป๋าแบรนด์เนม#[br(class="md:hidden")]ที่ให้บริการตรวจ
+            ul.box-accepted-brand__list
+              li
+                +img(src="/src/images/brand/logo-hermes.svg", alt="Hermès")
+              li
+                +img(src="/src/images/brand/logo-gucci.svg", alt="Gucci")
+              li
+                +img(src="/src/images/brand/logo-channel.svg", alt="Channel")
+              li
+                +img(src="/src/images/brand/logo-louis-vuitton.svg", alt="Louis Vuitton")
+              li
+                +img(src="/src/images/brand/logo-dior.svg", alt="Dior")
+              li
+                +img(src="/src/images/brand/logo-celine.svg", alt="Celine")
+              li
+                +img(src="/src/images/brand/logo-balenciaga.svg", alt="Balenciaga")
+              li
+                +img(src="/src/images/brand/logo-goyard.svg", alt="Goyard")
+              li
+                +img(src="/src/images/brand/logo-bottega-veneta.svg", alt="Bottega Veneta")
+              li
+                +img(src="/src/images/brand/logo-miumiu.svg", alt="Miumiu")
+              li
+                +img(src="/src/images/brand/logo-prada.svg", alt="Prada")
+              li
+                +img(src="/src/images/brand/logo-fendi.svg", alt="Fendi")
+              li
+                +img(src="/src/images/brand/logo-loewe.svg", alt="Loewe")
+              li
+                +img(src="/src/images/brand/logo-loro-piana.svg", alt="Loro Piana")
+              li
+                +img(src="/src/images/brand/logo-saint-laurent.svg", alt="Saint Laurent")
+              li
+                +img(src="/src/images/brand/logo-delvaux.svg", alt="Delvaux")
+            ul.box-accepted-brand__cost
+              li
+                +img(src="/src/images/common/ico-cost.svg", alt="")
+                p ค่าบริการ#[br]1,500 บาท
+              li
+                +img(src="/src/images/common/ico-cost.svg", alt="")
+                p เว้นแต่ Hermès #[br(class="md:hidden")]และ หนัง Exotic #[br(class="hidden md:block")]2,500 บาท
+
+      .sec-authen-accepted__item
+        figure.sec-authen-accepted__image
+          +img(src="/src/images/authentication/img-authen-watch.webp", alt="")
+        .sec-authen-accepted__brand
+          .box-accepted-brand
+            h3.box-accepted-brand__heading-02: span แบรนด์นาฬิกาไฮเอนด์#[br(class="md:hidden")]ที่ให้บริการตรวจ
+            ul.box-accepted-brand__list
+              li
+                +img(src="/src/images/brand/logo-audemars-piguet.svg", alt="Audemars Piguet")
+              li
+                +img(src="/src/images/brand/logo-breguet.svg", alt="Breguet")
+              li
+                +img(src="/src/images/brand/logo-bvlgari.svg", alt="Bvlgari")
+              li
+                +img(src="/src/images/brand/logo-cartier.svg", alt="Cartier")
+              li
+                +img(src="/src/images/brand/logo-channel.svg", alt="Channel")
+              li
+                +img(src="/src/images/brand/logo-chopard.svg", alt="Chopard")
+              li
+                +img(src="/src/images/brand/logo-corum.svg", alt="Corum")
+              li
+                +img(src="/src/images/brand/logo-franck-muller.svg", alt="Franck Muller")
+              li
+                +img(src="/src/images/brand/logo-hermes.svg", alt="Hermès")
+              li
+                +img(src="/src/images/brand/logo-hublot.svg", alt="Hublot")
+              li
+                +img(src="/src/images/brand/logo-omega.svg", alt="Omega")
+              li
+                +img(src="/src/images/brand/logo-panerai.svg", alt="Panerai")
+              li
+                +img(src="/src/images/brand/logo-patek.svg", alt="Patek Philippe")
+              li
+                +img(src="/src/images/brand/logo-piaget.svg", alt="Piaget")
+              li
+                +img(src="/src/images/brand/logo-rolex.svg", alt="Rolex")
+              li
+                +img(src="/src/images/brand/logo-richard-mille.svg", alt="Richard Mille")
+            ul.box-accepted-brand__cost
+              li
+                +img(src="/src/images/common/ico-cost.svg", alt="")
+                p ค่าบริการ#[br]1,500 บาท
+              li
+                +img(src="/src/images/common/ico-cost.svg", alt="")
+                p เว้นแต่ Hermès, Cartier, Chanel #[br(class="hidden md:block")]2,500 บาท
+  // /.sec-authen-accepted
+
+  .sec-authen-step
+    .sec-authen-step__container
+      h2.heading-02: span ขั้นตอนการใช้บริการ
+      ol.sec-authen-step__list
+        li
+          .card-step
+            p.card-step__number 1
+            p.card-step__title ส่งทรัพย์สิน
+            .card-step__text-md
+              p นำทรัพย์สินมาที่บริษัทด้วยตนเอง หรือใช้บริการแมสเซนเจอร์ ของบริษัท ลูกค้าต่างจังหวัดสามารถส่งขนส่งเอกชนมาได้
+              p.text-blue-main.mt-2 และหากต้องการใช้บริการรับถึงบ้านกรุณาติดต่อสอบถามและทำนัดหมายผ่าน LINE คลิก! #[a(href="https://line.me/R/ti/p/@jipjipmoney" target="_blank"): strong @JIPJIPMONEY]
+          // /.card-step
+        li
+          .card-step
+            p.card-step__number 2
+            p.card-step__title ชำระค่าบริการ
+            .card-step__text-md
+              p ชำระค่าบริการตามประเภททรัพย์สินที่ตรวจสอบ
+          // /.card-step
+        li
+          .card-step
+            p.card-step__number 3
+            p.card-step__title รอผลตรวจสอบ
+            .card-step__text-md
+              p รับผลตรวจภายใน 1-24 ชั่วโมง พร้อมใบรับรอง
+          // /.card-step
+
+      .sec-authen-step__remark
+        p หมายเหตุ
+        ul
+          li ลูกค้าต่างจังหวัด สามารถใช้บริการขนส่งเอกชนเพื่อส่งสินค้ามายังบริษัท และเมื่อดำเนินการตรวจสอบเสร็จ บริษัทจะจัดส่งคืนผ่านขนส่งเอกชน โดยไม่มีค่าใช้จ่ายในการจัดส่งคืน
+          li กรณีสินค้าปลอม – หากตรวจสอบแล้วพบว่าสินค้าไม่ใช่ของแท้ ทางบริษัทขอสงวนสิทธิ์ ไม่ออกใบรับรอง และ ไม่เปิดเผยรายละเอียดจุดที่ไม่ผ่านการตรวจสอบ
+          li ข้อจำกัดความรับผิดชอบ – หากลูกค้าเลือกใช้บริการขนส่งเอกชน บริษัทไม่รับผิดชอบต่อความสูญหายหรือความเสียหายของสินค้า ระหว่างการขนส่ง
+  // /.sec-authen-step
+
+  section.sec-authen-why
+    .sec-authen-why__container
+      h2.sec-authen-why__heading
+        .sec-authen-why__heading-in
+          span ทำไมต้องเลือก
+          +img(src="/src/images/common/logo-main-black.svg", alt="")
+        span Authentication Service?
+      .box-reason
+        ul.box-reason__list
+          li
+            +img(src="/src/images/authentication/ico-reason-01.svg", alt="")
+            p.box-reason__title: span ความแม่นยำสูงกว่า 99%
+            p.box-reason__text ด้วยการผสานเทคโนโลยี AI อัจฉริยะ เข้ากับ ความเชี่ยวชาญของทีมผู้ตรวจสอบที่มี ประสบการณ์มากกว่า 10 ปี เราจึงสามารถ ให้ผลลัพธ์ที่ถูกต้องแม่นยำและน่าเชื่อถือใน ทุกกระบวนการตรวจสอบ
+          li
+            +img(src="/src/images/authentication/ico-reason-02.svg", alt="")
+            p.box-reason__title: span มีใบรับรองจากบริษัท
+            p.box-reason__text สินค้าทุกชิ้นที่ผ่านการตรวจสอบจะได้รับใบรับรองจากบริษัท เพื่อเสริมความมั่นใจ เพิ่มมูลค่า และสามารถใช้เป็นหลักฐานประกอบ การซื้อขายหรือการันตีความแท้ของสินค้าได้
+          li
+            +img(src="/src/images/authentication/ico-reason-03.svg", alt="")
+            p.box-reason__title: span รวดเร็วที่สุด
+            p.box-reason__text บริการที่รวดเร็วและใส่ใจในทุกนาที โดยแจ้งผลการตรวจสอบภายใน 1 ชั่วโมง และไม่เกิน 24 ชั่วโมง
+
+    .sec-authen-why__container
+      h2.heading-04.mb-6: span ความรับผิดชอบต่อสินค้า
+      div(class="grid grid-cols-1 md:grid-cols-2 gap-6")
+        .sec-authen-why__card-responsible
+          +img(src="/src/images/authentication/ico-responsible-01.svg", alt="")
+          p ใน#[strong.text-blue-dark กรณีที่สินค้าสูญหาย]ระหว่างที่สินค้าถูกดูแล โดยบริษัท ทางบริษัทยินดีชดใช้ค่าเสียหาย #[br(class="hidden lg:block")]ตามมูลค่าของสินค้านั้นในราคาตลาด #[br(class="hidden lg:block")]หรือหาชิ้นใหม่ ทดแทนให้
+        .sec-authen-why__card-responsible
+          +img(src="/src/images/authentication/ico-responsible-02.svg", alt="")
+          p หาก#[strong.text-blue-dark สินค้าชำรุดหรือเกิดความเสียหาย] #[br(class="hidden lg:block")]บริษัทยินดีรับผิดชอบในการแก้ไขและซ่อมแซม #[br(class="hidden lg:block")]โดยใช้บริการจากร้านสปาชั้นนำ #[br(class="hidden lg:block")]เพื่อคืนสภาพสินค้า ให้ดีที่สุด
+  // /.sec-authen-why
+
+  section.sec-authen-cert
+    .sec-authen-cert__container
+      .box-certificate
+        figure.box-certificate__image
+          +img(src="/src/images/authentication/img-certificate.webp", alt="")
+        .box-certificate__info
+          h2.box-certificate__title ตัวอย่างข้อมูลบนใบรับรอง
+          ul.box-certificate__list
+            li: span เลขการ์ด (Card Number)
+            li: span Brand
+            li: span Model
+            li: span Details
+            li: span Issue Date
+  // /.sec-authen-cert
+
+  section.sec-faq
+    .sec-faq__container
+      h2.heading-02.text-center: span คำถามที่พบบ่อย #[span(class="hidden md:inline") (FAQ)]
+      .sec-faq__list
+        div#faq-list(class="flex flex-col gap-4 lg:gap-6")
+          faq-item
+            template(slot="question")
+              span ใช้เวลาตรวจสอบนานแค่ไหน?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span ตรวจสอบแล้วมีใบรับรองให้หรือไม่?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span ใบรับรองมีอายุการใช้งานไหม?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span หากสินค้าตรวจแล้วพบว่าเป็นของปลอม บริษัทจะดำเนินการอย่างไร?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span สามารถตรวจสอบผ่านออนไลน์ได้หรือไม่?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          faq-item
+            template(slot="question")
+              span หากการ์ดหาย จะต้องทำอย่างไร?
+            template(slot="answer")
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+      .box-remark(class="mt-4 lg:mt-13")
+        p.box-remark__title สนใจใช้บริการหรือสอบถามข้อมูลเพิ่มเติม สามารถติดต่อเราได้ทันที
+        ul
+          li ในช่วงวันและเวลาทำการ 09:00-19:00 น. (ปิดวันอาทิตย์)
+          li LINE: #[a(href="https://line.me/R/ti/p/@jipjipmoney" target="_blank"): strong @JIPJIPMONEY]
+  // /.sec-faq

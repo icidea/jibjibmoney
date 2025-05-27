@@ -1,0 +1,9 @@
+@use "../utilities" as *;
+
+.text-blue-main {
+  color: var(--color-blue-main);
+}
+
+.text-blue-dark {
+  color: var(--color-blue-dark);
+}

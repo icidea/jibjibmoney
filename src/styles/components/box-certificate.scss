@@ -1,0 +1,106 @@
+@use "../utilities" as *;
+
+.box-certificate {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  padding: 0 14px;
+
+  @include breakpoint-up(md) {
+    flex-direction: row;
+    gap: 64px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  &__image {
+    position: relative;
+    max-width: 400px;
+
+    @include breakpoint-up(md) {
+      flex: 1;
+      width: 100%;
+      max-width: 462px;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background-color: var(--color-white);
+      border: 1px solid var(--color-blue-dark);
+    }
+
+    &::before {
+      top: 16px;
+      left: 16px;
+    }
+
+    > img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    @include text-h6-bold;
+
+    margin-bottom: 16px;
+    color: var(--color-blue-dark);
+
+    @include breakpoint-up(lg) {
+      @include text-h5-bold;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    max-width: 400px;
+
+    @include breakpoint-up(md) {
+      width: auto;
+      max-width: none;
+    }
+  }
+
+  &__list {
+    @include text-h5;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include breakpoint-up(lg) {
+      @include text-h4;
+    }
+
+    > li {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+
+      &::before {
+        display: block;
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        content: "";
+        background: url("/src/images/common/bg-logo-blue-dark.svg") no-repeat;
+        background-size: contain;
+      }
+
+      > span {
+        flex: 1;
+      }
+    }
+  }
+}

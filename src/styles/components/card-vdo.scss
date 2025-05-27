@@ -1,0 +1,120 @@
+@use "../utilities" as *;
+
+.card-vdo {
+  $root: &;
+  position: relative;
+  display: block;
+
+  &:hover {
+    #{$root}__title {
+      color: var(--color-blue-main);
+    }
+
+    #{$root}__more::after {
+      transform: scaleX(0);
+    }
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 78px;
+    content: "";
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+
+    @include breakpoint-up(md) {
+      height: 136px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    aspect-ratio: 327 / 172;
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    width: 100%;
+    padding: 0 18px 14px;
+
+    @include breakpoint-up(md) {
+      padding: 0 32px 24px;
+    }
+  }
+
+  &__title {
+    flex: 1;
+    font-size: calc(9 / 16 * 1rem);
+    font-weight: 700;
+    color: var(--color-white);
+    transition: color 0.2s ease-out;
+
+    @include breakpoint-up(md) {
+      @include text-body2-bold;
+    }
+  }
+
+  &__more {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    gap: 3px;
+    align-items: center;
+    padding-bottom: 2px;
+    font-size: calc(9 / 16 * 1rem);
+    font-weight: 700;
+    color: var(--color-blue-main);
+
+    @include breakpoint-up(md) {
+      @include text-body2-bold;
+      gap: 6px;
+      padding-bottom: 3px;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      content: "";
+      background-color: var(--color-blue-main);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-in-out;
+
+      @include breakpoint-up(md) {
+        height: 2px;
+      }
+    }
+
+    > img {
+      display: block;
+      width: 11px;
+      height: 11px;
+
+      @include breakpoint-up(md) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
