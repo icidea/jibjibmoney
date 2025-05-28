@@ -325,6 +325,7 @@
 
   &__item {
     position: relative;
+    display: block;
 
     &:hover {
       @include hover {
