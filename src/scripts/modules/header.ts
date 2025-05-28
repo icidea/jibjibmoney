@@ -1,4 +1,4 @@
-import Vue from 'vue/dist/vue.js';
+import Vue from 'vue/dist/vue.min.js';
 
 const isBreakpointXL = () => window.matchMedia('(min-width: 1280px)').matches;
 

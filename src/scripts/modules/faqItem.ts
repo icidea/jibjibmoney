@@ -1,4 +1,4 @@
-import Vue from 'vue/dist/vue.js';
+import Vue from 'vue/dist/vue.min.js';
 
 export default function faqItem() {
   const element = document.querySelector('#faq-list');
