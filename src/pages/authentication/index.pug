@@ -13,9 +13,10 @@ block modal
 block content
   section.main-visual-sub
     picture.main-visual-sub__image
-      source(srcset="/src/images/authentication/img-mv-pc.jpg" media="(min-width: 1024px)")
-      +img(src="/src/images/authentication/img-mv-sp.jpg" alt="")
-
+      source(srcset="/src/images/authentication/img-mv-pc.avif" type="image/avif" media="(min-width: 1024px)")
+      source(srcset="/src/images/authentication/img-mv-pc.webp" type="image/webp" media="(min-width: 1024px)")
+      source(srcset="/src/images/authentication/img-mv-sp.avif" type="image/avif")
+      +img(src="/src/images/authentication/img-mv-sp.webp" alt="")
     .main-visual-sub__container
       +img.main-visual-sub__logo(src="/src/images/common/logo-main.svg", alt="JIBJIB MONEY")
       h1.main-visual-sub__heading: span Authentication Service #[br(class="lg:hidden")]บริการตรวจแท้ปลอม

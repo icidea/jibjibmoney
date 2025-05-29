@@ -13,7 +13,9 @@ block modal
 block content
   section.main-visual-home
     picture.main-visual-home__image
-      source(srcset="/src/images/home/img-main-visual-pc.webp" media="(min-width: 1024px)")
+      source(srcset="/src/images/home/img-main-visual-pc.avif" type="image/avif" media="(min-width: 1024px)")
+      source(srcset="/src/images/home/img-main-visual-pc.webp" type="image/webp" media="(min-width: 1024px)")
+      source(srcset="/src/images/home/img-main-visual-sp.avif" type="image/avif")
       +img(src="/src/images/home/img-main-visual-sp.webp" alt="")
     .main-visual-home__container
       +img.main-visual-home__logo(src="/src/images/common/logo-main.svg" alt="JIPJIP MONEY")

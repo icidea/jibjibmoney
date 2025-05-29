@@ -13,7 +13,9 @@ block modal
 block content
   section.main-visual-sub
     picture.main-visual-sub__image
-      source(srcset="/src/images/redemption/img-mv-pc.webp" media="(min-width: 1024px)")
+      source(srcset="/src/images/redemption/img-mv-pc.avif" type="image/avif" media="(min-width: 1024px)")
+      source(srcset="/src/images/redemption/img-mv-pc.webp" type="image/webp" media="(min-width: 1024px)")
+      source(srcset="/src/images/redemption/img-mv-sp.avif" type="image/avif")
       +img(src="/src/images/redemption/img-mv-sp.webp" alt="")
     .main-visual-sub__container.main-visual-sub__container--redemption
       h1.main-visual-sub__heading-lg: span บริการไถ่ถอนทรัพย์สิน

@@ -20,22 +20,37 @@
   &--home {
     overflow: hidden;
 
-    &::after {
+    &::before {
       @include breakpoint-down(lg) {
         position: absolute;
-        top: 342px;
+        top: 0;
         left: 0;
         z-index: 0;
         width: 100%;
-        height: calc(331 / 375 * 100vw);
+        aspect-ratio: 750 / 848;
         content: "";
-        background: url(/src/images/home/bg-home-about-sp.svg) no-repeat;
+        background: url(/src/images/home/bg-home-about-sp.avif) no-repeat;
         background-size: cover;
       }
     }
 
+    &::after {
+      @include breakpoint-down(lg) {
+        position: absolute;
+        bottom: 315px;
+        left: 0;
+        z-index: 0;
+        width: 181px;
+        height: 267px;
+        content: "";
+        background: url(/src/images/common/bg-logo-white.svg) right center no-repeat;
+        background-size: 267px;
+        opacity: 0.1;
+      }
+    }
+
     @include breakpoint-up(lg) {
-      background: url(/src/images/home/bg-home-about-pc.webp) no-repeat top center;
+      background: url(/src/images/home/bg-home-about-pc.avif) no-repeat top center;
       background-size: cover;
     }
   }
@@ -55,12 +70,16 @@
     opacity: 0.06;
 
     @include breakpoint-down(lg) {
-      display: none;
+      width: 138px;
+      height: 179px;
+      background-size: 200px;
     }
   }
 
   &--watchforcash {
-    background: linear-gradient(269.61deg, #000 -8.35%, #202930 49.09%, #0d1014 105.71%);
+    @include breakpoint-up(lg) {
+      background: linear-gradient(269.61deg, #000 -8.35%, #202930 49.09%, #0d1014 105.71%);
+    }
 
     &::after {
       top: auto;
@@ -70,6 +89,12 @@
       width: 421px;
       height: 621px;
       background-position: top right;
+
+      @include breakpoint-down(lg) {
+        width: 131px;
+        height: 201px;
+        background-size: 201px;
+      }
     }
   }
 
