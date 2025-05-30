@@ -32,7 +32,7 @@ export default defineConfig({
             if (/\.(css)$/.test(names)) {
               return `assets/css/${originalPath}[name][extname]`;
             }
-            if (/\.(jpg|jpeg|svg|png|webp|gif)$/.test(names)) {
+            if (/\.(jpg|jpeg|svg|png|webp|avif|gif)$/.test(names)) {
               return `assets/images/${originalPath}[name][extname]`;
             }
           }
