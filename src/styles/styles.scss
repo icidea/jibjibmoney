@@ -1,14 +1,14 @@
-@use "foundation/fonts";
-@use "destyle.css";
+@import "foundation/fonts";
+@import "destyle.css";
 
-@use "tailwindcss/theme.css";
-@use "foundation/root";
-@use "foundation/base";
+@import "tailwindcss/theme.css";
+@import "foundation/root";
+@import "foundation/base";
 
-@use "swiper/css";
-@use "swiper/css/navigation";
-@use "swiper/css/pagination";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
-@import "components/+.css";
-@import "pages/+.css";
+@import "components/index";
+@import "pages/index";
 @import "tailwindcss/utilities.css";
