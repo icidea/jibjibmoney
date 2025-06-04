@@ -124,7 +124,7 @@
     padding: 96px 24px;
     margin-inline: auto;
 
-    @include breakpoint-down(xl) {
+    @include breakpoint-down(lg) {
       gap: 32px;
       padding-block: 48px;
     }
@@ -145,7 +145,7 @@
       align-items: center;
       justify-content: center;
 
-      @include breakpoint-down(xl) {
+      @include breakpoint-down(lg) {
         flex-direction: column;
       }
     }
@@ -154,7 +154,7 @@
   &__logo {
     height: auto;
 
-    @include breakpoint-down(xl) {
+    @include breakpoint-down(lg) {
       width: 254px;
     }
   }
@@ -164,7 +164,7 @@
     color: var(--color-dark);
     text-align: center;
 
-    @include breakpoint-down(xl) {
+    @include breakpoint-down(lg) {
       @include text-body2;
       letter-spacing: 0;
     }
@@ -175,7 +175,7 @@
     position: relative;
     padding-bottom: 16px;
 
-    @include breakpoint-down(xl) {
+    @include breakpoint-down(lg) {
       @include text-h5-bold;
       text-align: center;
     }
@@ -203,13 +203,13 @@
 
   &__top {
     display: grid;
-    grid-template-columns: calc(337 / 1168 * 100%) 1fr;
-    gap: calc(48 / 1168 * 100%);
+    grid-template-columns: 340px minmax(auto, 1fr);
+    gap: calc(45 / 1168 * 100%);
     padding: 40px;
     background-color: var(--color-white);
     box-shadow: 0px 10px 40px 0px #0000001a;
 
-    @include breakpoint-down(xl) {
+    @include breakpoint-down(lg) {
       grid-template-columns: 100%;
       gap: 16px;
       padding: 24px;
@@ -221,7 +221,7 @@
     margin-top: 16px;
     color: var(--color-grey-main);
 
-    @include breakpoint-down(xl) {
+    @include breakpoint-down(lg) {
       @include text-body3;
       text-align: center;
     }
@@ -257,7 +257,7 @@
     flex-shrink: 0;
 
     img {
-      @include breakpoint-down(xl) {
+      @include breakpoint-down(lg) {
         width: 56px;
         height: auto;
       }
