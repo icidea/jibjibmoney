@@ -746,6 +746,7 @@
       &:last-child {
         @include text-h3-bold;
 
+        display: inline-block;
         background: linear-gradient(95.38deg, #000 0.75%, #546c83 87.8%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
