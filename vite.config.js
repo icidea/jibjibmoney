@@ -79,7 +79,7 @@ export default defineConfig({
         glob: '**/*.html',
         options: {
           indent_size: 2,
-          inline: [],
+          inline: ['br'],
           content_unformatted: ['pre', 'textarea', 'script'],
         },
       },
