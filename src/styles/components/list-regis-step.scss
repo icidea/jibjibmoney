@@ -1,0 +1,157 @@
+@use "../utilities" as *;
+
+.list-regis-step {
+  $root: &;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 24px;
+
+  @include breakpoint-down(lg) {
+    flex-direction: column;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  > li {
+    @include text-body2;
+
+    position: relative;
+    display: flex;
+    gap: 8px;
+
+    @include breakpoint-down(lg) {
+      @include text-body3;
+    }
+
+    &:nth-child(2) {
+      margin-left: 250px;
+
+      @media (max-width: 1232px) {
+        margin-left: calc(250 / 1232 * 100vw);
+      }
+
+      @include breakpoint-down(lg) {
+        margin-left: 0;
+      }
+
+      &::before {
+        top: -20px;
+        left: -252px;
+
+        @media (max-width: 1232px) {
+          top: calc(-20 / 1232 * 100vw);
+          left: calc(-252 / 1232 * 100vw);
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      margin-left: 500px;
+
+      @media (max-width: 1232px) {
+        margin-left: calc(500 / 1232 * 100vw);
+      }
+
+      @include breakpoint-down(lg) {
+        margin-left: 0;
+      }
+
+      &::before {
+        top: -48px;
+        left: -250px;
+
+        @media (max-width: 1232px) {
+          top: calc(-48 / 1232 * 100vw);
+          left: calc(-250 / 1232 * 100vw);
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      align-self: flex-end;
+
+      @include breakpoint-down(lg) {
+        align-self: flex-start;
+      }
+
+      &::before {
+        top: -45px;
+        left: -242px;
+
+        @media (max-width: 1232px) {
+          top: calc(-45 / 1232 * 100vw);
+          left: calc(-242 / 1232 * 100vw);
+        }
+      }
+
+      #{$root}__info {
+        @media (max-width: 1232px) {
+          max-width: calc(358 / 1232 * 100vw);
+        }
+
+        @include breakpoint-down(lg) {
+          max-width: none;
+        }
+      }
+    }
+
+    &:not(:first-child)::before {
+      position: absolute;
+      width: 232px;
+      height: 187px;
+      content: "";
+      background: url("/src/images/partner/bg-curve-dot.svg") no-repeat;
+      background-size: contain;
+
+      @media (max-width: 1232px) {
+        width: calc(232 / 1232 * 100vw);
+        height: calc(187 / 1232 * 100vw);
+      }
+
+      @include breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
+
+  &__num {
+    display: block;
+    flex-shrink: 0;
+    font-size: calc(112 / 16 * 1rem);
+    font-weight: 300;
+    line-height: 1;
+    background: linear-gradient(95.38deg, #000000 0.75%, #9abeca 87.8%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @media (max-width: 1232px) {
+      font-size: calc(112 / 1232 * 100vw);
+    }
+
+    @include breakpoint-down(lg) {
+      font-size: calc(64 / 16 * 1rem);
+    }
+  }
+
+  &__info {
+    flex-shrink: 0;
+
+    @include breakpoint-down(lg) {
+      flex: 1 1 0;
+    }
+  }
+
+  &__title {
+    @include text-h2-bold;
+    margin-bottom: 8px;
+
+    @media (max-width: 1232px) {
+      font-size: calc(40 / 1232 * 100vw);
+    }
+
+    @include breakpoint-down(lg) {
+      @include text-h6-bold;
+    }
+  }
+}

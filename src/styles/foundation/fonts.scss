@@ -17,3 +17,13 @@
     url("/assets/fonts/Aktiv_Grotesk_Thai_Bold.woff") format("woff");
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Aktiv_Grotesk_Thai";
+  font-style: normal;
+  font-weight: 300;
+  src:
+    url("/assets/fonts/Aktiv_Grotesk_Thai_Light.woff2") format("woff2"),
+    url("/assets/fonts/Aktiv_Grotesk_Thai_Light.woff") format("woff");
+  font-display: swap;
+}

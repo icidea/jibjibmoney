@@ -156,13 +156,41 @@
 }
 
 .sec-partner-bagforcash {
-  img {
-    width: 100%;
-    height: auto;
+  padding: 96px 24px;
+
+  @include breakpoint-down(lg) {
+    padding: 48px 24px;
   }
 
-  @include breakpoint-down(md) {
-    padding-block: 32px;
+  &__container {
+    max-width: 1184px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    margin-bottom: 38px;
+
+    > img {
+      display: block;
+      width: auto;
+      height: 33px;
+
+      @include breakpoint-down(lg) {
+        height: 20px;
+        margin: 0 auto;
+      }
+    }
+
+    > span {
+      @include text-h2-bold;
+      display: block;
+      margin-top: 8px;
+
+      @include breakpoint-down(lg) {
+        @include text-h5-bold;
+        text-align: center;
+      }
+    }
   }
 }
 
@@ -273,13 +301,36 @@
   padding: 88px 120px;
   background-color: var(--color-dark);
 
-  @include breakpoint-down(md) {
+  @include breakpoint-down(xl) {
+    padding: calc(88 / 1280 * 100vw) calc(120 / 1280 * 100vw);
+  }
+
+  @include breakpoint-down(lg) {
     padding: 32px 40px;
   }
 
-  img {
+  > img {
     width: 100%;
     height: auto;
+  }
+
+  &__note {
+    margin-top: 20px;
+    font-size: calc(10 / 16 * 1rem);
+    line-height: 1.2;
+    color: var(--color-white);
+    text-align: center;
+
+    @include breakpoint-up(md) {
+      display: none;
+    }
+
+    > img {
+      display: block;
+      width: 46px;
+      height: 46px;
+      margin: 0 auto;
+    }
   }
 }
 

@@ -57,8 +57,32 @@ block content
           p.sec-partner-team__text Shareholder
   // /.sec-partner-team
 
-  .sec-partner-bagforcash
-    +img(src="/src/images/partner/img-bagforcash.webp" alt="bagforcash")
+  section.sec-partner-bagforcash
+    .sec-partner-bagforcash__container
+      h2.sec-partner-bagforcash__heading
+        +img(src="/src/images/common/text-bagforcash-watchforcash-02.svg" alt="bagforcash watchforcash")
+        span รับวงเงินง่าย ๆ ใน 4 ขั้นตอน
+      ul.list-regis-step
+        li
+          p.list-regis-step__num 1
+          .list-regis-step__info
+            h3.list-regis-step__title สมัครใช้งาน
+            p เข้าเว็บไซต์ของบริษัท อัปโหลดรูปภาพทรัพย์สินที่ต้องการขอวงเงิน #[br]พร้อมกรอกรายละเอียดเบื้องต้นและระบุวงเงินที่ต้องการ#[br(class="hidden lg:block")]รู้ผลประเมินเบื้องต้นภายใน 45 นาที
+        li
+          p.list-regis-step__num 2
+          .list-regis-step__info
+            h3.list-regis-step__title ส่งสินค้ามายังบริษัท
+            p สามารถเลือกส่งทรัพย์สินด้วยตนเอง หรือเลือกใช้บริการรับสินค้าฟรีของบริษัท#[br(class="hidden lg:block")]เมื่อบริษัทได้รับสินค้าแล้ว จะประเมินวงเงินขั้นสุดท้าย และลูกค้ายืนยันผ่าน#[br(class="hidden lg:block")]การเซ็นสัญญาออนไลน์ สะดวก รวดเร็ว ใน 1 ชั่วโมง#[br(class="hidden lg:block")](หากลูกค้าอยู่ต่างจังหวัด สามารถใช้บริการขนส่งเอกชนมาได้เลย)
+        li
+          p.list-regis-step__num 3
+          .list-regis-step__info
+            h3.list-regis-step__title รับเงินโอนทันที
+            p หลังจากเซ็นสัญญาอิเล็กทรอนิกส์เรียบร้อย#[br]ระบบจะโอนเงินเข้าบัญชีของลูกค้าทันที ไม่ต้องรอนาน!
+        li
+          p.list-regis-step__num 4
+          .list-regis-step__info
+            h3.list-regis-step__title รับทรัพย์สินคืน
+            p เมื่อครบกำหนดสัญญา หากลูกค้าไม่ประสงค์ต่อสัญญา #[br(class="max-[1232px]:hidden")]สามารถนัดวันและเลือกวิธีการรับทรัพย์สินคืน#[br(class="max-[1232px]:hidden")]ได้ง่าย ๆ ผ่านระบบ
 
   section.sec-partner-keystrengths
     .sec-partner-keystrengths__container
@@ -92,6 +116,9 @@ block content
 
   .sec-partner-comparestrengths
     +img(src="/src/images/partner/img-comparestrengths.webp" alt="เปรียบเทียบจุดแข็งของเรา")
+    .sec-partner-comparestrengths__note
+      +img(src="/src/images/partner/ico-rotate.svg" alt="")
+      p กรุณาเอียงหน้าจอเป็นแนวนอน เพื่อดูภาพให้ชัดขึ้น
   // /.sec-partner-comparestrengths
 
   section.sec-partner-marketinsights
