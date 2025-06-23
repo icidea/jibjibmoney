@@ -718,7 +718,7 @@
     margin-top: 16px;
 
     @include breakpoint-down(lg) {
-      @include text-h5;
+      font-size: calc(23 / 16 * 1rem);
       line-height: 1.8;
       text-align: center;
       letter-spacing: 0;

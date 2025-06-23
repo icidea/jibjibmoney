@@ -47,7 +47,8 @@
 
     &--sm {
       @include breakpoint-up(md) {
-        grid-template-columns: repeat(3, minmax(auto, 177px));
+        grid-template-columns: repeat(3, minmax(auto, 200px));
+        gap: 10px;
         justify-content: center;
       }
     }
