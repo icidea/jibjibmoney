@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Home</title>
+  <meta name="keyword" content="">
+  <meta name="description" content="">
+  <meta property="og:title" content="Home">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <script type="module" crossorigin src="/assets/js/main.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/styles.css">
+</head>
+
+<body>
+  <header class="header" id="header">
+    <div class="header__container">
+      <a class="header__logo" href="/" aria-label="JipJip Money Logo"></a>
+      <button class="header-btn-menu" :aria-expanded="isMenuOpen.toString()" @click.prevent="menuToggle">
+        <span class="header-btn-menu__title">เมนู</span>
+        <span class="header-btn-menu__hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <nav class="nav-global" id="nav-global" :aria-hidden="menuAriaHidden.toString()" :class="{ 'is-open': isMenuOpen }">
+        <div class="nav-global__container">
+          <div class="nav-global__inner">
+            <ul class="nav-global__list">
+              <li>
+                <a class="nav-global__link" href="/">หน้าแรก</a>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/about-us/">เกี่ยวกับเรา</a>
+              </li>
+              <li @mouseenter="subMenuHoverToggle(true)" @mouseleave="subMenuHoverToggle(false)">
+                <button class="nav-global__link" @click.prevent="subMenuClickToggle" :aria-expanded="isSubMenuOpen">ผลิตภัณฑ์ของเรา</button>
+                <transition name="fade">
+                  <div class="nav-global-sub" :aria-hidden="(!isSubMenuOpen).toString()" v-show="isSubMenuOpen">
+                    <div class="nav-global-sub__inner">
+                      <p class="nav-global-sub__heading">บริการเงินด่วน</p>
+                      <a class="nav-global-sub__link" href="/bagforcash/">
+                        <img width="36" height="36" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-bagforcash.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">bagforcash</p>
+                          <p>ผู้นำด้านการฝากขายกระเป๋าและจิวเวลรี่แบรนด์เนม อันดับ 1 ของไทย</p>
+                        </div>
+                      </a>
+                      <a class="nav-global-sub__link" href="/watchforcash/">
+                        <img width="36" height="37" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-watchforcash.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">watchforcash</p>
+                          <p>ผู้นำด้านการฝากขายนาฬิกาแบรนด์เนม อันดับ 1 ของไทย</p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="nav-global-sub__inner">
+                      <p class="nav-global-sub__heading">บริการของเรา</p>
+                      <a class="nav-global-sub__link" href="/authentication/">
+                        <img width="36" height="37" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-authen.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">ตรวจแท้–ปลอม</p>
+                          <p>บริการตรวจแท้ปลอมโดยผู้เชี่ยวชาญพร้อมออกการ์ด</p>
+                        </div>
+                      </a>
+                      <a class="nav-global-sub__link" href="/redemption/">
+                        <img width="64" height="64" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-12.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">ไถ่ถอนทรัพย์สิน</p>
+                          <p>ย้ายมาฝากกับเราดอกเบี้ยถูกกว่า วงเงินสูงกกว่า!</p>
+                        </div>
+                      </a>
+                      <a class="nav-global-sub__link" href="#">
+                        <img width="36" height="37" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-redemption.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">สินเชื่อ</p>
+                          <p>บริการตรวจแท้ปลอมโดยผู้เชี่ยวชาญพร้อมออกการ์ด</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </transition>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/news-promotion/">ข่าวสารและโปรโมชัน</a>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/partner/">พาร์ทเนอร์</a>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/contact-us/">ติดต่อเรา</a>
+              </li>
+            </ul>
+            <div class="nav-global-lang">
+              <button class="nav-global-lang__button" :aria-expanded="isLangOpen.toString()" @click.prevent="langToggle">
+                <span class="nav-global-lang__text">ภาษา</span>
+                <span class="nav-global-lang__current">
+                  <span>ภาษาไทย</span>
+                </span>
+              </button>
+              <transition name="fade">
+                <div class="nav-global-lang__box" v-show="isLangOpen">
+                  <p class="nav-global-lang__box-title">เลือกภาษา</p>
+                  <ul class="nav-global-lang__list" :aria-hidden="(!isLangOpen).toString()">
+                    <li>
+                      <a href="#" aria-selected="true">ภาษาไทย</a>
+                    </li>
+                    <li>
+                      <a href="#">English</a>
+                    </li>
+                    <li>
+                      <a href="#">中文</a>
+                    </li>
+                  </ul>
+                </div>
+              </transition>
+            </div>
+          </div>
+          <ul class="nav-global__sns">
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=61550832268748&amp;mibextid=LQQJ4d" target="_blank" aria-label="Facebook">
+                <span style="--image: url('/assets/images/common/ico-facebook-white.svg')"></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://line.me/R/ti/p/%40jipjipmoney" target="_blank" aria-label="Line">
+                <span style="--image: url('/assets/images/common/ico-line-white.svg')"></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/jipjipmoney?igshid=MzRlODBiNWFlZA==" target="_blank" aria-label="Instagram">
+                <span style="--image: url('/assets/images/common/ico-instagram-white.svg'); --size: 22;"></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@jipjipmoney" target="_blank" aria-label="TikTok">
+                <span style="--image: url('/assets/images/common/ico-tiktok-white.svg'); --size: 21;"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="main-visual-home">
+      <picture class="main-visual-home__image">
+        <source srcset="/assets/images/home/img-main-visual-pc.avif" type="image/avif" media="(min-width: 1024px)">
+        <source srcset="/assets/images/home/img-main-visual-pc.webp" type="image/webp" media="(min-width: 1024px)">
+        <source srcset="/assets/images/home/img-main-visual-sp.avif" type="image/avif">
+        <img width="750" height="1001" decoding="async" loading="lazy" src="/assets/images/home/img-main-visual-sp.webp" alt="" />
+      </picture>
+      <div class="main-visual-home__container">
+        <img class="main-visual-home__logo" width="620" height="95" decoding="async" loading="lazy" src="/assets/images/common/logo-main.svg" alt="JIPJIP MONEY" />
+        <h1 class="main-visual-home__title">ผู้นำด้านบริการขายฝากสินค้าลักชัวรี่ในไทย</h1>
+      </div>
+      <a class="btn-mv-scroll" href="#sec-intro">
+        <span>Please scroll down</span>
+      </a>
+    </section>
+    <div class="sec-intro sec-intro--home" id="sec-intro">
+      <div class="sec-intro__container">
+        <div class="sec-intro__block">
+          <div class="sec-intro__block-inner">
+            <div class="box-home-intro">
+              <p class="box-home-intro__text-upper">เราคือผู้ให้บริการ <span class="text-blue-main">ขายฝากสินค้าลักชัวรี่</span> <br class="md:hidden">อันดับ 1 ในไทย <br class="hidden md:block">ที่ดำเนินธุรกิจ<br class="md:hidden">ด้วยความโปร่งใสยุติธรรม<br class="md:hidden">และใส่ใจในทุกรายละเอียด</p>
+              <div class="box-home-intro__line">
+                <img width="33" height="32" decoding="async" loading="lazy" src="/assets/images/common/logo-sm-blue.svg" alt="" />
+              </div>
+              <p class="box-home-intro__text-lower">“ฝากไว้กับเราสบายใจ<br class="md:hidden">ตั้งแต่เริ่มจนจบ”<br>“เราดูแลทุกทรัพย์สินของ<br class="md:hidden">คุณเสมือนเป็นของเราเอง”</p>
+              <img class="box-home-intro__logo" width="620" height="95" decoding="async" loading="lazy" src="/assets/images/common/logo-main.svg" alt="JIPJIP MONEY" />
+            </div>
+          </div>
+        </div>
+        <div class="box-home-about">
+          <div class="box-home-about__item">
+            <img width="33" height="32" decoding="async" loading="lazy" src="/assets/images/common/logo-sm-blue.svg" alt="" />
+            <div class="box-home-about__content">
+              <p>
+                <strong>JIPJIPMONEY</strong>
+                <strong class="text-blue-main">ผสมผสานความเชี่ยวชาญเฉพาะทาง <br class="hidden xl:block">เข้ากับเทคโนโลยีอันทันสมัย</strong> เพื่อให้ลูกค้าสามารถเปลี่ยน ทรัพย์สินให้เป็นสภาพคล่องทางการเงินได้อย่างรวดเร็ว ทันใจ พร้อมข้อเสนอที่ดีที่สุด <strong class="text-blue-main">ดอกเบี้ยเริ่มต้นเพียง 0.89% ต่อเดือน</strong> ให้วงเงินสูง เงื่อนไขยืดหยุ่น ต่อสัญญาได้ไม่จำกัด และระบบจัดเก็บแบบ 1 ต่อ 1 ในห้องนิรภัยมาตรฐานระดับโลก
+              </p>
+            </div>
+          </div>
+          <div class="box-home-about__item">
+            <img width="33" height="32" decoding="async" loading="lazy" src="/assets/images/common/logo-sm-blue.svg" alt="" />
+            <div class="box-home-about__content">
+              <p>
+                <strong>JIPJIPMONEY</strong> เราเข้าใจถึงคุณค่าของสินค้า ลักชัวรี่ <br class="hidden xl:block">ไม่ว่าจะเป็นกระเป๋าแบรนด์เนม นาฬิกาหรู หรือเครื่อง<br class="hidden xl:block">ประดับแบรนด์ <strong class="text-blue-main">เราจึงให้ความใส่ใจอย่างสูงสุดในทุกกระบวนการ</strong> ตั้งแต่การรับฝาก การจัดเก็บ ไปจนถึงการดูแลรักษา เพื่อให้ ทรัพย์สินของคุณ <strong class="text-blue-main">คงสภาพที่ดีที่สุด</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.sec-intro-->
+    <section class="sec-home-brand">
+      <div class="sec-home-brand__container">
+        <h2 class="heading-01">
+          <span>แบรนด์ในเครือของ <br class="md:hidden">JIPJIPMONEY</span>
+        </h2>
+        <ul class="sec-home-brand__list">
+          <li>
+            <a class="sec-home-brand__card" href="/bagforcash/">
+              <div class="sec-home-brand__card-inner">
+                <img width="120" height="120" decoding="async" loading="lazy" src="/assets/images/common/logo-bagforcash.svg" alt="bagforcash" />
+                <div class="sec-home-brand__card-desc">
+                  <img class="sec-home-brand__title" width="198" height="36" decoding="async" loading="lazy" src="/assets/images/common/text-bagforcash.svg" alt="" style="--height: 36;" />
+                  <p>บริการขายฝากกระเป๋าแบรนด์เนม<br>และเครื่องประดับแบรนด์</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="sec-home-brand__card" href="/watchforcash/">
+              <div class="sec-home-brand__card-inner">
+                <img width="121" height="120" decoding="async" loading="lazy" src="/assets/images/common/logo-watchforcash.svg" alt="watchforcash" />
+                <div class="sec-home-brand__card-desc">
+                  <img class="sec-home-brand__title" width="220" height="34" decoding="async" loading="lazy" src="/assets/images/common/text-watchforcash.svg" alt="" style="--height: 33;" />
+                  <p>บริการขายฝาก นาฬิกาไฮเอนด์</p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section><!-- /.sec-home-brand-->
+    <section class="sec-home-service">
+      <a class="sec-home-service__item" href="/bagforcash/">
+        <picture class="sec-home-service__image">
+          <source srcset="/assets/images/home/img-service-bagforcash-pc.webp" media="(min-width: 1024px)">
+          <img width="750" height="601" decoding="async" loading="lazy" src="/assets/images/home/img-service-bagforcash-sp.webp" alt="" />
+        </picture>
+        <img class="sec-home-service__logo" width="120" height="120" decoding="async" loading="lazy" src="/assets/images/common/logo-bagforcash.svg" alt="" />
+        <div class="sec-home-service__inner">
+          <h2 class="sec-home-service__heading">BAGFORCASH</h2>
+          <p>บริการกระเป๋า และเครื่องประดับแลกเงินด่วน คลิก!</p>
+        </div>
+      </a>
+      <a class="sec-home-service__item" href="/watchforcash/">
+        <picture class="sec-home-service__image">
+          <source srcset="/assets/images/home/img-service-watchforcash-pc.webp" media="(min-width: 1024px)">
+          <img width="750" height="601" decoding="async" loading="lazy" src="/assets/images/home/img-service-watchforcash-sp.webp" alt="" />
+        </picture>
+        <img class="sec-home-service__logo" width="121" height="120" decoding="async" loading="lazy" src="/assets/images/common/logo-watchforcash.svg" alt="" />
+        <div class="sec-home-service__inner">
+          <h2 class="sec-home-service__heading">WATCHFORCASH</h2>
+          <p>บริการนาฬิกาไฮเอนด์ แลกเงินด่วน คลิก!</p>
+        </div>
+      </a>
+      <a class="sec-home-service__item" href="/authentication/">
+        <picture class="sec-home-service__image">
+          <source srcset="/assets/images/home/img-service-authen-pc.webp" media="(min-width: 1024px)">
+          <img width="750" height="601" decoding="async" loading="lazy" src="/assets/images/home/img-service-authen-sp.webp" alt="" />
+        </picture>
+        <img class="sec-home-service__logo" width="126" height="126" decoding="async" loading="lazy" src="/assets/images/common/logo-authen.svg" alt="" />
+        <div class="sec-home-service__inner">
+          <h2 class="sec-home-service__heading">AUTHENTICATION SERVICE</h2>
+          <p>บริการตรวจแท้-ปลอม คลิก!</p>
+        </div>
+      </a>
+    </section><!-- /.sec-home-service-->
+    <section class="sec-home-why-us">
+      <div class="sec-home-why-us__container">
+        <h2 class="heading-02">
+          <span>WHY US?</span>
+        </h2>
+        <div class="sec-home-why-us__slider" id="slider-why-us">
+          <div class="swiper" ref="sliderWhyUs">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="card-why-us">
+                  <img class="card-why-us__icon" width="97" height="96" decoding="async" loading="lazy" src="/assets/images/home/ico-why-us-01.svg" alt="" />
+                  <h3 class="card-why-us__title">ขายฝากสินค้าลักชัวรี่</h3>
+                  <p class="card-why-us__text">รับฝากขายสินค้าลักซ์ชัวรี่ทุกประเภท เช่น กระเป๋าแบรนด์เนม นาฬิกา ไฮเอนด์ และเครื่องประดับแบรนด์</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-why-us">
+                  <img class="card-why-us__icon" width="97" height="97" decoding="async" loading="lazy" src="/assets/images/home/ico-why-us-02.svg" alt="" />
+                  <h3 class="card-why-us__title">ดอกเบี้ยถูกกฎหมาย</h3>
+                  <p class="card-why-us__text">เริ่มต้นเพียง 0.89% ต่อเดือน</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-why-us">
+                  <img class="card-why-us__icon" width="97" height="96" decoding="async" loading="lazy" src="/assets/images/home/ico-why-us-03.svg" alt="" />
+                  <h3 class="card-why-us__title">วงเงินสูง</h3>
+                  <p class="card-why-us__text">ตั้งแต่ 10,000 ถึง 6,500,000 บาท ต่อสัญญา</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-why-us">
+                  <img class="card-why-us__icon" width="97" height="96" decoding="async" loading="lazy" src="/assets/images/home/ico-why-us-04.svg" alt="" />
+                  <h3 class="card-why-us__title">ประเมินผลไว 45 นาที</h3>
+                  <p class="card-why-us__text">รับเงินโอนไวใน 1 ชั่วโมง<br>(การันตีรับเงินใน 24 ชั่วโมง)</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-why-us">
+                  <img class="card-why-us__icon" width="97" height="97" decoding="async" loading="lazy" src="/assets/images/home/ico-why-us-05.svg" alt="" />
+                  <h3 class="card-why-us__title">ให้วงเงินเต็ม</h3>
+                  <p class="card-why-us__text">ไม่หักดอก ไม่ต้องส่งต้น</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-why-us">
+                  <img class="card-why-us__icon" width="97" height="96" decoding="async" loading="lazy" src="/assets/images/home/ico-why-us-06.svg" alt="" />
+                  <h3 class="card-why-us__title">เงื่อนไขยืดหยุ่น</h3>
+                  <p class="card-why-us__text">ต่อสัญญาได้ไม่จำกัด</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-why-us">
+                  <img class="card-why-us__icon" width="97" height="96" decoding="async" loading="lazy" src="/assets/images/home/ico-why-us-07.svg" alt="" />
+                  <h3 class="card-why-us__title">จัดเก็บแบบ 1 ต่อ 1 ในห้องนิรภัย</h3>
+                  <p class="card-why-us__text">เราจัดเก็บในห้องนิรภัยมาตรฐานระดับโลก พร้อมวงเงินคุ้มครอง – มั่นใจได้ว่าทรัพย์สิน ของคุณปลอดภัยสูงสุดต่อสัญญาได้ไม่จำกัด</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-why-us">
+                  <img class="card-why-us__icon" width="97" height="97" decoding="async" loading="lazy" src="/assets/images/home/ico-why-us-08.svg" alt="" />
+                  <h3 class="card-why-us__title">ให้บริการอย่างเป็นส่วนตัว</h3>
+                  <p class="card-why-us__text">รักษาความลับของลูกค้าอย่างสูงสุด</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-why-us">
+                  <img class="card-why-us__icon" width="97" height="96" decoding="async" loading="lazy" src="/assets/images/home/ico-why-us-09.svg" alt="" />
+                  <h3 class="card-why-us__title">ถูกกฎหมาย</h3>
+                  <p class="card-why-us__text">จดทะเบียนถูกต้อง</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-why-us">
+                  <img class="card-why-us__icon" width="97" height="96" decoding="async" loading="lazy" src="/assets/images/home/ico-why-us-10.svg" alt="" />
+                  <h3 class="card-why-us__title">บริการรับสินค้าฟรีถึงบ้าน</h3>
+                  <p class="card-why-us__text">โดยแมสเซนเจอร์มืออาชีพที่เชี่ยวชาญด้านการขนส่งสินค้าลักชัวรี่โดยเฉพาะ (เฉพาะกรุงเทพฯ และปริมณฑล) ต่างจังหวัดใช้บริการขนส่ง เอกชนมาได้เลย</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card-why-us">
+                  <img class="card-why-us__icon" width="97" height="97" decoding="async" loading="lazy" src="/assets/images/home/ico-why-us-11.svg" alt="" />
+                  <h3 class="card-why-us__title">บริการอบ UV ฆ่าเชื้อ</h3>
+                  <p class="card-why-us__text">ฟรี! ทุกรายการ</p>
+                </div>
+              </div>
+            </div>
+            <div class="box-slider-control">
+              <div class="swiper-pagination" role="navigation" aria-label="Pagination"></div>
+              <div class="box-slider-control__nav">
+                <button class="swiper-button-prev" aria-label="Previous slide"></button>
+                <button class="swiper-button-next" aria-label="Next slide"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /.sec-home-why-us-->
+    <section class="sec-home-ceo">
+      <picture class="sec-home-ceo__image">
+        <source srcset="/assets/images/home/img-ceo-pc.webp" media="(min-width: 768px)">
+        <img width="750" height="900" decoding="async" loading="lazy" src="/assets/images/home/img-ceo-sp.webp" alt="คุณจิ๊บ เสาวนีย์ ผไทวณิชย" />
+      </picture>
+      <div class="sec-home-ceo__content">
+        <div class="sec-home-ceo__content-main">
+          <h2 class="heading-02">
+            <span>ทำความรู้จัก CEO</span>
+          </h2>
+          <div class="sec-home-ceo__text">
+            <p>บริษัทดำเนินงานภายใต้การนำของ <strong class="text-blue-dark">คุณจิ๊บ เสาวนีย์ ผไทวณิชย์</strong> ประธานเจ้าหน้า ที่บริหาร (CEO) ผู้มีประสบการณ์และความเชี่ยวชาญใน ธุรกิจสินค้าลักชัวรี่และ การเงินมากกว่า 10 ปี ด้วยวิสัยทัศน์ที่ยึดหลักความโปร่งใส ยุติธรรม และทันสมัย คุณจิ๊บมุ่งมั่นบริหารงานด้วยความ ใส่ใจใน ทุกรายละเอียดเพื่อตอบโจทย์ไลฟ์สไตล์ ของลูกค้าในปัจจุบัน พร้อมมอบประสบการณ์ การบริการที่เหนือระดับและสร้างความพึงพอใจ สูงสุดแก่ผู้ใช้บริการ</p><br>
+            <p>นอกจากนี้ ภายใต้การบริหารงานของคุณจิ๊บ บริษัทได้นำเทคโนโลยีที่ทันสมัย อาทิ Artificial Intelligence (AI) ในการตรวจสอบและประเมิน มูลค่าทรัพย์สิน รวมถึง การใช้ Data Analysis เพื่อประมวลราคากลางอย่างแม่นยำและโปร่งใส เพิ่ม ประสิทธิภาพในการดำเนินธุรกิจและสร้าง ความเชื่อมั่นให้กับลูกค้าด้วยเป้าหมาย อันชัดเจน ในการครองอันดับ 1 ในธุรกิจ ขายฝากสินค้า ลักชัวรี่ในประเทศไทย บริษัทพร้อมเดินหน้าเติบโต อย่างมั่นคงและยั่งยืน รวมถึงมีแผนในการขยาย ธุรกิจสู่ตลาดต่างประเทศในอนาคตอันใกล้นี้</p>
+          </div>
+        </div>
+        <div>
+          <a class="btn-read-more" href="/about-us/">
+            <span>อ่านเพิ่มเติม</span>
+            <i></i>
+          </a>
+        </div>
+      </div>
+    </section><!-- /.sec-home-ceo-->
+    <section class="sec-home-financial">
+      <div class="sec-home-financial__container">
+        <h2 class="heading-02 text-center">
+          <span>คำนวนวงเงินเบื้องต้น</span>
+        </h2>
+        <div class="sec-home-financial__tab" role="tablist">
+          <button class="sec-home-financial__tab-button" role="tab" aria-selected="true">
+            <picture>
+              <source srcset="/assets/images/common/text-bagforcash-tab-pc.svg" media="(min-width: 768px)">
+              <img width="107" height="20" decoding="async" loading="lazy" src="/assets/images/common/text-bagforcash-tab-sp.svg" alt="bagforcash" />
+            </picture>
+          </button>
+          <button class="sec-home-financial__tab-button" role="tab" aria-selected="false">
+            <picture>
+              <source srcset="/assets/images/common/text-watchforcash-tab-pc.svg" media="(min-width: 768px)">
+              <img width="114" height="19" decoding="async" loading="lazy" src="/assets/images/common/text-watchforcash-tab-sp.svg" alt="watchforcash" style="--height-sp: 19; --height-pc: 30;" />
+            </picture>
+          </button>
+        </div>
+        <div class="sec-home-financial__content">
+          <div class="box-calculate">
+            <form class="box-calculate__form" action="/" method="post">
+              <div class="box-calculate__field">
+                <label class="form-label" for="brand">แบรนด์ที่ต้องการฝาก</label>
+                <div class="form-block">
+                  <div class="form-select">
+                    <select name="brand" id="brand">
+                      <option value="">เลือกแบรนด์ที่ต้องการฝาก</option>
+                      <option value="chanel">Chanel</option>
+                      <option value="gucci">Gucci</option>
+                      <option value="prada">Prada</option>
+                      <option value="versace">Versace</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="box-calculate__field">
+                <label class="form-label" for="limit">วงเงินที่ต้องการ</label>
+                <div class="form-block">
+                  <div class="form-input-unit">
+                    <input type="number" name="limit" id="limit" required placeholder="กรอกวงเงินที่ต้องการ">
+                    <span class="form-input-unit__text">บาท</span>
+                  </div>
+                </div>
+              </div>
+              <div class="box-calculate__field">
+                <label class="form-label" for="month">จำนวนเดือนที่ต้องการฝาก</label>
+                <div class="form-block">
+                  <div class="form-select">
+                    <select name="month" id="month">
+                      <option value="">เลือกจำนวนเดือนที่ต้องการฝาก</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                    </select>
+                  </div>
+                </div>
+                <p class="box-calculate__note">สามารถต่อสัญญาได้ไม่จำกัด</p>
+              </div>
+            </form>
+            <button class="box-calculate__reset" type="reset">
+              <img width="17" height="17" decoding="async" loading="lazy" src="/assets/images/common/ico-reset.svg" alt="" />
+              <span>เคลียร์ข้อมูลและเริ่มใหม่</span>
+            </button>
+          </div><!-- /.box-calculate-->
+          <div class="box-result">
+            <p class="box-result__heading">
+              <img width="33" height="32" decoding="async" loading="lazy" src="/assets/images/common/logo-sm-blue.svg" alt="" />
+              <span>ผลลัพธ์</span>
+            </p>
+            <dl class="box-result__summary">
+              <dt>วงเงินที่ได้รับ</dt>
+              <dd>
+                <span>98,395 บาท</span>
+              </dd>
+              <dt>วงเงินเมื่อปิดสัญญา</dt>
+              <dd>
+                <span>102,250 บาท</span>
+              </dd>
+            </dl>
+            <div>
+              <p class="box-result__heading-sub">ต้องการใช้เงินด่วนเราช่วยคุณได้</p>
+              <ul class="box-result__list">
+                <li>
+                  <span>ประเมินวงเงินฟรี</span>
+                </li>
+                <li>
+                  <span>รู้ผลไวใน 45 นาที</span>
+                </li>
+                <li>
+                  <span>รับเงินโอนใน 1 ชั่วโมง</span>
+                </li>
+                <li>
+                  <span>บริการแมสเซนเจอร์ รับถึงบ้านฟรี</span>
+                </li>
+              </ul>
+            </div>
+            <a class="box-result__button" href="#">สนใจขอวงเงินกับเรา สมัครเลย!</a>
+            <button class="box-result__reset" type="reset">
+              <img width="17" height="17" decoding="async" loading="lazy" src="/assets/images/common/ico-reset.svg" alt="" />
+              <span>เคลียร์ข้อมูลและเริ่มใหม่</span>
+            </button>
+          </div><!-- /.box-result-->
+        </div>
+      </div><!-- /.sec-home-financial__container-->
+    </section><!-- /.sec-home-financial-->
+    <section class="sec-home-partner">
+      <div class="sec-home-partner__container">
+        <h2 class="heading-06 text-center">
+          <span>พาร์ทเนอร์ของเรา</span>
+        </h2>
+        <ul class="sec-home-partner__list">
+          <li>
+            <figure class="sec-home-partner__image">
+              <img width="257" height="257" decoding="async" loading="lazy" src="/assets/images/home/img-partner-01.webp" alt="" />
+              <figcaption>Shikochic_bkk</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="sec-home-partner__image">
+              <img width="257" height="257" decoding="async" loading="lazy" src="/assets/images/home/img-partner-02.webp" alt="" />
+              <figcaption>brandnamemusthave</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="sec-home-partner__image">
+              <img width="257" height="257" decoding="async" loading="lazy" src="/assets/images/home/img-partner-03.webp" alt="" />
+              <figcaption>Shikochic_bkk</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="sec-home-partner__image">
+              <img width="257" height="257" decoding="async" loading="lazy" src="/assets/images/home/img-partner-04.webp" alt="" />
+              <figcaption>brandnamemusthave</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="sec-home-partner__image">
+              <img width="257" height="257" decoding="async" loading="lazy" src="/assets/images/home/img-partner-05.webp" alt="" />
+              <figcaption>Shikochic_bkk</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="sec-home-partner__image">
+              <img width="257" height="257" decoding="async" loading="lazy" src="/assets/images/home/img-partner-06.webp" alt="" />
+              <figcaption>brandnamemusthave</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="sec-home-partner__image">
+              <img width="257" height="257" decoding="async" loading="lazy" src="/assets/images/home/img-partner-07.webp" alt="" />
+              <figcaption>Shikochic_bkk</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="sec-home-partner__image">
+              <img width="257" height="257" decoding="async" loading="lazy" src="/assets/images/home/img-partner-08.webp" alt="" />
+              <figcaption>brandnamemusthave</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="sec-home-partner__image">
+              <img width="320" height="320" decoding="async" loading="lazy" src="/assets/images/home/img-partner-09.webp" alt="" />
+              <figcaption>Shikochic_bkk</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="sec-home-partner__image">
+              <img width="320" height="320" decoding="async" loading="lazy" src="/assets/images/home/img-partner-10.webp" alt="" />
+              <figcaption>brandnamemusthave</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section><!-- /.sec-home-partner-->
+    <section class="sec-home-promotion">
+      <div class="sec-home-promotion__container">
+        <h2 class="sec-home-promotion__heading">
+          <span>WHAT’S ON</span>
+          <span>โปรโมชั่นสำหรับคุณ</span>
+        </h2>
+        <div class="sec-home-promotion__slider" id="slider-promotion">
+          <div class="swiper" ref="sliderPromotion">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a class="card-promotion" href="#">
+                  <figure class="card-promotion__image">
+                    <img width="1184" height="1480" decoding="async" loading="lazy" src="/assets/images/home/img-promotion.webp" alt="" />
+                  </figure>
+                  <div class="card-promotion__content">
+                    <div class="card-promotion__content-in">
+                      <time datetime="2023-08-31">31 AUGUST 2023</time>
+                      <h3 class="card-promotion__title">หมุนเงินไม่ทัน ทำยังไงดี?</h3>
+                      <div class="card-promotion__desc">
+                        <p>เปลี่ยนกระเป๋า สุดรัก ให้เป็นเงินทันใจ! ต้องที่ bagforcash</p>
+                        <ul class="list-icon-checked">
+                          <li>
+                            <span>อนุมัติไว ทันใจ ให้วงเงินสูง</span>
+                          </li>
+                          <li>
+                            <span>โอนไวใน 1 ชั่วโมง</span>
+                          </li>
+                          <li>
+                            <span>ดอกเบี้ย 0.89% / เดือน</span>
+                          </li>
+                          <li>
+                            <span>บริการแมสเซนเจอร์ รับถึงบ้านฟรี</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="btn-read-more">
+                        <span>อ่านเพิ่มเติม</span>
+                        <i></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div><!-- /.card-promotion-->
+              <div class="swiper-slide">
+                <a class="card-promotion" href="#">
+                  <figure class="card-promotion__image">
+                    <img width="1184" height="1480" decoding="async" loading="lazy" src="/assets/images/home/img-promotion.webp" alt="" />
+                  </figure>
+                  <div class="card-promotion__content">
+                    <div class="card-promotion__content-in">
+                      <time datetime="2023-08-31">31 AUGUST 2023</time>
+                      <h3 class="card-promotion__title">หมุนเงินไม่ทัน ทำยังไงดี?</h3>
+                      <div class="card-promotion__desc">
+                        <p>เปลี่ยนกระเป๋า สุดรัก ให้เป็นเงินทันใจ! ต้องที่ bagforcash</p>
+                        <ul class="list-icon-checked">
+                          <li>
+                            <span>อนุมัติไว ทันใจ ให้วงเงินสูง</span>
+                          </li>
+                          <li>
+                            <span>โอนไวใน 1 ชั่วโมง</span>
+                          </li>
+                          <li>
+                            <span>ดอกเบี้ย 0.89% / เดือน</span>
+                          </li>
+                          <li>
+                            <span>บริการแมสเซนเจอร์ รับถึงบ้านฟรี</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="btn-read-more">
+                        <span>อ่านเพิ่มเติม</span>
+                        <i></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div><!-- /.card-promotion-->
+              <div class="swiper-slide">
+                <a class="card-promotion" href="#">
+                  <figure class="card-promotion__image">
+                    <img width="1184" height="1480" decoding="async" loading="lazy" src="/assets/images/home/img-promotion.webp" alt="" />
+                  </figure>
+                  <div class="card-promotion__content">
+                    <div class="card-promotion__content-in">
+                      <time datetime="2023-08-31">31 AUGUST 2023</time>
+                      <h3 class="card-promotion__title">หมุนเงินไม่ทัน ทำยังไงดี?</h3>
+                      <div class="card-promotion__desc">
+                        <p>เปลี่ยนกระเป๋า สุดรัก ให้เป็นเงินทันใจ! ต้องที่ bagforcash</p>
+                        <ul class="list-icon-checked">
+                          <li>
+                            <span>อนุมัติไว ทันใจ ให้วงเงินสูง</span>
+                          </li>
+                          <li>
+                            <span>โอนไวใน 1 ชั่วโมง</span>
+                          </li>
+                          <li>
+                            <span>ดอกเบี้ย 0.89% / เดือน</span>
+                          </li>
+                          <li>
+                            <span>บริการแมสเซนเจอร์ รับถึงบ้านฟรี</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="btn-read-more">
+                        <span>อ่านเพิ่มเติม</span>
+                        <i></i>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div><!-- /.card-promotion-->
+            </div>
+            <div class="box-slider-control">
+              <div class="swiper-pagination" role="navigation" aria-label="Pagination"></div>
+              <div class="box-slider-control__nav">
+                <button class="swiper-button-prev" aria-label="Previous slide"></button>
+                <button class="swiper-button-next" aria-label="Next slide"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /.sec-home-promotion-->
+    <section class="sec-home-article">
+      <div class="sec-home-article__container">
+        <div class="sec-home-article__heading">
+          <h2 class="heading-02">
+            <span>บทความที่น่าสนใจ</span>
+          </h2>
+          <a class="btn-read-more" href="#">
+            <span>ดูเพิ่มเติม</span>
+            <i></i>
+          </a>
+        </div>
+        <div class="sec-home-article__slider" id="slider-article">
+          <div class="swiper" ref="sliderArticle">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a class="card-article" href="#">
+                  <figure class="card-article__image">
+                    <img width="720" height="860" decoding="async" loading="lazy" src="/assets/images/home/img-article-01.webp" alt="" />
+                  </figure>
+                  <div class="card-article__detail">
+                    <time datetime="2023-08-31">31 AUGUST 2023</time>
+                    <h3 class="card-article__title">Recycling Luxury: How to Sell Your Designer Items</h3>
+                  </div>
+                  <p class="card-article__more">
+                    <span>READ MORE</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="card-article" href="#">
+                  <figure class="card-article__image">
+                    <img width="720" height="860" decoding="async" loading="lazy" src="/assets/images/home/img-article-02.webp" alt="" />
+                  </figure>
+                  <div class="card-article__detail">
+                    <time datetime="2023-08-30">30 AUGUST 2023</time>
+                    <h3 class="card-article__title">Recycling Luxury: How to Sell Your Designer Items</h3>
+                  </div>
+                  <p class="card-article__more">
+                    <span>READ MORE</span>
+                  </p>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="card-article" href="#">
+                  <figure class="card-article__image">
+                    <img width="720" height="860" decoding="async" loading="lazy" src="/assets/images/home/img-article-03.webp" alt="" />
+                  </figure>
+                  <div class="card-article__detail">
+                    <time datetime="2023-08-29">29 AUGUST 2023</time>
+                    <h3 class="card-article__title">How You Can Properly Clean Your Chanel Bags</h3>
+                  </div>
+                  <p class="card-article__more">
+                    <span>READ MORE</span>
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="box-slider-control">
+              <div class="swiper-pagination" role="navigation" aria-label="Pagination"></div>
+              <div class="box-slider-control__nav">
+                <button class="swiper-button-prev" aria-label="Previous slide"></button>
+                <button class="swiper-button-next" aria-label="Next slide"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /.sec-home-article-->
+    <section class="sec-home-vdo">
+      <div class="sec-home-vdo__container">
+        <h2 class="sec-home-vdo__heading">
+          <span>รับชมวิดิโอเกี่ยวกับ</span>
+          <img width="318" height="50" decoding="async" loading="lazy" src="/assets/images/common/logo-main-black.svg" alt="" />
+        </h2>
+        <div class="sec-home-vdo__slider" id="slider-vdo">
+          <div class="swiper" ref="sliderVdo">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a class="card-vdo" href="#">
+                  <figure class="card-vdo__image">
+                    <img width="1160" height="608" decoding="async" loading="lazy" src="/assets/images/home/img-vdo-01.webp" alt="" />
+                  </figure>
+                  <div class="card-vdo__desc">
+                    <p class="card-vdo__title">คุณ จิ๊บ เสาวนีย์ ผไทวณิชย์ CEO Jipjip Money<br>ยกระดับมาตรฐานและตอกย้ำความเป็นอันดับ 1 ในไทย! ✨</p>
+                    <div class="card-vdo__more">
+                      <span>รับชมเลย</span>
+                      <img width="12" height="12" decoding="async" loading="lazy" src="/assets/images/common/ico-play-blue.svg" alt="" />
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="card-vdo" href="#">
+                  <figure class="card-vdo__image">
+                    <img width="1160" height="608" decoding="async" loading="lazy" src="/assets/images/home/img-vdo-02.webp" alt="" />
+                  </figure>
+                  <div class="card-vdo__desc">
+                    <p class="card-vdo__title">Exclusive Tour with Khun Tha Pipoauh<br>at JipJip Money! 💎💼⌚️</p>
+                    <div class="card-vdo__more">
+                      <span>รับชมเลย</span>
+                      <img width="12" height="12" decoding="async" loading="lazy" src="/assets/images/common/ico-play-blue.svg" alt="" />
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="card-vdo" href="#">
+                  <figure class="card-vdo__image">
+                    <img width="1160" height="608" decoding="async" loading="lazy" src="/assets/images/home/img-vdo-01.webp" alt="" />
+                  </figure>
+                  <div class="card-vdo__desc">
+                    <p class="card-vdo__title">คุณ จิ๊บ เสาวนีย์ ผไทวณิชย์ CEO Jipjip Money<br>ยกระดับมาตรฐานและตอกย้ำความเป็นอันดับ 1 ในไทย! ✨</p>
+                    <div class="card-vdo__more">
+                      <span>รับชมเลย</span>
+                      <img width="12" height="12" decoding="async" loading="lazy" src="/assets/images/common/ico-play-blue.svg" alt="" />
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="card-vdo" href="#">
+                  <figure class="card-vdo__image">
+                    <img width="1160" height="608" decoding="async" loading="lazy" src="/assets/images/home/img-vdo-02.webp" alt="" />
+                  </figure>
+                  <div class="card-vdo__desc">
+                    <p class="card-vdo__title">Exclusive Tour with Khun Tha Pipoauh<br>at JipJip Money! 💎💼⌚️</p>
+                    <div class="card-vdo__more">
+                      <span>รับชมเลย</span>
+                      <img width="12" height="12" decoding="async" loading="lazy" src="/assets/images/common/ico-play-blue.svg" alt="" />
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="box-slider-control">
+              <div class="swiper-pagination" role="navigation" aria-label="Pagination"></div>
+              <div class="box-slider-control__nav">
+                <button class="swiper-button-prev" aria-label="Previous slide"></button>
+                <button class="swiper-button-next" aria-label="Next slide"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sec-home-vdo__more">
+          <a href="#">
+            <span>ดูทั้งหมด</span>
+          </a>
+        </div>
+      </div>
+    </section><!-- /.sec-home-vdo-->
+  </main>
+  <footer class="footer">
+    <nav class="footer__container">
+      <a class="footer__logo" href="/">
+        <img width="620" height="95" decoding="async" loading="lazy" src="/assets/images/common/logo-main.svg" alt="JibJib Money" />
+      </a>
+      <div class="footer__address">
+        <p class="footer__address-title">บริษัท เงินเรื่องจิ๊บ จำกัด</p>
+        <p>58/101 หมู่ 3 ถนน แจ้งวัฒนะ-ปากเกร็ด 33 คลองเกลือ ปากเกร็ด นนทบุรี 11120</p>
+      </div>
+      <ul class="footer__contact">
+        <li>
+          <a href="tel:0888000000">
+            <img width="21" height="21" decoding="async" loading="lazy" src="/assets/images/common/ico-phone.svg" alt="" />
+            <span>088-800-0000</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:official@jipjipmoney.com">
+            <img width="20" height="21" decoding="async" loading="lazy" src="/assets/images/common/ico-email.svg" alt="" />
+            <span>official@jipjipmoney.com</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://line.me/R/ti/p/%40jipjipmoney" target="_blank">
+            <img width="20" height="20" decoding="async" loading="lazy" src="/assets/images/common/ico-line-sm.svg" alt="" />
+            <span>@jipjipmoney</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="footer__sns">
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=61550832268748&amp;mibextid=LQQJ4d" target="_blank" aria-label="Facebook">
+            <span style="--image: url('/assets/images/common/ico-facebook-white.svg')"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://line.me/R/ti/p/%40jipjipmoney" target="_blank" aria-label="Line">
+            <span style="--image: url('/assets/images/common/ico-line-white.svg')"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/jipjipmoney?igshid=MzRlODBiNWFlZA==" target="_blank" aria-label="Instagram">
+            <span style="--image: url('/assets/images/common/ico-instagram-white.svg'); --size: 22;"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@jipjipmoney" target="_blank" aria-label="TikTok">
+            <span style="--image: url('/assets/images/common/ico-tiktok-white.svg'); --size: 21;"></span>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank" aria-label="YouTube">
+            <span style="--image: url('/assets/images/common/ico-youtube-white.svg'); --size: 24;"></span>
+          </a>
+        </li>
+      </ul>
+      <ul class="footer__nav">
+        <li>
+          <a href="/about-us/">
+            <span>เกี่ยวกับเรา</span>
+          </a>
+        </li>
+        <li>
+          <a href="/privacy-policy/">
+            <span>นโยบายความเป็นส่วนตัว</span>
+          </a>
+        </li>
+        <li>
+          <a href="/articles/">
+            <span>บทความ</span>
+          </a>
+        </li>
+        <li>
+          <a href="/contact-us/">
+            <span>ติดต่อเรา</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+
+</html>

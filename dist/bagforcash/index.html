@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Bagforcash</title>
+  <meta name="keyword" content="">
+  <meta name="description" content="">
+  <meta property="og:title" content="Bagforcash">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <script type="module" crossorigin src="/assets/js/main.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/styles.css">
+</head>
+
+<body>
+  <header class="header" id="header">
+    <div class="header__container">
+      <a class="header__logo" href="/" aria-label="JipJip Money Logo"></a>
+      <button class="header-btn-menu" :aria-expanded="isMenuOpen.toString()" @click.prevent="menuToggle">
+        <span class="header-btn-menu__title">เมนู</span>
+        <span class="header-btn-menu__hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <nav class="nav-global" id="nav-global" :aria-hidden="menuAriaHidden.toString()" :class="{ 'is-open': isMenuOpen }">
+        <div class="nav-global__container">
+          <div class="nav-global__inner">
+            <ul class="nav-global__list">
+              <li>
+                <a class="nav-global__link" href="/">หน้าแรก</a>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/about-us/">เกี่ยวกับเรา</a>
+              </li>
+              <li @mouseenter="subMenuHoverToggle(true)" @mouseleave="subMenuHoverToggle(false)">
+                <button class="nav-global__link" @click.prevent="subMenuClickToggle" :aria-expanded="isSubMenuOpen">ผลิตภัณฑ์ของเรา</button>
+                <transition name="fade">
+                  <div class="nav-global-sub" :aria-hidden="(!isSubMenuOpen).toString()" v-show="isSubMenuOpen">
+                    <div class="nav-global-sub__inner">
+                      <p class="nav-global-sub__heading">บริการเงินด่วน</p>
+                      <a class="nav-global-sub__link" href="/bagforcash/">
+                        <img width="36" height="36" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-bagforcash.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">bagforcash</p>
+                          <p>ผู้นำด้านการฝากขายกระเป๋าและจิวเวลรี่แบรนด์เนม อันดับ 1 ของไทย</p>
+                        </div>
+                      </a>
+                      <a class="nav-global-sub__link" href="/watchforcash/">
+                        <img width="36" height="37" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-watchforcash.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">watchforcash</p>
+                          <p>ผู้นำด้านการฝากขายนาฬิกาแบรนด์เนม อันดับ 1 ของไทย</p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="nav-global-sub__inner">
+                      <p class="nav-global-sub__heading">บริการของเรา</p>
+                      <a class="nav-global-sub__link" href="/authentication/">
+                        <img width="36" height="37" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-authen.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">ตรวจแท้–ปลอม</p>
+                          <p>บริการตรวจแท้ปลอมโดยผู้เชี่ยวชาญพร้อมออกการ์ด</p>
+                        </div>
+                      </a>
+                      <a class="nav-global-sub__link" href="/redemption/">
+                        <img width="64" height="64" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-12.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">ไถ่ถอนทรัพย์สิน</p>
+                          <p>ย้ายมาฝากกับเราดอกเบี้ยถูกกว่า วงเงินสูงกกว่า!</p>
+                        </div>
+                      </a>
+                      <a class="nav-global-sub__link" href="#">
+                        <img width="36" height="37" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-redemption.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">สินเชื่อ</p>
+                          <p>บริการตรวจแท้ปลอมโดยผู้เชี่ยวชาญพร้อมออกการ์ด</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </transition>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/news-promotion/">ข่าวสารและโปรโมชัน</a>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/partner/">พาร์ทเนอร์</a>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/contact-us/">ติดต่อเรา</a>
+              </li>
+            </ul>
+            <div class="nav-global-lang">
+              <button class="nav-global-lang__button" :aria-expanded="isLangOpen.toString()" @click.prevent="langToggle">
+                <span class="nav-global-lang__text">ภาษา</span>
+                <span class="nav-global-lang__current">
+                  <span>ภาษาไทย</span>
+                </span>
+              </button>
+              <transition name="fade">
+                <div class="nav-global-lang__box" v-show="isLangOpen">
+                  <p class="nav-global-lang__box-title">เลือกภาษา</p>
+                  <ul class="nav-global-lang__list" :aria-hidden="(!isLangOpen).toString()">
+                    <li>
+                      <a href="#" aria-selected="true">ภาษาไทย</a>
+                    </li>
+                    <li>
+                      <a href="#">English</a>
+                    </li>
+                    <li>
+                      <a href="#">中文</a>
+                    </li>
+                  </ul>
+                </div>
+              </transition>
+            </div>
+          </div>
+          <ul class="nav-global__sns">
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=61550832268748&amp;mibextid=LQQJ4d" target="_blank" aria-label="Facebook">
+                <span style="--image: url('/assets/images/common/ico-facebook-white.svg')"></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://line.me/R/ti/p/%40jipjipmoney" target="_blank" aria-label="Line">
+                <span style="--image: url('/assets/images/common/ico-line-white.svg')"></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/jipjipmoney?igshid=MzRlODBiNWFlZA==" target="_blank" aria-label="Instagram">
+                <span style="--image: url('/assets/images/common/ico-instagram-white.svg'); --size: 22;"></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@jipjipmoney" target="_blank" aria-label="TikTok">
+                <span style="--image: url('/assets/images/common/ico-tiktok-white.svg'); --size: 21;"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="main-visual-service">
+      <picture class="main-visual-service__image">
+        <source srcset="/assets/images/bagforcash/img-mv-pc.webp" media="(min-width: 1024px)">
+        <img width="750" height="1000" decoding="async" loading="lazy" src="/assets/images/bagforcash/img-mv-sp.webp" alt="" />
+      </picture>
+      <div class="main-visual-service__container">
+        <img class="main-visual-service__logo" width="120" height="120" decoding="async" loading="lazy" src="/assets/images/common/logo-bagforcash.svg" alt="" />
+        <img class="main-visual-service__name" width="223" height="40" decoding="async" loading="lazy" src="/assets/images/common/text-bagforcash-white.svg" alt="bagforcash" />
+        <h1 class="main-visual-service__title">บริการกระเป๋า<br class="md:hidden">และจิวเวลรี่แลกเงินด่วน</h1>
+      </div>
+      <a class="btn-mv-scroll" href="#sec-intro">
+        <span>Please scroll down</span>
+      </a>
+    </section><!-- /.main-visual-service-->
+    <div class="sec-intro sec-intro--bagforcash" id="sec-intro">
+      <div class="sec-intro__container">
+        <div class="sec-intro__block">
+          <div class="sec-intro__block-inner">
+            <div class="box-service-intro">
+              <p class="box-service-intro__sub">
+                <span class="text-blue-main">bagforcash</span> – กระเป๋าแลกเงินด่วน
+              </p>
+              <p class="box-service-intro__heading">เปลี่ยนทรัพย์สินเป็นเงินสดได้ทันที <span class="text-blue-main">วงเงินสูง<br class="hidden md:block">อนุมัติไว ดอกเบี้ยต่ำถูกกฎหมาย</span>
+              </p>
+              <p class="box-service-intro__text">หากคุณยังไม่อยากขายกระเป๋าแบรนด์เนม แต่ต้องการใช้เงินด่วน <strong>bagforcash</strong> พร้อมช่วยคุณ <br class="md:hidden"><br class="lg:hidden">เราประเมินวงเงินด้วยระบบราคากลางที่ประมวลผลแม่นยำและเป็นธรรม รับสินค้าหลากหลาย พร้อมให้วงเงินสูงถึง <strong class="text-blue-main">6,500,000 บาทต่อสัญญา</strong>
+              </p>
+            </div><!-- /.box-service-intro-->
+          </div>
+        </div>
+        <div class="box-service-condition">
+          <p class="box-service-condition__heading">
+            <span>“เรารับฝาก สินค้าแบรนด์เนม <br class="md:hidden">ทุกประเภท”</span>
+          </p>
+          <ul class="box-service-condition__list">
+            <li>
+              <span>มือหนึ่ง หรือ มือสอง</span>
+            </li>
+            <li>
+              <span>รุ่นวินเทจ ของสะสม และของหายาก</span>
+            </li>
+          </ul>
+          <img class="box-service-condition__logo" width="620" height="95" decoding="async" loading="lazy" src="/assets/images/common/logo-main.svg" alt="" />
+        </div><!-- /.box-service-condition-->
+      </div>
+    </div><!-- /.sec-intro-->
+    <section class="sec-why-choose sec-why-choose--bagforcash">
+      <div class="sec-why-choose__container">
+        <h2 class="heading-service">
+          <span>ทำไมต้องเลือก</span>
+          <img width="191" height="40" decoding="async" loading="lazy" src="/assets/images/common/text-bagforcash-02.svg" alt="bagforcash" />
+        </h2>
+        <div class="sec-why-choose__inner">
+          <div class="box-why-choose">
+            <div class="box-why-choose__inner">
+              <ul class="box-why-choose__list">
+                <li>
+                  <img width="64" height="64" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-01.svg" alt="" />
+                  <p class="box-why-choose__info">ให้วงเงินสูง ตั้งแต่ 10,000 - 6,500,000 บาท ต่อสัญญา</p>
+                </li>
+                <li>
+                  <img width="56" height="56" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-02.svg" alt="" />
+                  <p class="box-why-choose__info">ดอกเบี้ยต่ำถูกกฎหมาย เริ่มต้นเพียง<br>0.89% ต่อเดือน</p>
+                </li>
+                <li>
+                  <img width="56" height="56" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-03.svg" alt="" />
+                  <p class="box-why-choose__info">อนุมัติไวใน 45 นาที <br class="md:hidden">รับเงินโอนใน 1 ชั่วโมง</p>
+                </li>
+                <li>
+                  <img width="56" height="56" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-04.svg" alt="" />
+                  <p class="box-why-choose__info">ให้วงเงินเต็ม ไม่หักดอกเบี้ยล่วงหน้า</p>
+                </li>
+                <li>
+                  <img width="56" height="56" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-05.svg" alt="" />
+                  <p class="box-why-choose__info">ไม่ต้องส่งเงินต้นระหว่างสัญญา</p>
+                </li>
+                <li>
+                  <img width="56" height="57" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-06.svg" alt="" />
+                  <p class="box-why-choose__info">บริการรับสินค้าฟรีถึงบ้าน – โดยแมสเซนเจอร์ที่ เชี่ยวชาญด้านการขนส่งสินค้าลักชัวรี่โดยเฉพาะ</p>
+                </li>
+                <li>
+                  <img width="64" height="64" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-07.svg" alt="" />
+                  <p class="box-why-choose__info">เงื่อนไขยืดหยุ่น – <br class="md:hidden">ต่อสัญญาได้ไม่จำกัด</p>
+                </li>
+                <li>
+                  <img width="64" height="64" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-08.svg" alt="" />
+                  <p class="box-why-choose__info">ดำเนินธุรกิจถูกกฎหมาย <br>ลูกค้ามากกว่า 10,000 รายไว้วางใจ</p>
+                </li>
+                <li>
+                  <img width="64" height="64" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-09.svg" alt="" />
+                  <p class="box-why-choose__info">จัดเก็บแบบ 1 ต่อ 1 ในห้องนิรภัยมาตรฐานระดับ โลกพร้อมวงเงินคุ้มครอง – มั่นใจได้ว่าทรัพย์สิน ของคุณปลอดภัยสูงสุด</p>
+                </li>
+                <li>
+                  <img width="64" height="64" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-10.svg" alt="" />
+                  <p class="box-why-choose__info">รักษาความลับของลูกค้าอย่างสูงสุด</p>
+                </li>
+              </ul>
+            </div>
+            <div class="box-why-choose__footer">
+              <img width="47" height="46" decoding="async" loading="lazy" src="/assets/images/common/logo-bagforcash-black.svg" alt="" />
+              <p class="box-why-choose__footer-text">ต้องการเงินด่วนนำกระเป๋าแบรนด์เนมและจิวเวลรี่ มาที่ bagforcash เท่านั้น !</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /.sec-why-choose-->
+    <section class="sec-how-to-use">
+      <div class="sec-how-to-use__container">
+        <h2 class="heading-service">
+          <span>ขั้นตอนการใช้บริการ</span>
+          <img width="191" height="40" decoding="async" loading="lazy" src="/assets/images/common/text-bagforcash-02.svg" alt="bagforcash" />
+        </h2>
+        <p class="sec-how-to-use__heading-sub">ง่าย รวดเร็ว ปลอดภัย – <br class="md:hidden">พร้อมรับเงินก้อนใช้ในทันที</p>
+        <ol class="sec-how-to-use__list">
+          <li>
+            <div class="card-step">
+              <p class="card-step__number">1</p>
+              <p class="card-step__title">สมัครสมาชิก</p>
+              <div class="card-step__text">
+                <p>ส่งข้อมูลทรัพย์สินเบื้องต้นพร้อมระบุวงเงินที่ต้องการผ่านเว็บไซต์</p>
+                <p>
+                  <a href="https://www.bagforcash.com" target="_blank">www.bagforcash.com</a>
+                </p>
+              </div>
+            </div><!-- /.card-step-->
+          </li>
+          <li>
+            <div class="card-step">
+              <p class="card-step__number">2</p>
+              <p class="card-step__title">รอผลอนุมัติวงเงิน</p>
+              <div class="card-step__text">
+                <p>แจ้งผลอนุมัติภายใน 45 นาที</p>
+              </div>
+            </div><!-- /.card-step-->
+          </li>
+          <li>
+            <div class="card-step">
+              <p class="card-step__number">3</p>
+              <p class="card-step__title">ส่งทรัพย์สิน<br>และชำระค่าประเมิน</p>
+              <div class="card-step__text">
+                <p>ส่งทรัพย์สินมายังสำนักงานใหญ่เมืองทอง หรือใช้บริการ แมสเซนเจอร์จากเราฟรี!</p>
+              </div>
+            </div><!-- /.card-step-->
+          </li>
+          <li>
+            <div class="card-step">
+              <p class="card-step__number">4</p>
+              <p class="card-step__title">เซ็นสัญญาออนไลน์</p>
+              <div class="card-step__text">
+                <p>รับเงินโอนทันที</p>
+              </div>
+            </div><!-- /.card-step-->
+          </li>
+        </ol>
+        <div class="sec-how-to-use__remark">
+          <p class="sec-how-to-use__remark-title">หมายเหตุ</p>
+          <ul class="sec-how-to-use__remark-list">
+            <li>ชื่อในการทำสัญญาและบัญชีรับโอนเงินจะต้องตรงกันเท่านั้น</li>
+            <li>ลูกค้าที่ฝากทรัพย์สินมูลค่ามากกว่า 1 ล้านบาทจะต้องทำ KYC</li>
+          </ul>
+        </div>
+      </div>
+    </section><!-- /.sec-how-to-use-->
+    <section class="sec-accepted-brand">
+      <div class="sec-accepted-brand__container">
+        <h2 class="heading-02 text-center">
+          <span>แบรนด์กระเป๋า<br class="md:hidden">และจิวเวลรี่ที่รับฝาก</span>
+        </h2>
+        <div class="sec-accepted-brand__accepted">
+          <div class="box-accepted-brand">
+            <h3 class="box-accepted-brand__heading">แบรนด์กระเป๋าที่รับฝาก</h3>
+            <ul class="box-accepted-brand__list">
+              <li>
+                <img width="177" height="72" decoding="async" loading="lazy" src="/assets/images/brand/logo-hermes.svg" alt="Hermès" />
+              </li>
+              <li>
+                <img width="177" height="72" decoding="async" loading="lazy" src="/assets/images/brand/logo-gucci.svg" alt="Gucci" />
+              </li>
+              <li>
+                <img width="177" height="72" decoding="async" loading="lazy" src="/assets/images/brand/logo-channel.svg" alt="Channel" />
+              </li>
+              <li>
+                <img width="177" height="72" decoding="async" loading="lazy" src="/assets/images/brand/logo-louis-vuitton.svg" alt="Louis Vuitton" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-dior.svg" alt="Dior" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-celine.svg" alt="Celine" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-balenciaga.svg" alt="Balenciaga" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-goyard.svg" alt="Goyard" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-bottega-veneta.svg" alt="Bottega Veneta" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-miumiu.svg" alt="Miumiu" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-prada.svg" alt="Prada" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-fendi.svg" alt="Fendi" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-loewe.svg" alt="Loewe" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-loro-piana.svg" alt="Loro Piana" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-saint-laurent.svg" alt="Saint Laurent" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-delvaux.svg" alt="Delvaux" />
+              </li>
+            </ul>
+          </div><!-- /.box-accepted-brand-->
+          <div class="box-accepted-brand">
+            <h3 class="box-accepted-brand__heading">แบรนด์จิวเวลรี่ที่รับฝาก</h3>
+            <ul class="box-accepted-brand__list box-accepted-brand__list--sm">
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-cartier.svg" alt="Cartier" />
+              </li>
+              <li>
+                <img width="177" height="72" decoding="async" loading="lazy" src="/assets/images/brand/logo-bvlgari.svg" alt="Bvlgari" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-van-cleef-arpels.svg" alt="Van Cleef &amp; Arpels" />
+              </li>
+              <li>
+                <img width="177" height="73" decoding="async" loading="lazy" src="/assets/images/brand/logo-tiffany-co.svg" alt="Tiffany &amp; Co." />
+              </li>
+              <li>
+                <img width="177" height="72" decoding="async" loading="lazy" src="/assets/images/brand/logo-hermes.svg" alt="Hermès" />
+              </li>
+              <li>
+                <img width="177" height="72" decoding="async" loading="lazy" src="/assets/images/brand/logo-channel.svg" alt="Channel" />
+              </li>
+            </ul>
+          </div><!-- /.box-accepted-brand-->
+        </div>
+      </div>
+    </section><!-- /.sec-accepted-brand-->
+    <section class="sec-faq">
+      <div class="sec-faq__container">
+        <h2 class="heading-02 text-center">
+          <span>คำถามที่พบบ่อย <span class="hidden md:inline">(FAQ)</span>
+          </span>
+        </h2>
+        <div class="sec-faq__list">
+          <div class="flex flex-col gap-4 lg:gap-6" id="faq-list"><faq-item>
+              <template slot="question">
+                <span>ดอกเบี้ยแพงไหมคะ?</span>
+              </template>
+              <template slot="answer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </template>
+            </faq-item><faq-item>
+              <template slot="question">
+                <span>สัญญาถ้าครบสัญญาแล้ว<br class="md:hidden">สามารถต่อได้มั้ยคะ?</span>
+              </template>
+              <template slot="answer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </template>
+            </faq-item><faq-item>
+              <template slot="question">
+                <span>กระเป๋าที่ฝากเก็บดีมั้ยคะ?</span>
+              </template>
+              <template slot="answer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </template>
+            </faq-item><faq-item>
+              <template slot="question">
+                <span>จ่ายดอกเบี้ยยังไงคะ?</span>
+              </template>
+              <template slot="answer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </template>
+            </faq-item></div>
+        </div>
+      </div>
+    </section><!-- /.sec-faq-->
+  </main>
+  <footer class="footer">
+    <nav class="footer__container">
+      <a class="footer__logo" href="/">
+        <img width="620" height="95" decoding="async" loading="lazy" src="/assets/images/common/logo-main.svg" alt="JibJib Money" />
+      </a>
+      <div class="footer__address">
+        <p class="footer__address-title">บริษัท เงินเรื่องจิ๊บ จำกัด</p>
+        <p>58/101 หมู่ 3 ถนน แจ้งวัฒนะ-ปากเกร็ด 33 คลองเกลือ ปากเกร็ด นนทบุรี 11120</p>
+      </div>
+      <ul class="footer__contact">
+        <li>
+          <a href="tel:0888000000">
+            <img width="21" height="21" decoding="async" loading="lazy" src="/assets/images/common/ico-phone.svg" alt="" />
+            <span>088-800-0000</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:official@jipjipmoney.com">
+            <img width="20" height="21" decoding="async" loading="lazy" src="/assets/images/common/ico-email.svg" alt="" />
+            <span>official@jipjipmoney.com</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://line.me/R/ti/p/%40jipjipmoney" target="_blank">
+            <img width="20" height="20" decoding="async" loading="lazy" src="/assets/images/common/ico-line-sm.svg" alt="" />
+            <span>@jipjipmoney</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="footer__sns">
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=61550832268748&amp;mibextid=LQQJ4d" target="_blank" aria-label="Facebook">
+            <span style="--image: url('/assets/images/common/ico-facebook-white.svg')"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://line.me/R/ti/p/%40jipjipmoney" target="_blank" aria-label="Line">
+            <span style="--image: url('/assets/images/common/ico-line-white.svg')"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/jipjipmoney?igshid=MzRlODBiNWFlZA==" target="_blank" aria-label="Instagram">
+            <span style="--image: url('/assets/images/common/ico-instagram-white.svg'); --size: 22;"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@jipjipmoney" target="_blank" aria-label="TikTok">
+            <span style="--image: url('/assets/images/common/ico-tiktok-white.svg'); --size: 21;"></span>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank" aria-label="YouTube">
+            <span style="--image: url('/assets/images/common/ico-youtube-white.svg'); --size: 24;"></span>
+          </a>
+        </li>
+      </ul>
+      <ul class="footer__nav">
+        <li>
+          <a href="/about-us/">
+            <span>เกี่ยวกับเรา</span>
+          </a>
+        </li>
+        <li>
+          <a href="/privacy-policy/">
+            <span>นโยบายความเป็นส่วนตัว</span>
+          </a>
+        </li>
+        <li>
+          <a href="/articles/">
+            <span>บทความ</span>
+          </a>
+        </li>
+        <li>
+          <a href="/contact-us/">
+            <span>ติดต่อเรา</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+
+</html>

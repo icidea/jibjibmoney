@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>About us</title>
+  <meta name="keyword" content="">
+  <meta name="description" content="">
+  <meta property="og:title" content="About us">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <script type="module" crossorigin src="/assets/js/main.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/styles.css">
+</head>
+
+<body>
+  <header class="header header--white" id="header">
+    <div class="header__container">
+      <a class="header__logo" href="/" aria-label="JipJip Money Logo"></a>
+      <button class="header-btn-menu" :aria-expanded="isMenuOpen.toString()" @click.prevent="menuToggle">
+        <span class="header-btn-menu__title">เมนู</span>
+        <span class="header-btn-menu__hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <nav class="nav-global" id="nav-global" :aria-hidden="menuAriaHidden.toString()" :class="{ 'is-open': isMenuOpen }">
+        <div class="nav-global__container">
+          <div class="nav-global__inner">
+            <ul class="nav-global__list">
+              <li>
+                <a class="nav-global__link" href="/">หน้าแรก</a>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/about-us/">เกี่ยวกับเรา</a>
+              </li>
+              <li @mouseenter="subMenuHoverToggle(true)" @mouseleave="subMenuHoverToggle(false)">
+                <button class="nav-global__link" @click.prevent="subMenuClickToggle" :aria-expanded="isSubMenuOpen">ผลิตภัณฑ์ของเรา</button>
+                <transition name="fade">
+                  <div class="nav-global-sub" :aria-hidden="(!isSubMenuOpen).toString()" v-show="isSubMenuOpen">
+                    <div class="nav-global-sub__inner">
+                      <p class="nav-global-sub__heading">บริการเงินด่วน</p>
+                      <a class="nav-global-sub__link" href="/bagforcash/">
+                        <img width="36" height="36" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-bagforcash.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">bagforcash</p>
+                          <p>ผู้นำด้านการฝากขายกระเป๋าและจิวเวลรี่แบรนด์เนม อันดับ 1 ของไทย</p>
+                        </div>
+                      </a>
+                      <a class="nav-global-sub__link" href="/watchforcash/">
+                        <img width="36" height="37" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-watchforcash.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">watchforcash</p>
+                          <p>ผู้นำด้านการฝากขายนาฬิกาแบรนด์เนม อันดับ 1 ของไทย</p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="nav-global-sub__inner">
+                      <p class="nav-global-sub__heading">บริการของเรา</p>
+                      <a class="nav-global-sub__link" href="/authentication/">
+                        <img width="36" height="37" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-authen.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">ตรวจแท้–ปลอม</p>
+                          <p>บริการตรวจแท้ปลอมโดยผู้เชี่ยวชาญพร้อมออกการ์ด</p>
+                        </div>
+                      </a>
+                      <a class="nav-global-sub__link" href="/redemption/">
+                        <img width="64" height="64" decoding="async" loading="lazy" src="/assets/images/common/ico-why-choose-12.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">ไถ่ถอนทรัพย์สิน</p>
+                          <p>ย้ายมาฝากกับเราดอกเบี้ยถูกกว่า วงเงินสูงกกว่า!</p>
+                        </div>
+                      </a>
+                      <a class="nav-global-sub__link" href="#">
+                        <img width="36" height="37" decoding="async" loading="lazy" src="/assets/images/common/ico-nav-redemption.svg" alt="" />
+                        <div class="nav-global-sub__link-desc">
+                          <p class="nav-global-sub__link-title">สินเชื่อ</p>
+                          <p>บริการตรวจแท้ปลอมโดยผู้เชี่ยวชาญพร้อมออกการ์ด</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </transition>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/news-promotion/">ข่าวสารและโปรโมชัน</a>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/partner/">พาร์ทเนอร์</a>
+              </li>
+              <li>
+                <a class="nav-global__link" href="/contact-us/">ติดต่อเรา</a>
+              </li>
+            </ul>
+            <div class="nav-global-lang">
+              <button class="nav-global-lang__button" :aria-expanded="isLangOpen.toString()" @click.prevent="langToggle">
+                <span class="nav-global-lang__text">ภาษา</span>
+                <span class="nav-global-lang__current">
+                  <span>ภาษาไทย</span>
+                </span>
+              </button>
+              <transition name="fade">
+                <div class="nav-global-lang__box" v-show="isLangOpen">
+                  <p class="nav-global-lang__box-title">เลือกภาษา</p>
+                  <ul class="nav-global-lang__list" :aria-hidden="(!isLangOpen).toString()">
+                    <li>
+                      <a href="#" aria-selected="true">ภาษาไทย</a>
+                    </li>
+                    <li>
+                      <a href="#">English</a>
+                    </li>
+                    <li>
+                      <a href="#">中文</a>
+                    </li>
+                  </ul>
+                </div>
+              </transition>
+            </div>
+          </div>
+          <ul class="nav-global__sns">
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=61550832268748&amp;mibextid=LQQJ4d" target="_blank" aria-label="Facebook">
+                <span style="--image: url('/assets/images/common/ico-facebook-white.svg')"></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://line.me/R/ti/p/%40jipjipmoney" target="_blank" aria-label="Line">
+                <span style="--image: url('/assets/images/common/ico-line-white.svg')"></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/jipjipmoney?igshid=MzRlODBiNWFlZA==" target="_blank" aria-label="Instagram">
+                <span style="--image: url('/assets/images/common/ico-instagram-white.svg'); --size: 22;"></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@jipjipmoney" target="_blank" aria-label="TikTok">
+                <span style="--image: url('/assets/images/common/ico-tiktok-white.svg'); --size: 21;"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="sec-about">
+      <div class="sec-about__container">
+        <div class="sec-about__wrap">
+          <h1 class="sec-about__heading">
+            <span>เกี่ยวกับ</span>
+          </h1>
+          <div class="sec-about__logo">
+            <img width="318" height="50" decoding="async" loading="lazy" src="/assets/images/common/logo-main-black.svg" alt="JIPJIP MONEY" />
+          </div>
+        </div>
+        <div class="sec-about__content">
+          <p>
+            <strong> บริษัท เงินเรื่องจิ๊บ จำกัด (JIPJIPMONEY)</strong> ก่อตั้งขึ้นในปี 2565<br class="hidden lg:block"> โดยทีมผู้ก่อตั้งของเรามีความเชี่ยวชาญและประสบการณ์หลากหลาย<br class="hidden lg:block">
+            ทั้งในธุรกิจสินค้าลักชัวรี่ การเงิน การลงทุน และเทคโนโลยี ทำให้บริษัทแข็งแกร่งรอบด้าน<br class="hidden lg:block"> เรานำความรู้และนวัตกรรมมาพัฒนาบริการ เพื่อให้ลูกค้าได้รับความพึงพอใจสูงสุด<br class="hidden lg:block">
+            พร้อมก้าวขึ้นเป็นบริษัทขายฝากชั้นนำ และเป็นอันดับหนึ่งในใจของลูกค้า<br><br>
+            ในปี 2568 บริษัทได้ร่วมทุนกับ<strong> บริษัท ทีคิวเอ็ม อัลฟ่า จำกัด (มหาชน)<br class="hidden lg:block"></strong>เสริมความแข็งแกร่งด้านเงินทุนและความสามารถในการคุ้มครองประกันภัยทรัพย์สินของลูกค้า<br><br>
+            <strong>JIPJIPMONEY</strong> มุ่งมั่นเป็นทางเลือกที่มั่นคง ปลอดภัย และยุติธรรมสำหรับลูกค้าที่ต้องการ<br class="hidden lg:block">
+            เปลี่ยนทรัพย์สินลักชัวรี่ให้กลายเป็นเงินสดได้อย่างรวดเร็วและง่ายดาย โดยเชื่อมั่นในศักยภาพ<br class="hidden lg:block">
+            ของตลาดสินค้าลักชัวรี่ที่เติบโตต่อเนื่องทั้งในด้านมูลค่าและคุณค่าทางจิตใจ พร้อมตั้งเป้าหมาย<br class="hidden lg:block">
+            ขยายธุรกิจสู่ตลาดหลักทรัพย์แห่งประเทศไทย และต่อยอดสู่ตลาดต่างประเทศในอนาคต
+          </p>
+        </div>
+      </div>
+    </section><!-- .sec-about-->
+    <section class="sec-partner-team pb-0 md:pb-[60px]">
+      <img class="hidden md:block" width="5692" height="3200" decoding="async" loading="lazy" src="/assets/images/partner/img-team-pc.webp" alt="alt" />
+      <div class="sec-partner-team__sp">
+        <div class="sec-partner-team__logo">
+          <img width="318" height="50" decoding="async" loading="lazy" src="/assets/images/common/logo-main-black.svg" alt="JIPJIP MONEY" />
+        </div>
+        <h2 class="sec-partner-team__heading">
+          <span>Introducing Our Team</span>
+        </h2>
+        <div class="sec-partner-team__item">
+          <img width="280" height="280" decoding="async" loading="lazy" src="/assets/images/partner/img-saowanee-phathaiwanich.webp" alt="Saowanee Phathaiwanich" />
+          <div class="sec-partner-team__content">
+            <h3 class="sec-partner-team__title">Saowanee<br> Phathaiwanich</h3>
+            <p class="sec-partner-team__text">Chief Executive Officer</p>
+          </div>
+        </div>
+        <div class="sec-partner-team__item">
+          <img width="280" height="280" decoding="async" loading="lazy" src="/assets/images/partner/img-chalermchai-mahagitsiri.webp" alt="Chalermchai Mahagitsiri" />
+          <div class="sec-partner-team__content">
+            <h3 class="sec-partner-team__title">Chalermchai<br> Mahagitsiri</h3>
+            <p class="sec-partner-team__text">Co-Founder</p>
+          </div>
+        </div>
+        <div class="sec-partner-team__item">
+          <img width="280" height="280" decoding="async" loading="lazy" src="/assets/images/partner/img-natavudh-pungcharoenpong.webp" alt="Natavudh Pungcharoenpong" />
+          <div class="sec-partner-team__content">
+            <h3 class="sec-partner-team__title">Natavudh<br> Pungcharoenpong</h3>
+            <p class="sec-partner-team__text">Co-Founder</p>
+          </div>
+        </div>
+        <div class="sec-partner-team__item">
+          <img width="280" height="280" decoding="async" loading="lazy" src="/assets/images/partner/img-napassanun-punnipa.webp" alt="Dr. Napassanun Punnipa" />
+          <div class="sec-partner-team__content">
+            <h3 class="sec-partner-team__title">Dr. Napassanun<br> Punnipa</h3>
+            <p class="sec-partner-team__text">Shareholder</p>
+          </div>
+        </div>
+      </div>
+    </section><!-- .sec-partner-team-->
+    <section class="sec-about-service">
+      <div class="sec-about-service__container">
+        <div class="sec-about-service__wrap">
+          <h2 class="heading-02">
+            <span>บริการของ</span>
+            <img class="sec-about-service__logo" width="318" height="50" decoding="async" loading="lazy" src="/assets/images/common/logo-main-black.svg" alt="JIPJIP MONEY" />
+          </h2>
+          <p class="sec-about-service__sub">JIPJIPMONEY ให้บริการทางการเงินครบวงจร ด้วยบริการหลัก 4 ประเภท ได้แก่</p>
+        </div>
+        <div class="sec-about-service__top">
+          <div class="sec-about-service__top-wrap">
+            <h3 class="sec-about-service__title">
+              <span>บริการขายฝาก<br class="lg:hidden">สินค้าลักชัวรี่</span>
+            </h3>
+            <p class="sec-about-service__top-text">ภายใต้แบรนด์ bagforcash (ขายฝากกระเป๋า <br class="hidden xl:block">แบรนด์เนม และเครื่องประดับแบรนด์เนม) และ watchforcash (ขายฝากนาฬิกาไฮเอนด์)</p>
+          </div>
+          <div class="sec-about-service__top-list">
+            <ul>
+              <li>
+                <div class="sec-about-service__top-logo">
+                  <img width="64" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-lowinterest.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__top-content">
+                  <p>อัตราดอกเบี้ยต่ำที่สุดในตลาด<br class="hidden xl:block">เริ่มต้น 0.89% ต่อเดือน</p>
+                </div>
+              </li>
+              <li>
+                <div class="sec-about-service__top-logo">
+                  <img width="64" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-quickapproval.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__top-content">
+                  <p>อนุมัติไวใน 45 นาที รับเงินโอนใน 1 ชั่วโมง</p>
+                </div>
+              </li>
+              <li>
+                <div class="sec-about-service__top-logo">
+                  <img width="64" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-fullcreditlimitapproved.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__top-content">
+                  <p>อนุมัติวงเงินเต็มจำนวนไม่มีการหักดอกเบี้ย<br class="hidden xl:block">ล่วงหน้าและไม่ต้องส่งเงินต้นระหว่างสัญญา</p>
+                </div>
+              </li>
+              <li>
+                <div class="sec-about-service__top-logo">
+                  <img width="64" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-coveragelimit.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__top-content">
+                  <p>มีวงเงินคุ้มครองในกรณีฉุกเฉิน</p>
+                </div>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <div class="sec-about-service__top-logo">
+                  <img width="65" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-uvroom.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__top-content">
+                  <p>มีบริการอบฆ่าเชื้อฟรี ในห้อง UV ROOM ก่อน นำเข้าห้องนิรภัย และก่อนส่งคืนให้ลูกค้าทุกชิ้น</p>
+                </div>
+              </li>
+              <li>
+                <div class="sec-about-service__top-logo">
+                  <img width="65" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-datadriven.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__top-content">
+                  <p>วงเงินสูงและเป็นธรรม โดยใช้ระบบ <br class="hidden xl:block">Data-Driven Valuation ในการประเมิน</p>
+                </div>
+              </li>
+              <li>
+                <div class="sec-about-service__top-logo">
+                  <img width="65" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-freeservice.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__top-content">
+                  <p>มีบริการรับทรัพย์สินฟรีถึงบ้าน ไม่มีขั้นต่ำ <br class="hidden xl:block">(เฉพาะกรุงเทพฯ และปริมณฑล)</p>
+                  <p class="sec-about-service__top-note">ต่างจังหวัดกรุณาสอบถามเงื่อนไข</p>
+                </div>
+              </li>
+              <li>
+                <div class="sec-about-service__top-logo">
+                  <img width="65" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-saferoom.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__top-content">
+                  <p>ทรัพย์สินทุกชิ้นจัดเก็บแบบ 1:1 ใน ห้องนิรภัย มาตรฐานระดับโลก</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sec-about-service__bottom">
+          <div class="sec-about-service__bottom-box">
+            <h3 class="sec-about-service__title">
+              <span>บริการตรวจสอบ<br>ความแท้ของสินค้า</span>
+            </h3>
+            <ul class="sec-about-service__bottom-list">
+              <li>
+                <div class="sec-about-service__bottom-logo">
+                  <img width="28" height="29" decoding="async" loading="lazy" src="/assets/images/common/logo-bagforcash-02.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__bottom-content">
+                  <p>
+                    <strong class="sec-about-service__bottom-bold01">บริการตรวจสอบ แท้-ปลอม กระเป๋า<br class="hidden xl:block"> แบรนด์เนม</strong> ด้วยผู้เชียวชาญควบคู่กับ เทคโนโลยี Ai ที่มีความ แม่นยำสูงกว่า 99% พร้อมออกใบรับรองและทราบ<br class="hidden xl:block"> ผลตรวจสอบ ภายใน 1 - 24 ชั่วโมง
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="sec-about-service__bottom-logo">
+                  <img width="28" height="41" decoding="async" loading="lazy" src="/assets/images/common/logo-watchforcash-02.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__bottom-content">
+                  <p>
+                    <strong class="sec-about-service__bottom-bold01">บริการตรวจสอบนาฬิกาไฮเอนด์<br class="hidden xl:block">และจิวเวลรี่ แบรนด์</strong> โดยผู้เชียวชาญ<br class="hidden xl:block"> ประสบการณ์มาก กว่า 10 ปี พร้อมออกใบ รับรอง และทราบผล ตรวจสอบภายใน<br class="hidden xl:block"> 1 - 24 ชั่วโมง
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="sec-about-service__bottom-box">
+            <h3 class="sec-about-service__title">
+              <span>บริการไถ่ถอน</span>
+            </h3>
+            <p class="sec-about-service__bottom-text">ในกรณีที่ลูกค้าฝากทรัพย์สินไว้กับร้านค้าหรือ<br class="hidden xl:block">บริษัทอื่นที่มีดอกเบี้ยหรือค่าใช้จ่ายสูงสามารถใช้บริการไถ่ถอนทรัพย์สินได้</p>
+            <ul class="sec-about-service__bottom-list">
+              <li>
+                <div class="sec-about-service__bottom-logo">
+                  <img width="29" height="29" decoding="async" loading="lazy" src="/assets/images/common/ico-sign.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__bottom-content">
+                  <p>เพียงแค่เซ็นใบมอบอำนาจและแจ้ง<br class="hidden xl:block">รายละเอียดให้เราทราบ เรามีทีม<br class="hidden xl:block">
+                    <strong class="sec-about-service__bottom-bold02">ดำเนินการให้ฟรี</strong>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="sec-about-service__bottom-logo">
+                  <img width="29" height="29" decoding="async" loading="lazy" src="/assets/images/common/ico-reducecosts.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__bottom-content">
+                  <p>ช่วยให้ลูกค้าลดค่าใช้จ่าย ลดอัตรา<br class="hidden xl:block"> ดอกเบี้ยให้ต่ำลง และยังมีโอกาสได้รับ<br class="hidden xl:block"> วงเงินที่สูงขึ้นจากเราอีกด้วย</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="sec-about-service__bottom-box">
+            <h3 class="sec-about-service__title">
+              <span>บริการสินเชื่อส่วนบุคคล</span>
+            </h3>
+            <ul class="sec-about-service__bottom-list">
+              <li>
+                <div class="sec-about-service__bottom-logo">
+                  <img width="29" height="29" decoding="async" loading="lazy" src="/assets/images/common/ico-lowinterestrates.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__bottom-content">
+                  <p>ดอกเบี้ยต่ำ เริ่มต้น 1.25%/ เดือน<br class="hidden xl:block"> (ดอกเบี้ย 15% - ดอกเบี้ยสูงสุด 25%<br class="hidden xl:block"> ต่อปี)</p>
+                </div>
+              </li>
+              <li>
+                <div class="sec-about-service__bottom-logo">
+                  <img width="29" height="29" decoding="async" loading="lazy" src="/assets/images/common/ico-installmentpayment.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__bottom-content">
+                  <p>สามารถเลือกผ่อนชำระได้ตั้งแต่ 12 ถึง<br class="hidden xl:block"> 60 เดือน</p>
+                </div>
+              </li>
+              <li>
+                <div class="sec-about-service__bottom-logo">
+                  <img width="29" height="29" decoding="async" loading="lazy" src="/assets/images/common/ico-permission.svg" alt="alt" />
+                </div>
+                <div class="sec-about-service__bottom-content">
+                  <p>ได้รับอนุญาตประกอบธุรกิจสินเชื่อส่วน<br class="hidden xl:block"> บุคคลภายใต้การกำกับของ ธนาคารแห่ง<br class="hidden xl:block"> ประเทศไทย</p>
+                </div>
+              </li>
+            </ul>
+            <div class="sec-about-service__bottom-details">
+              <p>(ใบอนุญาตเลขที่ ๒๗/๒๕๖๕)</p>
+              <ul>
+                <li>เงื่อนไขเป็นไปตามที่บริษัทกำหนด</li>
+                <li>กู้เท่าที่จำเป็นและชำระคืนไหว</li>
+                <li>ควรศึกษาข้อมูลตลาดเพิ่มเติมก่อนตัดสินใจ</li>
+              </ul>
+              <p>
+                <u>คำเตือน</u> กู้เท่าที่จำเป็น และชำระคืนไหว พิจารณาสินเชื่อ<br class="md:hidden"> โดยผ่านการประเมิน<br class="hidden lg:block"> ความสามารถ ในการชำระหนี้
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- .sec-about-service-->
+    <section class="sec-partner-technology bg-02">
+      <div class="sec-partner-technology__container">
+        <div class="sec-partner-technology__img">
+          <img width="761" height="914" decoding="async" loading="lazy" src="/assets/images/partner/img-technology.webp" alt="alt" />
+        </div>
+        <div class="sec-partner-technology__box">
+          <img width="309" height="25" decoding="async" loading="lazy" src="/assets/images/common/text-bagforcash-watchforcash.svg" alt="bagforcash watchforcash" />
+          <div class="sec-partner-technology__heading">
+            <h2 class="heading-02">
+              <span>Technology-Driven Operation</span>
+            </h2>
+            <ul class="sec-partner-technology__list">
+              <li class="sec-partner-technology__item">
+                <div class="sec-partner-technology__icon">
+                  <img width="65" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-ai.svg" alt="alt" />
+                </div>
+                <div class="sec-partner-technology__content">
+                  <h3 class="sec-partner-technology__title">ระบบตรวจสอบทรัพย์สินด้วยเทคโนโลยี AI</h3>
+                  <p class="sec-partner-technology__text">บริษัทผสานความเชี่ยวชาญของผู้เชี่ยวชาญเฉพาะทางเข้ากับเทคโนโลยี AI เพื่อการตรวจสอบความแท้<br class="hidden lg:block">ของทรัพย์สินได้อย่างแม่นยำในระดับมากกว่า 99% ระบบถูกออกแบบให้ดำเนินการ ได้อย่างรวดเร็ว<br class="hidden lg:block"> และมีประสิทธิภาพ รองรับการให้บริการที่รวดเร็วเพื่อตอบสนองความต้องการของลูกค้าได้ดีที่สุด</p>
+                </div>
+              </li>
+              <li class="sec-partner-technology__item">
+                <div class="sec-partner-technology__icon">
+                  <img width="65" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-graph.svg" alt="alt" />
+                </div>
+                <div class="sec-partner-technology__content">
+                  <h3 class="sec-partner-technology__title">ระบบประเมินมูลค่าทรัพย์สินที่แม่นยำและได้มาตรฐาน</h3>
+                  <p class="sec-partner-technology__text">การประเมินวงเงินอ้างอิงจากฐานข้อมูลราคากลางในตลาดโลกที่พัฒนาโดยบริษัท โดยนำเทคโนโลยี AI เข้ามา ช่วยวิเคราะห์ร่วม ส่งผลให้ผลการประเมินวงเงินมีความถูกต้อง โปร่งใส และเป็นธรรมต่อผู้ใช้บริการ</p>
+                </div>
+              </li>
+              <li class="sec-partner-technology__item">
+                <div class="sec-partner-technology__icon">
+                  <img width="65" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-alert.svg" alt="alt" />
+                </div>
+                <div class="sec-partner-technology__content">
+                  <h3 class="sec-partner-technology__title">ระบบแจ้งเตือนและจัดการธุรกรรมด้วย Automation</h3>
+                  <p class="sec-partner-technology__text">บริษัทใช้ระบบ Automation แบบครบวงจรในการแจ้งเตือนการชำระเงินและการต่อสัญญา ผ่านช่องทางต่าง ๆ ผ่าน LINE, SMS และอีเมล ระบบนี้ช่วยเพิ่มความสะดวกให้กับลูกค้าในการติดตามสถานะ ลดความเสี่ยงในการ ผิดนัดและสนับสนุนการวางแผนทางการเงินของลูกค้าได้อย่างมีประสิทธิภาพ</p>
+                </div>
+              </li>
+              <li class="sec-partner-technology__item">
+                <div class="sec-partner-technology__icon">
+                  <img width="65" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-crm.svg" alt="alt" />
+                </div>
+                <div class="sec-partner-technology__content">
+                  <h3 class="sec-partner-technology__title">การจัดการข้อมูลลูกค้าด้วยระบบ CRM / CDP</h3>
+                  <p class="sec-partner-technology__text">บริษัทนำระบบบริหารความสัมพันธ์ลูกค้า (CRM) และระบบจัดการข้อมูลลูกค้า (CDP) มาใช้เพื่อวิเคราะห์ข้อมูล เชิงลึก เพื่อเข้าใจความต้องการเฉพาะของลูกค้า และเพื่อพัฒนาการให้บริการที่มีประสิทธิภาพ พร้อมเสริมสร้าง ความสัมพันธ์ระยะยาว</p>
+                </div>
+              </li>
+              <li class="sec-partner-technology__item">
+                <div class="sec-partner-technology__icon">
+                  <img width="65" height="65" decoding="async" loading="lazy" src="/assets/images/common/ico-data.svg" alt="alt" />
+                </div>
+                <div class="sec-partner-technology__content">
+                  <h3 class="sec-partner-technology__title">การจัดเก็บและบริหารฐานข้อมูลทรัพย์สินอย่างเป็นระบบ</h3>
+                  <p class="sec-partner-technology__text">บริษัทมีการจัดเก็บข้อมูลประวัติของทรัพย์สินแต่ละชิ้นที่นำมาฝากไว้อย่างละเอียด เพื่อให้ลูกค้ามั่นใจว่าทรัพย์สิน อยู่ภายใต้การดูแลที่มีมาตรฐาน และสามารถตรวจสอบย้อนหลังได้ หากเกิดข้อสงสัยหรือปัญหาใด ๆ<br class="hidden lg:block"> ลูกค้าจะมีข้อมูลอ้างอิงที่ชัดเจน ครอบคลุมทั้งสองฝ่าย</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section><!-- .sec-partner-technology-->
+    <section class="sec-about-vision">
+      <div class="sec-about-vision__container">
+        <div class="sec-about-vision__wrap">
+          <div class="sec-about-vision__item01">
+            <div class="sec-about-vision__details">
+              <p class="sec-about-vision__subheading">VISION (วิสัยทัศน์)</p>
+              <p class="sec-about-vision__text">
+                <span>เรามุ่งมั่นเป็นผู้นำด้านบริการ<br class="hidden xl:block">ขายฝากสินค้าลักชัวรี่ โดยยึดหลัก
+                  บริหารอย่างโปร่งใส เป็นธรรม
+                  และให้บริการด้วยมาตรฐานสูง
+                  เน้นความรวดเร็ว ทันสมัย<br class="hidden xl:block">
+                  ครองความนิยมอันดับหนึ่งใน
+                  ประเทศไทย พร้อมขยายสู่ระดับ
+                  สากลในอนาคต</span>
+              </p>
+            </div>
+            <figure class="sec-about-vision__image">
+              <img width="900" height="1153" decoding="async" loading="lazy" src="/assets/images/about-us/img-vision.webp" alt="alt" />
+            </figure>
+          </div>
+          <div class="sec-about-vision__item02">
+            <figure class="sec-about-vision__image">
+              <img width="1300" height="1601" decoding="async" loading="lazy" src="/assets/images/about-us/img-fairness.webp" alt="alt" />
+            </figure>
+            <div class="sec-about-vision__details">
+              <p class="sec-about-vision__subheading">CORE VALUE (ค่านิยมองค์กร)</p>
+              <h2 class="sec-about-vision__heading">
+                <span>Fairness &amp; Protection</span>
+              </h2>
+              <p class="sec-about-vision__text">
+                <span>ให้ความสำคัญกับความยุติธรรมของลูกค้า<br class="hidden xl:block"> ปกป้องลูกค้าจากการถูกเอาเปรียบหรือ<br class="hidden xl:block">ถูกคิดอัตราดอกเบี้ยเกินกว่าที่กฎหมายกำหนด พร้อมนำเสนอข้อเสนอที่ดีที่สุดอย่างโปร่งใส<br class="hidden xl:block"> และเป็นธรรมเสมอ</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-about-mission">
+        <div class="sec-about-mission__container">
+          <h2 class="sec-about-mission__heading">MISSION (พันธกิจ)</h2>
+          <div class="sec-about-mission__box">
+            <ul class="sec-about-mission__list">
+              <li>ส่งมอบบริการทางการเงินที่รวดเร็ว โปร่งใส และเป็นธรรม</li>
+              <li>พัฒนาโซลูชันทางการเงินที่ทันสมัย โดยใช้ เทคโนโลยีและข้อมูล (Data-Driven) เพื่อเพิ่มความแม่นยำและ ความน่าเชื่อถือ</li>
+              <li>พัฒนาระบบราคากลางของสินค้าลักชัวรี่ เพื่อใช้เป็นมาตรฐานราคาเปรียบเทียบที่ยุติธรรมและช่วยยกระดับตลาดสินค้า ลักชัวรี่ในประเทศไทย พร้อมเป็นผู้พัฒนารายแรกที่ทำสำเร็จ</li>
+              <li>มุ่งมั่นในการนำเสนอข้อเสนอและ ทางเลือกทางการเงินที่ดีที่สุดให้แก่ลูกค้าที่มี ทรัพย์สินประเภทสินค้าลักชัวรี่ เพื่อป้องกัน การถูกเอาเปรียบจากร้านค้า หรือ ผู้ให้บริการ ที่เรียกเก็บดอกเบี้ยเกินอัตราที่กฎหมายกำหนด รวมถึงการถูกกดราคา หรือได้รับวงเงินที่ไม่เป็นธรรม เพื่อให้ลูกค้าได้รับผลประโยชน์และความคุ้มค่าสูงสุด จากการใช้บริการ</li>
+              <li>สร้างความมั่นใจให้กับลูกค้าด้วยการดูแลทรัพย์สินภายใต้ มาตรฐาน ความปลอดภัยระดับโลกและความคุ้มครองจาก บริษัทประกันภัยพันธมิตร</li>
+              <li>ผลักดันธุรกิจสู่การเป็นบริษัทจดทะเบียนในตลาดหลักทรัพย์แห่งประเทศไทยและขยายธุรกิจสู่ตลาดต่างประเทศ</li>
+              <li>ดำเนินธุรกิจอย่าง ยั่งยืน รับผิดชอบ ต่อสังคม และสร้างคุณค่าให้แก่ ผู้มีส่วนร่วม</li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- .sec-about-mission-->
+      <div class="sec-about-slogan">
+        <div class="sec-about-slogan__container">
+          <h2 class="sec-about-slogan__heading">สโลแกนของเรา</h2>
+          <p class="sec-about-slogan__box">“ฝากไว้กับเรา<br class="xl:hidden"> สบายใจตั้งแต่เริ่มจนจบ”</p>
+        </div>
+      </div><!-- .sec-about-slogan-->
+    </section><!-- .sec-about-vision-->
+  </main>
+  <footer class="footer">
+    <nav class="footer__container">
+      <a class="footer__logo" href="/">
+        <img width="620" height="95" decoding="async" loading="lazy" src="/assets/images/common/logo-main.svg" alt="JibJib Money" />
+      </a>
+      <div class="footer__address">
+        <p class="footer__address-title">บริษัท เงินเรื่องจิ๊บ จำกัด</p>
+        <p>58/101 หมู่ 3 ถนน แจ้งวัฒนะ-ปากเกร็ด 33 คลองเกลือ ปากเกร็ด นนทบุรี 11120</p>
+      </div>
+      <ul class="footer__contact">
+        <li>
+          <a href="tel:0888000000">
+            <img width="21" height="21" decoding="async" loading="lazy" src="/assets/images/common/ico-phone.svg" alt="" />
+            <span>088-800-0000</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:official@jipjipmoney.com">
+            <img width="20" height="21" decoding="async" loading="lazy" src="/assets/images/common/ico-email.svg" alt="" />
+            <span>official@jipjipmoney.com</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://line.me/R/ti/p/%40jipjipmoney" target="_blank">
+            <img width="20" height="20" decoding="async" loading="lazy" src="/assets/images/common/ico-line-sm.svg" alt="" />
+            <span>@jipjipmoney</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="footer__sns">
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=61550832268748&amp;mibextid=LQQJ4d" target="_blank" aria-label="Facebook">
+            <span style="--image: url('/assets/images/common/ico-facebook-white.svg')"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://line.me/R/ti/p/%40jipjipmoney" target="_blank" aria-label="Line">
+            <span style="--image: url('/assets/images/common/ico-line-white.svg')"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/jipjipmoney?igshid=MzRlODBiNWFlZA==" target="_blank" aria-label="Instagram">
+            <span style="--image: url('/assets/images/common/ico-instagram-white.svg'); --size: 22;"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@jipjipmoney" target="_blank" aria-label="TikTok">
+            <span style="--image: url('/assets/images/common/ico-tiktok-white.svg'); --size: 21;"></span>
+          </a>
+        </li>
+        <li>
+          <a href="" target="_blank" aria-label="YouTube">
+            <span style="--image: url('/assets/images/common/ico-youtube-white.svg'); --size: 24;"></span>
+          </a>
+        </li>
+      </ul>
+      <ul class="footer__nav">
+        <li>
+          <a href="/about-us/">
+            <span>เกี่ยวกับเรา</span>
+          </a>
+        </li>
+        <li>
+          <a href="/privacy-policy/">
+            <span>นโยบายความเป็นส่วนตัว</span>
+          </a>
+        </li>
+        <li>
+          <a href="/articles/">
+            <span>บทความ</span>
+          </a>
+        </li>
+        <li>
+          <a href="/contact-us/">
+            <span>ติดต่อเรา</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+
+</html>
